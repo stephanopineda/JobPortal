@@ -1,5 +1,6 @@
 <?php
-    include '../connections.php';
+    include '../connections.php';    
+    include 'sessions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,14 @@
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        header('Location: s-admin/dashboard/dashboard.php');
+                        $_SESSION['username']=$username;
+                        $_SESSION['admin_type']=$row['admin_type'];
+                        
+                        if($row['admin_type']=='Superadmin'){
+                            header('Location: s-admin\dashboard\dashboard.php');
+                        }else{
+                            header('Location: dashboard\dashboard.php');
+                        }
                     }
                   } else {
                     echo "No account existing.";
