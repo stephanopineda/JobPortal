@@ -68,7 +68,6 @@
                         echo "Account Exist";
                     }
                   } else {
-<<<<<<< HEAD
                     $dataquery = "users(username,name,email,password,usertype)";
                     $valuequery="('$username','$name','$email','$password','$usertype')";
                     insertData($conn,$dataquery,$valuequery);
@@ -78,9 +77,6 @@
                     elseif($usertype == 'Employer'){
                         header('Location: employer/employer-register.php');
                     }  
-=======
-                    // insert codes here
->>>>>>> main
                   }
             }
         ?>
