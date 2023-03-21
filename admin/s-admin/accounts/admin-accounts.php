@@ -1,6 +1,7 @@
 <?php
 
 include('../../../connections.php');
+include('../sessions.php');
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +17,8 @@ include('../../../connections.php');
     </head>
     <body>
 
-        <?php
-        
+        <?php        
             include('../navbar.php');
-        
         ?>
         
         <h1>Admin Accounts</h1>

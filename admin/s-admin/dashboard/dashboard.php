@@ -1,3 +1,7 @@
+<?php
+    include '../../../connections.php';
+    include('../sessions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
