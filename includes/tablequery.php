@@ -14,7 +14,7 @@
 	$result = $conn->query($sql);
 	if ($result->num_rows === 0){
 		$sql = "INSERT INTO admin_accounts (username, name, email, password, admin_type) 
-					VALUES ('superadmin', 'superadmin', 'superadmin@gmail.com', 'superadmin', 'superadmin')";
+					VALUES ('superadmin', 'superadmin', 'superadmin@gmail.com', 'superadmin', 'Superadmin')";
                     // Admin pass: superadmin
 		$conn->query($sql);
 	}

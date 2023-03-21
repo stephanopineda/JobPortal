@@ -28,10 +28,10 @@
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "Account Exist";
+                        header('Location: s-admin/dashboard/dashboard.php');
                     }
                   } else {
-                    echo "0 results";
+                    echo "No account existing.";
                   }
             }
         ?>

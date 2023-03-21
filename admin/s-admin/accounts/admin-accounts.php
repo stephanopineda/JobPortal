@@ -23,23 +23,32 @@ include('../../../connections.php');
         ?>
         
         <h1>Admin Accounts</h1>
+
+        <a href="add-admin.php">Add Admin Accounts</a>
         
         <table>
-
+            
             <tr>
                 <th>Username</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Admin Type</th>        
+                <th>Admin Type</th>
+                <th>Actions</th>        
             </tr>
+
             <?php
-                $sql = "SELECT * FROM admin_accounts";
-                $result = mysqli_query($conn, $sql);
+                $result = selectData($conn,"admin_accounts","*");
                 $resultCheck = mysqli_num_rows($result);
 
                 if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr><td>" . $row['username'] . "</td><td>" . $row['name'] . "</td><td>" . $row['email'] . "</td><td>" . $row['admin_type'] . "</td></tr>";
+                        echo "<tr>
+                        <td>" . $row['username'] . "</td
+                        ><td>" . $row['name'] . "</td>
+                        <td>" . $row['email'] . "</td>
+                        <td>" . $row['admin_type'] . "</td>
+                        <td>Action</td>
+                        </tr>";
                     }
                 }
             ?>
