@@ -12,5 +12,7 @@
         <input type="password" name="password" placeholder="Password">
         <input type="submit" name="submit" value="Log In">
     </form>
+    <br>
+    <p>No account yet?<a href="signup.php">Sign Up</a></p>
 </body>
 </html>
