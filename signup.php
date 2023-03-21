@@ -10,8 +10,15 @@
     
     <form action="signup.php" method="post">
         <input type="text" name="username" placeholder="Username">
+        <input type="text" name="name" placeholder="Name">
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="password2" placeholder="Confirm Password">
+        <input list="browsers" name="usertype" id="usertype" placeholder="User Type">
+
+        <datalist id="usertype">
+            <option value="Student">
+            <option value="Employer">
+        </datalist>
         <input type="submit" name="submit" value="Sign Up">
     </form>
     <br>
