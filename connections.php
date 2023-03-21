@@ -10,7 +10,7 @@
     $conn = new mysqli($servername, $username, $password);
 
     // Connection Commands
-    createDB($conn,$dbname);
+    createDB($conn, $dbname);
     mysqli_select_db($conn,$dbname);
 
     // Create Tables
