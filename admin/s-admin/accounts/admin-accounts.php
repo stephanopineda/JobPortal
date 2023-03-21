@@ -26,15 +26,15 @@ include('../sessions.php');
         <a href="add-admin.php">Add Admin Accounts</a>
         
         <table>
-            
-            <tr>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Admin Type</th>
-                <th>Actions</th>        
-            </tr>
-
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin Type</th>
+                    <th>Actions</th>        
+                </tr>
+            </thead>
             <?php
                 $result = selectData($conn,"admin_accounts","*");
                 $resultCheck = mysqli_num_rows($result);
@@ -50,7 +50,9 @@ include('../sessions.php');
                         </tr>";
                     }
                 }
-            ?>
+                ?>
+            </tbody>
+
         </table>
 
     </body>
