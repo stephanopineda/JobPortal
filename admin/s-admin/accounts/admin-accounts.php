@@ -25,24 +25,29 @@ include('../../../connections.php');
         <h1>Admin Accounts</h1>
         
         <table>
+            <thead>    
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin Type</th>        
+                </tr>
+            </thead>
+            
+            <tbody>
+                <?php
+                    $sql = "SELECT * FROM admin_accounts";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
 
-            <tr>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Admin Type</th>        
-            </tr>
-            <?php
-                $sql = "SELECT * FROM admin_accounts";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-
-                if ($resultCheck > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr><td>" . $row['username'] . "</td><td>" . $row['name'] . "</td><td>" . $row['email'] . "</td><td>" . $row['admin_type'] . "</td></tr>";
+                    if ($resultCheck > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr><td>" . $row['username'] . "</td><td>" . $row['name'] . "</td><td>" . $row['email'] . "</td><td>" . $row['admin_type'] . "</td></tr>";
+                        }
                     }
-                }
-            ?>
+                ?>
+            </tbody>
+
         </table>
 
     </body>

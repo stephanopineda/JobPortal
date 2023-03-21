@@ -20,8 +20,26 @@ include('../../connections.php');
         ?>
 
         <h1>Job Listing</h1>
-        
 
+        <table>
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Job Name</th>
+                    <th>Employee ID</th>
+                    <th>Company Name</th>
+                    <th>Job Salary</th>
+                    <th>Work Setup</th>
+                    <th>Job Description</th>
+                    <th>Job Type</th>
+                    <th>Job Qualification</th>
+                    <th>Job Experience</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
 
     </body>
 

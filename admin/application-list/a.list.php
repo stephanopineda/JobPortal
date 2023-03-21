@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Listing</title>
+    <title>Application Listing</title>
 </head>
 <body>
 
@@ -17,19 +17,22 @@
         include('../navbar.php');
     ?>
 
-    <h1>Company Listing</h1>
+    <h1>Application Listing</h1>
     
     <table>
 
         <thead>
             <tr>
-                <th>Company Name</th>
-                <th>Company Address</th>
-                <th>Company Logo</th>
-                <th>Company Size</th>
-                <th>Company Email</th>
-            </tr>
+                <th>Application ID</th>
+                <th>Credentials ID</th>
+                <th>Application Status</th>
+                <th>Job ID</th>
         </thead>
+        
+        <tbody>
+
+        </tbody>
+        
         <tbody>
 
         </tbody>
