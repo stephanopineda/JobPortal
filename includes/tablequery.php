@@ -5,7 +5,7 @@
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),    
     password VARCHAR(100),
-    admin_type VARCHAR(12),
+    admin_type enum('Admin','Superadmin'),
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
     createTable($conn, "admin_accounts", $tablequery);
 
@@ -22,14 +22,16 @@
 		//echo "Superadmin exists.";
 	}
 
- $tablequery = "(
-        userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        username varchar(50) NOT NULL,
-        password varchar(50) NOT NULL,
-        email varchar(50) NOT NULL,
-        userType enum('student','employer') NOT NULL
-        )";
+        // User Accounts Table
+    $tablequery = "(
+            userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            username varchar(50) NOT NULL,
+            password varchar(50) NOT NULL,
+            email varchar(50) NOT NULL,
+            userType enum('Student','Employer') NOT NULL
+            )";
     createTable($conn, "users", $tablequery);
+
     // // Admin Accounts Table
     // $tablequery = "(
     //     `companyID` int,
