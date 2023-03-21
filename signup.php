@@ -1,3 +1,8 @@
+<?php
+    include 'connections.php';
+    include('sessions.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +22,10 @@
         <label for="name">Name</label>
         <br>
         <input type="text" name="name" placeholder="Enter name">
+        <br>
+        <label for="email">Email</label>
+        <br>
+        <input type="email" name="email" placeholder="Enter email">
         <br>
         <label for="password">Password</label>
         <br>
@@ -39,21 +48,35 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
-                $name = $_POST['name'];    
+                $name = $_POST['name']; 
+                $email = $_POST['email'];   
                 $password = $_POST['password']; 
-                $usertype = $_POST['browser'];      
-                $tablename="admin_accounts";
+                $usertype = $_POST['usertype'];      
+                $tablename="users";
                 $columnquery="*";
+ 
+               
                 
                 $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
+
+
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
+                        
                         echo "Account Exist";
                     }
                   } else {
-                    // insert codes here   
+                    $dataquery = "users(username,name,email,password,usertype)";
+                    $valuequery="('$username','$name','$email','$password','$usertype')";
+                    insertData($conn,$dataquery,$valuequery);
+                    if($usertype == 'Student'){
+                        header('Location: student/student-register.php');
+                    }
+                    elseif($usertype == 'Employer'){
+                        header('Location: employer/employer-register.php');
+                    }  
                   }
             }
         ?>
