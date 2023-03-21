@@ -11,13 +11,13 @@
     include('navbar.php');
     ?>
         <h1>Admin Logs</h1>
-    <table>
+    <!-- <table>
         <tr>
             <th>ID</th>
             <th>Username</th>
             <th>Name</th>
             <th>Email</th>
         </tr>
-    </table>
+    </table> -->
 </body>
 </html>
