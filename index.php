@@ -1,2 +1,4 @@
 <?php
-    header('Location: login.php');
+
+include('connections.php');
+header('Location: login.php');
