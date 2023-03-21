@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'connections-functions.php';
 
     $servername = "localhost";

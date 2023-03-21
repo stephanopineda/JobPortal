@@ -1,6 +1,7 @@
 <?php
 
-    include('../../connections-functions.php');
+    include('../../connections.php');
+    include('../sessions-admin.php')
 
 ?>
 
