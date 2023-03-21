@@ -4,10 +4,16 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
+    $dbname = "jobportal";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password);
 
-    // connection commands
-    createDB($conn);
+    // Connection Commands
+    createDB($conn,$dbname);
+    mysqli_select_db($conn,$dbname);
+
+    // Create Tables
+    include 'includes/tablequery.php';
+
 ?>
