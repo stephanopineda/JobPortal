@@ -1,0 +1,118 @@
+body {
+    background: rgba(255, 255, 255, 0.5);
+    font-family: 'Arial' ;
+  }
+.fw-boldest{
+  font-weight: 10000px;
+}
+.logo{
+  padding-left: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.bg {
+  background-image: url("assets/Opportunity-awaits-banner.png");
+  height: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.font-color{
+  color: white;
+  font-size: 150%;
+}
+
+.login-nav{
+  margin-left: -150px;
+}
+.login-form{
+  border-radius: 25px;
+}
+
+.div-margins{
+  margin:25px;
+}
+
+.header-text{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.job-card{ 
+  height: 400px;
+}
+.job-img{
+  height: 150px;
+  border: 1px solid black;
+}
+.job-name{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.footer{
+  background-color: #800;
+  bottom: 0;
+}
+
+.footer-toc{
+  font-size: 25px;
+  color: aliceblue;
+  margin-bottom: 0px;
+}
+
+.border-on{
+  border: 1px solid black;
+}
+
+.footer a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.footer a:hover{
+  text-decoration: none;
+  color: rgb(234, 231, 23);
+}
+
+.footer-margin{
+  margin-left: 20px;
+}
+.footer-two{
+  margin-top: 40px;
+}
+
+.footer-cpw{
+  font-size: 10px;
+  line-height: 0.1;
+}
+
+.sidebar {
+  height: 100%;
+  right: 0;
+  position: fixed;
+  text-decoration: none;
+}
+.stud-btn{
+  background-color: #800;
+}
+.stud-btn:hover{
+  background-color: rgb(160, 25, 25);
+}
+
+ .frost{
+  background-color: rgba(19, 19, 19, 0.52);
+ }
+
+ .wrapper{
+  border-top: 30px solid #800;;
+ }
+
+ .dropdown-menu-right {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.stud-btn2{
+  background-color: #800;
+}
