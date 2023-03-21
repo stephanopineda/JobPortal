@@ -9,16 +9,30 @@
 <body>
     
     <form action="signup.php" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="text" name="name" placeholder="Name">
-        <input type="password" name="password" placeholder="Password">
+        <h1>Sign Up</h1>
+        <label for="username">Username</label>
+        <br>
+        <input type="text" name="username" placeholder="Enter username">
+        <br>
+        <label for="name">Name</label>
+        <br>
+        <input type="text" name="name" placeholder="Enter name">
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="password" name="password" placeholder="Enter password">
+        <br>
+        <label for="password">Confirm Password</label>
+        <br>
         <input type="password" name="password2" placeholder="Confirm Password">
-        <input list="browsers" name="browser" id="browser" placeholder="User Type">
-
-        <datalist id="browsers">
-            <option value="Student">
-            <option value="Employer">
-        </datalist>
+        <br>
+        <label for="usertype">User Type</label>
+        <br>
+        <select name="usertype" id="usertype">
+            <option value="Student">Student</option>
+            <option value="Employer">Employer</option>
+        </select>
+        <br>
         <input type="submit" name="register" value="Sign Up">
 
         <?php

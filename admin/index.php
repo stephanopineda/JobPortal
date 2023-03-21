@@ -8,12 +8,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Admin Portal</title>
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <h1>Admin Portal</h1>
+        <label for="username">Username</label>
+        <br>
+        <input type="text" name="username" placeholder="Enter username">
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="password" name="password" placeholder="Enter password">
+        <br>
         <input type="submit" name="login" value="Sign In">
         
         <?php

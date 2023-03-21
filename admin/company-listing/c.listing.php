@@ -23,11 +23,11 @@
 
         <thead>
             <tr>
-                <th>Company Name</th>
-                <th>Company Address</th>
-                <th>Company Logo</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Logo</th>
                 <th>Company Size</th>
-                <th>Company Email</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
