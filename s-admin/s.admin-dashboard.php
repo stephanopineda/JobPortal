@@ -7,7 +7,10 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Admin Logs</h1>
+    <?php
+    include('navbar.php');
+    ?>
+        <h1>Admin Logs</h1>
     <table>
         <tr>
             <th>ID</th>
