@@ -14,6 +14,7 @@
     <?php include 'header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
     <title>Job Portal</title>
+    
 </head>
 
 <body>
