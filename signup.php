@@ -1,5 +1,5 @@
 <?php
-    include 'connections.php';
+    include ('connections.php');
     include('sessions.php');
 ?>
 
