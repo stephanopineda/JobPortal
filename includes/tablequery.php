@@ -88,19 +88,17 @@
 
     
     // // Admin Accounts Table
-    // $tablequery = "(
-    //     `jobID` int,
-    //     `jobName` varchar(50),
-    //     `employerID` int,
-    //     `companyName` varchar(50),
-    //     `jobSalary` int,
-    //     `workSetup` varchar(50),
-    //     `jobDescription` varchar(50),
-    //     `jobType` varchar(50),
-    //     `jobQuali` varchar(50),
-    //     `jobExp` varchar(50),
-    //     PRIMARY KEY (`jobID`)";
-    // createTable($conn, "job_list", $tablequery);
+    $tablequery = "(
+        `jobID` int(6) AUTO_INCREMENT PRIMARY KEY,
+        `jobTitle` varchar(50) NOT NULL,
+        `jobSummary` varchar(50) NOT NULL,
+        `jobQuali` varchar(50) NOT NULL,
+        `jobCategory` varchar(50) NOT NULL,
+        `jobType` varchar(50) NOT NULL,
+        `workSetup`  varchar(50) NOT NULL,
+        `jobSalary` int(11) NOT NULL
+        )";
+    createTable($conn, "job_list", $tablequery);
 
     // // Admin Accounts Table
     // $tablequery = "(
