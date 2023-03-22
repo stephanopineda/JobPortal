@@ -13,12 +13,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
+    <link rel="stylesheet" href="assets/CSS/loginBg.css">
     <title>Job Portal</title>
     
 </head>
 
 <body>
-
+<div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto mt-5">
+        <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
     <form action="login.php" method="post">
         <h1>Job Portal</h1>
         <label for="username">Username</label>
@@ -41,5 +45,11 @@
     <br>
     <!-- temporary -->
     <p>Login admin account <a href="admin/index.php">here</a></p>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
 </body>
 </html>
