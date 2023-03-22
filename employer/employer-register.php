@@ -26,29 +26,55 @@
         <div class="container">
             <div class="col-8 mx-auto mt-5">
             <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
-                <h1>Company Registration</h1>
-                <p>Please fill out the form</p>
-                <form id=""action="" method="post">
-                        Company Name: <input type="text" name="name" placeholder="Palamigan"><br>
-                        
-                        Company Email: <input type="text" name="email" placeholder="example@email.com"><br>
-                        
-                        Company Address: <input type="text" name="address" placeholder="somewhere"><br>
-                        
-                        Company Contact No.: <input type="tel" id="contact_no" name="contact_no" pattern="[0-9]{11}" placeholder="09XXXXXXXXX"><br>
-                        
-                        Company Size: <input type="number" name="size" placeholder=""><br>
+                
+                    <form id=""action="" method="post" enctype="multipart/form-data">
+                    <h1>Company Registration</h1>
+                    <p>Please fill out the form</p>
+                    <hr>
+
+                    <div class="form-group">
+                    <label class="form-group" for="C.name"> Company Name: </label>
+                        <input type="text" name="name" placeholder="Enter company name" class="form-control" required><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group" for="C.email">Company Email:</label> 
+                        <input class="form-control" type="text" name="email" placeholder="example@email.com" required><br>
+                    </div>   
+
+                    <div class="form-group">
+                        <label class="form-group" for="C.ardress">Company Address:</label>  
+                        <input type="text" name="address" class="form-control" placeholder="somewhere" required><br>
+                    </div>    
+                    <div class="form-group">
+                        <label class="form-group" for="C.contact_no">Company Contact No.:</label>  
+                         
+                        <input class="form-control" type="tel" id="contact_no" name="contact_no" pattern="[0-9]{11}" placeholder="09XXXXXXXXX" required><br>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="form-group" for="C.size">Company Size:</label>  
+                        <input type="number" name="size" placeholder="" class="form-control" required><br>
+                    </div>
                         <!-- Enable preview for image upload -->
-                        
-                        Company Logo: <input type="file" name="logo" accept="image/png, image/jpg, image/jpeg, image/PNG"><br>
+                    
+                    <div class="form-group">
+                         
+                        <label class="form-group" for="C.logo">Company Logo:</label> 
+                        <input class="form-control-file" type="file" name="logo" accept="image/png, image/jpg, image/jpeg, image/PNG"><br>
                         <!-- Text Area: Compnay Overview -->
-                    <label for="overview">Company Overview:</label> <br>
+                    </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label class="form-group" for="C.overview">Company Overview:</label>  
+                                
+                        <textarea id="overview" name="overview" rows="8" cols="40" class="form-control"></textarea><br>
+                    </div>                
+
+                <input type="submit" name="submit" value="Submit"  class="btn btn-primary">
                     
-                    <textarea id="overview" name="overview" rows="8" cols="40"></textarea><br>
-                    
-                    <input type="submit" name="submit" value="Submit">
-                    
-                    <input type="reset"><br>
+                    <input type="reset"  class="btn btn-danger"><br>
                 </form>
                 <?php
                     include('register.php');
@@ -56,6 +82,7 @@
             </div>
         </div>
         </div>
+
     </div>
 </body>
 </html>
