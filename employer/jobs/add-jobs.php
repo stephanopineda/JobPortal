@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include 'header-link.php'; ?>
+    <?php include '../../header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
     <title>Add Job</title>
 </head>
@@ -96,7 +96,8 @@
                 $jobCategory = $_POST['job_category']; 
                 $jobType = $_POST['job_type']; 
                 $workSetup = $_POST['workSetup']; 
-                $jobSalary = $_POST['salary'];      
+                $jobSalary = $_POST['salary'];
+                $companyID = $_SESSION['companyId'];      
                 $tablename="job_list";
                 $columnquery="*";
  
@@ -113,8 +114,8 @@
                         echo "Job Exist";
                     }
                   } else {
-                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary)";
-                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary')";
+                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary, CompanyId)";
+                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary', '$companyID')";
                     insertData($conn,$dataquery,$valuequery);
                   }
             }
