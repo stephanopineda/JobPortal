@@ -19,37 +19,54 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-      <div class="col-8 mx-auto mt-5">
-        <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
-    <form action="login.php" method="post">
-        <h1>Job Portal</h1>
-        <label for="username">Username</label>
-        <br>
-        <input type="text" name="username" placeholder="Enter username">
-        <br>
-        <label for="password">Password</label>
-        <br>
-        <input type="password" name="password" placeholder="Enter password">
-        <br>
-        <input type="submit" name="submit" value="Submit">
-
-
-    </form>
-
-    <br>
-
-    <p>No account yet? <a href="signup.php">Sign Up</a></p>
-
-    <br>
-    <!-- temporary -->
-    <p>Login admin account <a href="admin/index.php">here</a></p>
-
-    </div>
-    </div>
-    </div>
-    </div>
+<section class="vh-100 d-flex justify-content-center align-items-center">
+      <div class="container py-5 pt-1 h-100 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10 ">
+            <div class="card" style="border-radius: 1.5rem;">
+              <div class="row g-0">
+                <div class="col-md-12 col-lg-12 px-5 d-flex align-items-center">
+                  <div class="card-body p-4 text-black">
     
+                    <form>
+    
+                      <div class=" d-flex justify-content-center align-items-center form-control-lg mb-3 pb-1 ">
+                        <img src="assets/img/jobportal_logo3.png"
+                        alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                      </div>
+    
+                      <h4 class="text-center fw-bold mb-3 pb-3 " style="letter-spacing: 1px;">Welcome back! Good to see you again!</h4>
+    
+                      <div class="form-outline mb-4">
+                      <label class="form-label fw-bold" for="email">Email </label>  
+                      <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                        
+                      </div>
+    
+                      <div class="form-outline mb-4">
+                        <label class="form-label fw-bold" for="password">Password</label>
+                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                      </div>
+    
+                      <div class=" text-center pt-1 mb-4">
+                        <button class=" fw-bold btn btn-primary btn-lg btn-block" type="button">Login</button>
+                        
+                      </div>
+    
+                      <p class=" text-center mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="signup.php"
+                          style="color: #393f81;">Register here!</a></p>
+                      <br>
+                      <p><a href="admin/index.php">Admin</a></p>
+                    </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </body>
 </html>

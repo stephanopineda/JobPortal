@@ -55,12 +55,10 @@
         student_id VARCHAR(50) NOT NULL, 
         address VARCHAR(120) NOT NULL, 
         birthdate DATE NOT NULL, 
-        background VARCHAR(50) NOT NULL,
-        skills TEXT(50) NOT NULL,
         sex VARCHAR (6) NOT NULL,
         bio TEXT(200) NULL
         )";
-    createTable($conn, "user_profile", $tablequery);
+    createTable($conn, "student_profile", $tablequery);
 
     // // Admin Accounts Table
     // $tablequery = "(
