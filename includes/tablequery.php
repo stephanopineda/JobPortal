@@ -23,12 +23,12 @@
 	}
 
  $tablequery = "(
-        userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        userID int(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         username varchar(50) NOT NULL,
         name varchar(50) NOT NULL,
         email varchar(50) NOT NULL,
         password varchar(50) NOT NULL,
-        userType enum('student','employer') NOT NULL
+        userType enum('Student','Employer') NOT NULL
         )";
     createTable($conn, "users", $tablequery);
     // // Admin Accounts Table

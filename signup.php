@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    <form action="signup.php" method="post">
+    <form action="signup.php" method="POST">
         <h1>Sign Up</h1>
         <label for="username">Username</label>
         <br>
