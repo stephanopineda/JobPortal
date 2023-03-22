@@ -97,7 +97,7 @@
                 $jobType = $_POST['job_type']; 
                 $workSetup = $_POST['workSetup']; 
                 $jobSalary = $_POST['salary'];
-                $companyID = $_SESSION['companyId'];      
+                $companyID = $_SESSION['companyId'];    
                 $tablename="job_list";
                 $columnquery="*";
  
