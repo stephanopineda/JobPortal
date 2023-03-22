@@ -1,3 +1,8 @@
+<?php
+    include ('connections.php');
+    include('sessions.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@
     <div class="row">
       <div class="col-8 mx-auto mt-5">
         <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
-          <form method="post" enctype="multipart/form-data" onsubmit="">
+          <form method="POST" enctype="multipart/form-data" onsubmit="">
             <h2>Sign Up</h2>
             <br>
             <div class="form-group">
@@ -32,6 +37,10 @@
             <input  class="form-control" type="password" name="password" placeholder="Enter password" >
             </div>
             <br>
+        <label for="email">Email</label>
+        <br>
+        <input type="email" name="email" placeholder="Enter email">
+        <br>
             <div class="form-group">
             <label  for="usertype">User Type</label>  
 				    <select id="usertype" class="form-control" name="usertype" required="">
@@ -56,21 +65,35 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
-                $name = $_POST['name'];    
+                $name = $_POST['name']; 
+                $email = $_POST['email'];   
                 $password = $_POST['password']; 
-                $usertype = $_POST['browser'];      
-                $tablename="admin_accounts";
+                $usertype = $_POST['usertype'];      
+                $tablename="users";
                 $columnquery="*";
+ 
+               
                 
                 $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
+
+
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
+                        
                         echo "Account Exist";
                     }
                   } else {
-                    // insert codes here
+                    $dataquery = "users(username,name,email,password,usertype)";
+                    $valuequery="('$username','$name','$email','$password','$usertype')";
+                    insertData($conn,$dataquery,$valuequery);
+                    if($usertype == 'Student'){
+                        header('Location: student/student-register.php');
+                    }
+                    elseif($usertype == 'Employer'){
+                        header('Location: employer/employer-register.php');
+                    }  
                   }
             }
         ?>
