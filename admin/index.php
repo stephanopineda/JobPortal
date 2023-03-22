@@ -14,9 +14,15 @@
 </head>
 <body>
 
-<div class="container">
-        <div class="col-8 mx-auto mt-4">
-            <div id="LogInCon" class="container-xsm mt-5 py-5 p-5 bg-light login-form">
+<section class="vh-100 d-flex justify-content-center align-items-center">
+      <div class="container py-5 pt-1 h-100 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10 ">
+            <div class="card" style="border-radius: 1.5rem;">
+              <div class="row g-0">
+                <div class="col-md-12 col-lg-12 px-5 d-flex align-items-center">
+                  <div class="card-body p-4 text-black">
+    
                 <form action="index.php" method="post">
                     <h1>Admin Portal</h1>
                     <br>
@@ -64,10 +70,13 @@
             ?>
 
             </form>
+            </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
+    </section>
 </body>
 
 </html>

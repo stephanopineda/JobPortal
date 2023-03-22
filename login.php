@@ -53,10 +53,10 @@
                         
                       </div>
     
-                      <br>
                       <p class=" text-center mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="signup.php"
                           style="color: #393f81;">Register here!</a></p>
-  
+                      <br>
+                      <p><a href="admin/index.php">Admin</a></p>
                     </form>
     
                   </div>
