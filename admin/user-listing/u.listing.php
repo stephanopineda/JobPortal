@@ -24,15 +24,31 @@
     <h1>User Listing</h1>
 
     <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>User Type</th>        
+            </tr>
+        </thead>
+        <tbody>
+                <?php
+                $sql = "SELECT * FROM users";
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
 
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>User Type</th>        
-        </tr>
- 
+                while($row = mysqli_fetch_assoc($result)){
+                    echo "<tr>";
+                    echo "<td>".$row['username']."</td>";
+                    echo "<td>".$row['name']."</td>";
+                    echo "<td>".$row['email']."</td>";
+                    echo "<td>".$row['userType']."</td>";
+                    echo "</tr>";
+                }
 
+                ?>
+        </tbody>
     </table>
 </body>
 </html>

@@ -7,9 +7,6 @@
                 $lastname = $_POST['lastname']; 
                 $email = $_POST['email'];   
                 $address = $_POST['address'];
-                //$course = $_POST['course'];
-                //$contact = $_POST['contact_no'];
-                //$profile = $_POST['profile_picture'];
                 $sex = $_POST['sex'];
                 $birthdate = $_POST['birthdate'];
                 $student_id = "3";
