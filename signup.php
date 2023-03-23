@@ -23,63 +23,65 @@
               <div class="row g-0">
                 <div class="col-md-12 col-lg-12 px-5 d-flex align-items-center">
                   <div class="card-body p-4 text-black">
-          <form method="POST" enctype="multipart/form-data" onsubmit="">
-            <h2>Sign Up</h2>
-            <br>
-            <div class="form-group">
-              <label class="form-label" for="username">Username </label>
-              <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
-            </div>
-            <br>
 
-            <div class="row">
-              <div class="col">
-                <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
-                <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
-              </div>
-              <br>
-              
-              <div class="col">
-                <label class= "form-label mb-2 fw-bold" for="Last-name">Last Name</label>
-                <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
-              </div>
-            </div>
-            <br>
+                      <form method="POST" enctype="multipart/form-data" onsubmit="">
+                        <h2>Sign Up</h2>
+                        <br>
+                        <div class="form-group">
+                          <label class="form-label" for="username">Username </label>
+                          <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
+                        </div>
+                        <br>
 
-            <div class="row">
-              <div class="col">
-                <label class="form-label mb-2 fw-bold" for="password">Password</label>
-                <input  class="form-control" type="password" name="password" placeholder="Enter password" >
-              </div>
+                        <div class="row">
+                          <div class="col">
+                            <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
+                            <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
+                          </div>
+                          <br>
+                          
+                          <div class="col">
+                            <label class= "form-label mb-2 fw-bold" for="Last-name">Last Name</label>
+                            <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
+                          </div>
+                        </div>
+                        <br>
 
-              <div class="col">
-                <label  class="form-label mb-2 fw-bold" for="Cpassword">Confirm Password</label>
-                <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
-              </div>
-            </div>
-            <br>
-            <div class="form-group">
-        <label class="form-label mb-2 fw-bold" for="email">Email</label>
-        <br>
-        <input class="form-control" type="email" name="email" placeholder="Enter email">
-        <br>
-        </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
-              <label class="form-check-label" for="student">
-              Student
-            </div>  
-              <br>
-            <div class="form-check">  
-              <input class="form-check-input" type="radio" name="usertype" id="usertype" value = "Employer">
-              <label class="form-check-label" for="employer">
-              Employer
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary" name="register">Sign Up</button>
-          </form>
-          <br>  
-          <p>Already have an account?<a href="login.php"> Log In</a></p>
+                        <div class="row">
+                          <div class="col">
+                            <label class="form-label mb-2 fw-bold" for="password">Password</label>
+                            <input  class="form-control" type="password" name="password" placeholder="Enter password" >
+                          </div>
+
+                          <div class="col">
+                            <label  class="form-label mb-2 fw-bold" for="Cpassword">Confirm Password</label>
+                            <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                    <label class="form-label mb-2 fw-bold" for="email">Email</label>
+                    <br>
+                    <input class="form-control" type="email" name="email" placeholder="Enter email">
+                    <br>
+                    </div>
+                        <label for="user_type" class="form-label mb-2 fw-bold">Role</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
+                          <label class="form-check-label" for="student">
+                          Student
+                        </div>  
+                          <br>
+                        <div class="form-check">  
+                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value = "Employer">
+                          <label class="form-check-label" for="employer">
+                          Employer
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary" name="register">Sign Up</button>
+                      </form>
+                      <br>  
+                      <p>Already have an account?<a href="login.php"> Log In</a></p>
         </div>
       </div>
     </div>
@@ -116,13 +118,24 @@
                   } else {
                     $dataquery = "users(username,name,email,password,usertype)";
                     $valuequery="('$username','$name','$email','$password','$usertype')";
+
                     insertData($conn,$dataquery,$valuequery);
-                    if($usertype == 'Student'){
-                        header('Location: student/student-register.php');
+                    
+                    // echo "Account Created";
+                    if($usertype == "Student"){
+                      // header("Location: student.php");
+                      echo '<script>
+                        window.location.href = "student/student-register.php";
+                      </script>';
                     }
-                    elseif($usertype == 'Employer'){
-                        header('Location: employer/employer-register.php');
-                    }  
+                    else if($usertype == "Employer"){
+                      echo '<script>
+                      window.location.href = "employer/employer-register.php";
+                    </script>';
+                    }
+                    else{
+                      echo "Error";
+                    }
                   }
             }
         ?>
