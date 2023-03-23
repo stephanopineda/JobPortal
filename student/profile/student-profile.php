@@ -11,14 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '../../header-link.php'; ?>
     <link rel="stylesheet" href="../../assets/CSS/styles.css">
-    <link rel="stylesheet" href="../../assets/CSS/student-bg.css">
+    <!-- <link rel="stylesheet" href="../../assets/CSS/student-bg.css"> -->
     <title>Student Profile</title>
 </head>
 <body>
+<?php
+    include '../navbar.php';  
+?>
 
 <div class="container">
     <br> <br>
-
+  
     <div class="row">
       <div class="col-4 ">
         <div class="container-fluid mt-5 mr-5 pb-4 shadow rounded">
