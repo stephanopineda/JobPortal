@@ -48,7 +48,7 @@
                     <div class="form-group">
         <label for="course">Program:</label> <br>
         <select id="course" name="course">
-            <option value="none"> Choose Job Category  </option>
+            <option value="none"> Choose Course  </option>
             <option value="Computer Engineering"> Computer Engineering  </option>
             <option value="Civil Engineering"> Civil Engineering  </option>
             <option value="Electrical Engineering"> Electrical Engineering  </option>
