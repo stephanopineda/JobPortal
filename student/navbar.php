@@ -6,8 +6,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800;">
     <div class="container-fluid">
-      <a class="navbar-brand logo" href="index.html">
-        <img src="assets/jobportal_logo1.png" height="100px" width="275px"  class="d-inline-block align-text-top">
+      <a class="navbar-brand logo" href="../student\home-page.php">
+        <img src="../assets\img\jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
         
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
@@ -30,7 +30,7 @@
         <ul class="navbar-nav d-flex flex-row-reverse">
           <div class="dropdown">
             <a class="btn stud-btn2 dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets\img\no-profile.png" alt="" class="rounded-circle" height="40px">
+              <img src="../assets\img\no-profile.png" alt="" class="rounded-circle" height="40px">
             </a>
           
             <ul class="dropdown-menu dropdown-menu-right">
