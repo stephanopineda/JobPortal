@@ -72,7 +72,7 @@
                     <div class="form-group">
                          
                          <label class="form-group" for="S.logo">Upload Profile:</label> <br>
-                         <input class="form-control-file" type="file" name="profile_picture" accept="image/png, image/jpg, image/jpeg, image/PNG"><br>
+                         <input class="form-control-file" type="file" name="p_img" accept="image/png, image/jpg, image/jpeg, image/PNG"><br>
                          <!-- Text Area: Compnay Overview -->
                      </div><br>
                      <div class="form-group">

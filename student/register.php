@@ -6,10 +6,16 @@
                 $email = $_POST['email'];
                 $course = $_POST['course'];
                 $address = $_POST['address'];   
-                $contactNumber = $_POST['contact_no'];
+                $contact_no = $_POST['contact_no'];
                 $sex = $_POST['sex'];
                 $birthdate = $_POST['birthdate'];
                 $bio = $_POST['bio'];
+                
+                $p_img = $_FILES['p_img']['name'];
+                $target = "../assets/img/student-profile/".basename($_FILES['p_img']['name']);
+
+                
+
                 
 
                 $tablename="student_profile";
@@ -28,11 +34,19 @@
                         echo "Account Exist";
                     }
                   } else {
-                    $dataquery = "student_profile(firstname,lastname,email,course,contactNumber,address,birthdate,sex,bio)";
-                    $valuequery="('$firstname','$lastname','$email','$course','$contactNumber','$address','$birthdate','$sex','$bio')";
+                    $dataquery = "student_profile(firstname,lastname,email,course,contact_no,address,birthdate,sex,bio, p_img)";
+                    $valuequery="('$firstname','$lastname','$email','$course','$contact_no','$address','$birthdate','$sex','$bio','$p_img')";
+                    
                     insertData($conn,$dataquery,$valuequery);
-                    echo '<script>
-                    window.location.href = "profile/student-profile.php";
-                  </script>';
+                    
+                    if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){
+                        echo "Image uploaded successfully";
+                        echo '<script>
+                        window.location.href = "profile/student-profile.php";
+                      </script>';
+                    }else{
+                        echo "There was a problem uploading image";
+                    }
+
                   }
                 }
