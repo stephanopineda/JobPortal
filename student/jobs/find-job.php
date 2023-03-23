@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 
 <?php
- include('../connections.php');
- include('../sessions.php');
+ include('../../connections.php');
+ include('../../sessions.php');
 
 $results_per_page = 4;
-$sql = "SELECT * FROM job_list";
-$all_jobs = $conn->query($sql);
-$number_of_result = mysqli_num_rows($all_jobs);
-
-$number_of_page = ceil($number_of_result / $results_per_page);
-
 
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -33,7 +27,7 @@ $page_first_result = ($page - 1) * $results_per_page;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include '../header-link.php'; ?>
+    <?php include '../../header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
     <title>Find Job</title>
 </head>
@@ -84,24 +78,35 @@ $page_first_result = ($page - 1) * $results_per_page;
         $sql = "SELECT *FROM job_list WHERE jobTitle LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
       }
       $all_jobs = mysqli_query($conn, $sql);
+      $number_of_result = mysqli_num_rows($all_jobs);
+      $number_of_page = ceil($number_of_result / $results_per_page);
+
       // $row = mysqli_fetch_assoc($all_jobs);
-      while ($row = mysqli_fetch_assoc($all_jobs)) {
-      ?>
-        <div class="col-3 mb-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $row["jobTitle"]; ?> </h5>
-              <p class="skills"> <b> Job Summary: </b> <?php echo $row["jobSummary"]; ?> </p>
-              <p class="job_type"> <b> Job Type: </b> <?php echo $row["jobType"]; ?> </p>
-              <p class="salary"> <b> Salary: </b> <?php echo $row["jobSalary"]; ?> </p>
-              <p class="positions"> <b> Job Category: </b> <?php echo $row["jobCategory"]; ?> </p>
-              <a href="Apply-Page.php" class="btn btn-primary">Apply Now</a>
-              
+      if($number_of_result > 0){
+        while ($row = mysqli_fetch_assoc($all_jobs)) {
+        ?>
+          <div class="col-3 mb-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $row["jobTitle"]; ?> </h5>
+                <p class="skills"> <b> Job Summary: </b> <?php echo $row["jobSummary"]; ?> </p>
+                <p class="job_type"> <b> Job Type: </b> <?php echo $row["jobType"]; ?> </p>
+                <p class="salary"> <b> Salary: </b> <?php echo $row["jobSalary"]; ?> </p>
+                <p class="positions"> <b> Job Category: </b> <?php echo $row["jobCategory"]; ?> </p>
+                <a href="Apply-Page.php" class="btn btn-primary">Apply Now</a>
+                
+              </div>
             </div>
           </div>
-        </div>
 
-      <?php
+        <?php
+        }
+      }
+      else{
+        echo'
+          <div class = "col-12 text-center">
+          <p class = "fs-1 bold"> No Entries Found </p>
+          </div>';
       }
       ?>
 
