@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
     $CompanyId =$row['CompanyId'];
 
     $cresult = selectWhere($conn, 'job_list', '*', 'company_id',$CompanyId);
-    $crow = mysqli_fetch_assoc($result);
+    $crow = mysqli_fetch_assoc($cresult);
 
     $companyName = $crow['name'];
   }
