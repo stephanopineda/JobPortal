@@ -70,13 +70,20 @@
                         echo "Account Exist";
                     }
                   } else {
-                    // insert codes here   
+                    $dataquery = "users(username,name,email,password,usertype)";
+                    $valuequery="('$username','$name','$email','$password','$usertype')";
+                    insertData($conn,$dataquery,$valuequery);
+                    if($usertype == 'Student'){
+                        header('Location: student/student-register.php');
+                    }
+                    elseif($usertype == 'Employer'){
+                        header('Location: employer/employer-register.php');
+                    }  
                   }
             }
         ?>
 
     </form>
-
 
 </body>
 </html>
