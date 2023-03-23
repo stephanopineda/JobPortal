@@ -27,7 +27,7 @@
             <div class="col-8 mx-auto mt-5">
             <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
                 
-                    <form id=""action="" method="post" enctype="multipart/form-data">
+                    <form id="" method="post" enctype="multipart/form-data">
                     <h1>Student Registration</h1>
                     <p>Please fill out the form</p>
                     <hr>

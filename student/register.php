@@ -1,18 +1,14 @@
-<?php
-            //add contact
-            //add course 
-            //add profile
+<?php 
+
             if(isset($_POST['submit'])){
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname']; 
-                $email = $_POST['email'];   
-                $address = $_POST['address'];
-                //$course = $_POST['course'];
-                //$contact = $_POST['contact_no'];
-                //$profile = $_POST['profile_picture'];
+                $email = $_POST['email'];
+                $course = $_POST['course'];
+                $address = $_POST['address'];   
+                $contactNumber = $_POST['contact_no'];
                 $sex = $_POST['sex'];
                 $birthdate = $_POST['birthdate'];
-                $student_id = "3";
                 $bio = $_POST['bio'];
                 
 
@@ -21,7 +17,7 @@
  
                
                 
-                $result = selectWhere($conn, $tablename, $columnquery, 'student_id', $student_id);
+                $result = selectWhere($conn, $tablename, $columnquery, 'email', $email);
 
 
 
@@ -32,8 +28,11 @@
                         echo "Account Exist";
                     }
                   } else {
-                    $dataquery = "student_profile(firstname,lastname,email,student_id,address,birthdate,sex,bio)";
-                    $valuequery="('$firstname','$lastname','$email','$student_id','$address','$birthdate','$sex','$bio')";
+                    $dataquery = "student_profile(firstname,lastname,email,course,contactNumber,address,birthdate,sex,bio)";
+                    $valuequery="('$firstname','$lastname','$email','$course','$contactNumber','$address','$birthdate','$sex','$bio')";
                     insertData($conn,$dataquery,$valuequery);
+                    echo '<script>
+                    window.location.href = "profile/student-profile.php";
+                  </script>';
                   }
-            }
+                }
