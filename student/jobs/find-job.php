@@ -35,7 +35,7 @@ $page_first_result = ($page - 1) * $results_per_page;
 <body>
   <?php
 
-  
+      include '../navbar.php';
   ?>
   <div class="container mt-5 div-margins">
     <div class="row">

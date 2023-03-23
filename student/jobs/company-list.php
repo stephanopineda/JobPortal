@@ -34,6 +34,9 @@ $page_first_result = ($page - 1) * $results_per_page;
 
 <body>
 
+<?php
+include '../navbar.php';
+?>
 
 
   <div class="container justify-content-center mt-50 mb-50">
@@ -105,7 +108,11 @@ $page_first_result = ($page - 1) * $results_per_page;
               </div>
 
 
-              <nav class="mx-auto" aria-label="Page navigation example">
+              
+            <?php
+            } 
+            ?>                                                        
+            <nav class="mx-auto" aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <?php
@@ -143,8 +150,7 @@ $page_first_result = ($page - 1) * $results_per_page;
                 </li>
               </ul>
             </nav>
-            <?php
-            }
+          <?php
           } 
           else{
             echo '
