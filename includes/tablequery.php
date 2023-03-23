@@ -48,15 +48,16 @@
 
     // User Profile Table
     $tablequery = "(
-        id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        id int(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         firstname varchar(50) NOT NULL,
         lastname varchar(50) NOT NULL,
         email varchar(50) NOT NULL,
-        student_id VARCHAR(50) NOT NULL, 
+        course VARCHAR(50) NOT NULL,
+        contactNumber int(11) NOT NULL,  
         address VARCHAR(120) NOT NULL, 
         birthdate DATE NOT NULL, 
         sex VARCHAR (6) NOT NULL,
-        bio TEXT(200) NULL
+        bio TEXT(200) NULL,
         )";
     createTable($conn, "student_profile", $tablequery);
 
