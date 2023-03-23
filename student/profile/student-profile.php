@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php //include '../../header-link.php'; ?>
-    <!-- <link rel="stylesheet" href="assets/CSS/styles.css">
-    <link rel="stylesheet" href="assets/CSS/login-bg.css"> -->
-    <title>Sign Up</title>
+    <?php include '../../header-link.php'; ?>
+    <link rel="stylesheet" href="../../assets/CSS/styles.css">
+    <link rel="stylesheet" href="../../assets/CSS/student-bg.css">
+    <title>Student Profile</title>
 </head>
 <body>
 
@@ -38,10 +38,13 @@
                     ?>
                 
                 <?php
-                if ($row['p_img'] == NULL) {
-                    echo '<img src="../../assets/img/UI/no-profile.png" class="img-fluid rounded-circle" alt="profile picture" style="height: 150px; width: 150px;">';
+                $p_img = $row['p_img'];
+
+                if ($p_img == NULL) {
+                  
+                    echo "<img src='../../assets/img/UI/no-profile.png' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
                 } else {
-                    echo '<img src="../../assets/img/student-profile/,'.base64_encode($row['p_img'] ).'" class="img-fluid rounded-circle" alt="profile picture" style="height: 150px; width: 150px;">';
+                    echo "<img src='../../assets/img/student-profile/$p_img' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
                 }
                 ?>
              
