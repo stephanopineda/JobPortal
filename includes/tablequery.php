@@ -53,11 +53,12 @@
         lastname varchar(50) NOT NULL,
         email varchar(50) NOT NULL,
         course VARCHAR(50) NOT NULL,
-        contactNumber int(11) NOT NULL,  
+        contact_no int(11) NOT NULL,  
         address VARCHAR(120) NOT NULL, 
         birthdate DATE NOT NULL, 
         sex VARCHAR (6) NOT NULL,
         bio TEXT(200) NULL,
+        p_img VARCHAR(255) NULL
         )";
     createTable($conn, "student_profile", $tablequery);
 

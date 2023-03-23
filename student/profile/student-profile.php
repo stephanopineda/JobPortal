@@ -9,9 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include '../../header-link.php'; ?>
-    <link rel="stylesheet" href="assets/CSS/styles.css">
-    <link rel="stylesheet" href="assets/CSS/login-bg.css">
+    <?php //include '../../header-link.php'; ?>
+    <!-- <link rel="stylesheet" href="assets/CSS/styles.css">
+    <link rel="stylesheet" href="assets/CSS/login-bg.css"> -->
     <title>Sign Up</title>
 </head>
 <body>
@@ -25,25 +25,35 @@
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
-              $id = $_SESSION['id'];
-                $result = selectWhere($conn,"student_profile","*", "id", $id );
+                
+                $student_id = 1;
+                $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
+                $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
+
 
                 if ($resultCheck > 0) { 
                     $row = mysqli_fetch_assoc($result);
                     $fullname = $row['firstname'] . ' ' . $row['lastname']; 
                     ?>
                 
-              <img src="" alt="img" class="rounded-circle" height="100%">
+                <?php
+                if ($row['p_img'] == NULL) {
+                    echo '<img src="../../assets/img/UI/no-profile.png" class="img-fluid rounded-circle" alt="profile picture" style="height: 150px; width: 150px;">';
+                } else {
+                    echo '<img src="../../assets/img/student-profile/,'.base64_encode($row['p_img'] ).'" class="img-fluid rounded-circle" alt="profile picture" style="height: 150px; width: 150px;">';
+                }
+                ?>
+             
             </div>
             <div class="col-12 mt-3">
-              <p class="text-center fs-3"><?php $fullname ?></p>
+              <p class="text-center fs-3"><?php echo $fullname ?></p>
             </div>
             <div class="col-6">
               <p>Bio</p>
             </div>
             <div class="col-12 mt-0 d-flex justify-content-evenly text-sm-start">
-              <p class="fs-6 d-flex justify-content-evenly text-md-start"><?php $row['bio'] ?></p>
+              <p class="fs-6 d-flex justify-content-evenly text-md-start"><?php echo $row['bio'] ?></p>
             </div>
           </div>
           <div class="row">
@@ -70,27 +80,27 @@
                 <div class="row">
                   <div class="col-6">
                     <p class="fs-4">Course</p>
-                    <p><?php $row['course']; ?></p>
+                    <p><?php echo $row['course']; ?></p>
                   </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Email Address</p>
-                        <p><?php $row['email']; ?></p>
+                        <p><?php echo $row['email']; ?></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Birthdate</p>
-                        <p><?php $row['birthdate']; ?></p>
+                        <p><?php echo $row['birthdate']; ?></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Sex</p>
-                        <p><?php $row['sex']; ?></p>
+                        <p><?php echo $row['sex']; ?></p>
                     </div>
                 </div>
 
