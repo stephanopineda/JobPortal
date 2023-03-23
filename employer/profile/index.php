@@ -37,13 +37,26 @@
             <div class="container-fluid mr-8 pb-4 shadow rounded">
                 <div class="row">
                     <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
-                        <img src="<?php echo $row["logo"]; ?>" alt="img" class="rounded-circle-center" name="logo" height="100%">
+                    <?php
+                $logo = $row['logo'];
+
+                if ($logo == NULL) {
+                  
+                    echo "<img src='../../assets/img/UI/no-profile.png' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
+                } else {
+                    echo "<img src='../../assets/img/employer-profile/$logo' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
+                }
+                ?>
                     </div>
                     <div class="col d-flex flex-row-reverse">
                         <a href="company-edit-profile.html" class="btn btn-danger">Edit Profile</a>
                     </div>
                     <div class="col-12 mt-3">
                         <p class="text-left fs-1" name="name"><?php echo $row["name"]; ?></p>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <p class="text-left fs-5">Employer Name</p>
+                        <h6 text-left fs-3><?php echo $row["employer_name"]; ?></h6>
                     </div>
                     <div class="col-12 mt-3">
                         <p class="text-left fs-5">Company Email</p>

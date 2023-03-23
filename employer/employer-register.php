@@ -38,6 +38,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="form-group" for="C.email">Employer Name:</label> 
+                        <input class="form-control" type="text" name="employer_name" placeholder="Enter employer name" required><br>
+                    </div>  
+
+                    <div class="form-group">
                         <label class="form-group" for="C.email">Company Email:</label> 
                         <input class="form-control" type="text" name="email" placeholder="example@email.com" required><br>
                     </div>   

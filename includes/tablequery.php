@@ -36,13 +36,13 @@
     $tablequery = "(
         company_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
         name varchar(50) NOT NULL,
+        employer_name varchar(50) NOT NULL,
         email varchar(50) NOT NULL,
         address varchar(50) NULL,
         contact_no VARCHAR(50) NOT NULL, 
         size VARCHAR(50) NULL, 
-        logo VARCHAR(50) NULL, 
-        overview TEXT(120) NULL,
-        employer_id VARCHAR(50) NOT NULL
+        logo VARCHAR(255) NULL, 
+        overview TEXT(120) NULL
         )";
     createTable($conn, "company_list", $tablequery);
 
