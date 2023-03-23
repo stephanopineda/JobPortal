@@ -1,6 +1,5 @@
 <?php
     include ('connections.php');
-    include('sessions.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,50 +10,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
+    <link rel="stylesheet" href="assets/CSS/login-bg.css">
     <title>Sign Up</title>
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-      <div class="col-8 mx-auto mt-5">
-        <div id="LogInCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
+<section class="vh-100 d-flex justify-content-center align-items-center">
+      <div class="container py-5 pt-1 h-100 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10 ">
+            <div class="card" style="border-radius: 1.5rem;">
+              <div class="row g-0">
+                <div class="col-md-12 col-lg-12 px-5 d-flex align-items-center">
+                  <div class="card-body p-4 text-black">
           <form method="POST" enctype="multipart/form-data" onsubmit="">
             <h2>Sign Up</h2>
             <br>
             <div class="form-group">
-            <label class="form-group" for="username">Username </label>
-            <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
+              <label class="form-label" for="username">Username </label>
+              <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col">
+                <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
+                <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
+              </div>
+              <br>
+              
+              <div class="col">
+                <label class= "form-label mb-2 fw-bold" for="Last-name">Last Name</label>
+                <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col">
+                <label class="form-label mb-2 fw-bold" for="password">Password</label>
+                <input  class="form-control" type="password" name="password" placeholder="Enter password" >
+              </div>
+
+              <div class="col">
+                <label  class="form-label mb-2 fw-bold" for="Cpassword">Confirm Password</label>
+                <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
+              </div>
             </div>
             <br>
             <div class="form-group">
-              <label class= "mb-2" for="name">Name</label>
-              <input class="form-control" type="text" name="name" placeholder="Enter name" required="">
-            </div>
-            <br>
-            <div class="form-group">
-            <label  for="password">Password</label>
-            <input  class="form-control" type="password" name="password" placeholder="Enter password" >
-            </div>
-            <br>
-        <label for="email">Email</label>
+        <label class="form-label mb-2 fw-bold" for="email">Email</label>
         <br>
-        <input type="email" name="email" placeholder="Enter email">
+        <input class="form-control" type="email" name="email" placeholder="Enter email">
         <br>
-            <div class="form-group">
-            <label  for="usertype">User Type</label>  
-				    <select id="usertype" class="form-control" name="usertype" required="">
-              <option value="Student">Student</option>
-              <option value="Employer">Employer</option>
-				    </select>
-                </div>
+        </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="usertype" id="student">
+              <label class="form-check-label" for="student">
+              Student
+            </div>  
+              <br>
+            <div class="form-check">  
+              <input class="form-check-input" type="radio" name="usertype" id="employer">
+              <label class="form-check-label" for="employer">
+              Employer
+            </div>
             <br>
             <button type="submit" class="btn btn-primary">Sign Up</button>
           </form>
+          <br>  
           <p>Already have an account?<a href="login.php"> Log In</a></p>
         </div>
       </div>
-
     </div>
 
   </div>
@@ -99,6 +126,13 @@
         ?>
 
     </form>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 
 </body>
