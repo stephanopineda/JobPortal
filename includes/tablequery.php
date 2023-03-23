@@ -5,7 +5,7 @@
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),    
     password VARCHAR(100),
-    admin_type VARCHAR(12),
+    admin_type enum('Admin','Superadmin'),
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
     createTable($conn, "admin_accounts", $tablequery);
 
@@ -23,13 +23,45 @@
 	}
 
  $tablequery = "(
-        userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        userID int(6) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         username varchar(50) NOT NULL,
-        password varchar(50) NOT NULL,
+        name varchar(50) NOT NULL,
         email varchar(50) NOT NULL,
-        userType enum('student','employer') NOT NULL
+        password varchar(50) NOT NULL,
+        userType enum('Student','Employer') NOT NULL
         )";
     createTable($conn, "users", $tablequery);
+
+    // Company List Table
+    $tablequery = "(
+        company_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name varchar(50) NOT NULL,
+        employer_name varchar(50) NOT NULL,
+        email varchar(50) NOT NULL,
+        address varchar(50) NULL,
+        contact_no VARCHAR(50) NOT NULL, 
+        size VARCHAR(50) NULL, 
+        logo VARCHAR(255) NULL, 
+        overview TEXT(120) NULL
+        )";
+    createTable($conn, "company_list", $tablequery);
+
+    // User Profile Table
+    $tablequery = "(
+        id int(6) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        firstname varchar(50) NOT NULL,
+        lastname varchar(50) NOT NULL,
+        email varchar(50) NOT NULL,
+        course VARCHAR(50) NOT NULL,
+        contact_no int(11) NOT NULL,  
+        address VARCHAR(120) NOT NULL, 
+        birthdate DATE NOT NULL, 
+        sex VARCHAR (6) NOT NULL,
+        bio TEXT(200) NULL,
+        p_img VARCHAR(255) NULL
+        )";
+    createTable($conn, "student_profile", $tablequery);
+
     // // Admin Accounts Table
     // $tablequery = "(
     //     `companyID` int,
@@ -56,19 +88,18 @@
 
     
     // // Admin Accounts Table
-    // $tablequery = "(
-    //     `jobID` int,
-    //     `jobName` varchar(50),
-    //     `employerID` int,
-    //     `companyName` varchar(50),
-    //     `jobSalary` int,
-    //     `workSetup` varchar(50),
-    //     `jobDescription` varchar(50),
-    //     `jobType` varchar(50),
-    //     `jobQuali` varchar(50),
-    //     `jobExp` varchar(50),
-    //     PRIMARY KEY (`jobID`)";
-    // createTable($conn, "job_list", $tablequery);
+    $tablequery = "(
+        `jobID` int(6) AUTO_INCREMENT PRIMARY KEY,
+        `jobTitle` varchar(50) NOT NULL,
+        `jobSummary` varchar(50) NOT NULL,
+        `jobQuali` varchar(50) NOT NULL,
+        `jobCategory` varchar(50) NOT NULL,
+        `jobType` varchar(50) NOT NULL,
+        `workSetup`  varchar(50) NOT NULL,
+        `jobSalary` int(11) NOT NULL,
+        `CompanyId` int(11) NOT NULL
+        )";
+    createTable($conn, "job_list", $tablequery);
 
     // // Admin Accounts Table
     // $tablequery = "(
