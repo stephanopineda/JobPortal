@@ -1,17 +1,22 @@
 <?php
-            
+            //add contact
+            //add course 
+            //add profile
             if(isset($_POST['submit'])){
                 $firstname = $_POST['firstname'];
                 $lastname = $_POST['lastname']; 
                 $email = $_POST['email'];   
                 $address = $_POST['address'];
+                //$course = $_POST['course'];
+                //$contact = $_POST['contact_no'];
+                //$profile = $_POST['profile_picture'];
                 $sex = $_POST['sex'];
                 $birthdate = $_POST['birthdate'];
                 $student_id = "3";
                 $bio = $_POST['bio'];
                 
 
-                $tablename="user_profile";
+                $tablename="student_profile";
                 $columnquery="*";
  
                
@@ -27,7 +32,7 @@
                         echo "Account Exist";
                     }
                   } else {
-                    $dataquery = "user_profile(firstname,lastname,email,student_id,address,birthdate,sex,bio)";
+                    $dataquery = "student_profile(firstname,lastname,email,student_id,address,birthdate,sex,bio)";
                     $valuequery="('$firstname','$lastname','$email','$student_id','$address','$birthdate','$sex','$bio')";
                     insertData($conn,$dataquery,$valuequery);
                   }
