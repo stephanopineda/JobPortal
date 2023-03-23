@@ -25,23 +25,25 @@
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
+              $id = $_SESSION['id'];
                 $result = selectWhere($conn,"student_profile","*", "id", $id );
                 $resultCheck = mysqli_num_rows($result);
 
                 if ($resultCheck > 0) { 
-                    $row = mysqli_fetch_assoc($result)
+                    $row = mysqli_fetch_assoc($result);
+                    $fullname = $row['firstname'] . ' ' . $row['lastname']; 
                     ?>
                 
               <img src="" alt="img" class="rounded-circle" height="100%">
             </div>
             <div class="col-12 mt-3">
-              <p class="text-center fs-3"><?php $row['Name'] ?></p>
+              <p class="text-center fs-3"><?php $fullname ?></p>
             </div>
             <div class="col-6">
               <p>Bio</p>
             </div>
             <div class="col-12 mt-0 d-flex justify-content-evenly text-sm-start">
-              <p class="fs-6 d-flex justify-content-evenly text-md-start">asdasdasd</p>
+              <p class="fs-6 d-flex justify-content-evenly text-md-start"><?php $row['bio'] ?></p>
             </div>
           </div>
           <div class="row">
@@ -66,36 +68,29 @@
                   </div>
                 </div>
                 <div class="row">
-
-                  <div class="col-6">
-                    <p class="fs-4">Student ID</p>
-                    <p>asdasd</p>
-                  </div>
-                </div>
-                <div class="row">
                   <div class="col-6">
                     <p class="fs-4">Course</p>
-                    <p>asdasd</p>
+                    <p><?php $row['course']; ?></p>
                   </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Email Address</p>
-                        <p>email</p>
+                        <p><?php $row['email']; ?></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Birthdate</p>
-                        <p>date</p>
+                        <p><?php $row['birthdate']; ?></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <p class="fs-4">Sex</p>
-                        <p>M</p>
+                        <p><?php $row['sex']; ?></p>
                     </div>
                 </div>
 
