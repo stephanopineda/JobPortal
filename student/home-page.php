@@ -39,8 +39,8 @@
     <!--Header-->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800;">
     <div class="container-fluid">
-      <a class="navbar-brand logo" href="index.html">
-        <img src="assets/jobportal_logo1.png" height="100px" width="275px"  class="d-inline-block align-text-top">
+      <a class="navbar-brand logo" href="../student\home-page.php">
+        <img src="..\assets\img\home-page(student)\jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
         
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
@@ -51,7 +51,7 @@
         <ul class="navbar-nav mx-auto">
           
           <li class="nav-item">
-            <a class="nav-link fs-3 fw-bold" href="index.html">Home</a>
+            <a class="nav-link fs-3 fw-bold" href="../student\home-page.php">Home</a>
           </li>
           <li class="nav-item mx-5">
             <a class="nav-link  fs-3 fw-bold " href="company-profiles.html">Company Profiles</a>
@@ -60,10 +60,11 @@
             <a class="nav-link fs-3 fw-bold " href="find-job.php">Find A Job</a>
           </li>
         </ul>
+          
         <ul class="navbar-nav d-flex flex-row-reverse">
           <div class="dropdown">
             <a class="btn stud-btn2 dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets\img\no-profile.png" alt="" class="rounded-circle" height="40px">
+              <img src="../assets\img\home-page(student)\no-profile.png" alt="" class="rounded-circle" height="40px">
             </a>
           
             <ul class="dropdown-menu dropdown-menu-right">
@@ -79,11 +80,11 @@
 
 
   <div class="">
-    <img src="#"height="1000px" width="100%"> 
+    <img src="../assets\img\home-page(student)\opportunity awaits poster.png"height="725px" width="100%"> 
     <div class="bg"></div>
     <div class="row">
       <div class="col-12 text-center">
-        <img src="" alt="" width="100%">
+        <img src="../assets\img\home-page(student)\image for landing page website.png" alt=""height="100%" width="100%">
       </div>
     </div>
   </div>
@@ -91,7 +92,7 @@
   <div class="container mx-5 mt-5">
     <div class="row mx-5 mt-5">
       <div class="col text-center">
-        <img src="#" alt="img" style="border: 0.5px solid rgba(0, 0, 0, 0.408); " width="400px" height="400px">
+        <img src="../assets\img\home-page(student)\bridge_employee.jpg" alt="img" style="border: 1px solid rgba(0, 0, 0, 0.408); " width="400px" height="400px">
       </div>
       <div class="col">
         <p class=" fw-bolder fs-1">The Bridge between employee and employer.</p>
@@ -109,7 +110,7 @@
        
       </div>
       <div class="col-6 text-center mt-5">
-        <img src="#" alt="img" style="border: 0.5px solid rgba(0, 0, 0, 0.408); " width="400px" height="400px">
+        <img src="../assets\img\home-page(student)\desire_help_students.jpg" alt="img" style="border: 1px solid rgba(0, 0, 0, 0.408); " width="100%" height="400px">
       </div> 
     </div>
   </div>
@@ -118,7 +119,7 @@
   <div class="container-fluid mt-5 footer border" style="border: 1px solid; background-color: #800;">
     <div class="row">
       <div class="col-2 my-auto text-center">
-        <img src="../views/assets/Job-Portal-icon.png" alt="img" height="20%" width="65%">
+        <img src="../assets\img\home-page(student)\Job-Portal-icon.png" alt="img" height="20%" width="65%">
       </div>
       <div class="col-4 mt-2">
         <ul class="list-unstyled">
@@ -126,19 +127,19 @@
             <p class="footer-toc fw-bold" style=" margin-top: 25px;color:aliceblue;">Table of Contents</p>
           </li>
           <li class="">
-            <a class="fw-bold" href="#">Home </a>
+            <a class="fw-bold text-white" href="#">Home </a>
           </li>
           <li class="">
-            <a class="fw-bold" href="#">Find A Job</a>
+            <a class="fw-bold text-white" href="#">Find A Job</a>
           </li>
           <li class="">
-            <a class="fw-bold" href="#">My Profile</a>
+            <a class="fw-bold text-white" href="#">My Profile</a>
           </li>
           <li class="">
-            <a class="fw-bold" href="#">Company Profiles</a>
+            <a class="fw-bold text-white" href="#">Company Profiles</a>
           </li>
           <li class="">
-            <a class="fw-bold" href="#">About Us</a>
+            <a class="fw-bold text-white" href="#">About Us</a>
           </li>
         </ul>
       </div>
@@ -154,8 +155,8 @@
         </ul>
       </div>
       <div class="">
-        <p class="text-sm-center" style="color:aliceblue;">Job Portal Solutions © 2023 Grp 2 & 10</p>
-        <p class="text-sm-center" style="color:aliceblue;">All rights reserved.</p>
+        <p class="text-sm-center" style="color:aliceblue;">Job Portal Solutions © 2023 Grp 2 & 10 <br> All rights reserved.</p>
+       
       </div>
     </div>
 
