@@ -26,13 +26,17 @@ $page_first_result = ($page - 1) * $results_per_page;
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="assets/CSS/styles.css"> -->
+    <?php include('../../header-link.php'); ?>
+    <link rel="stylesheet" href="../../assets/CSS/styles.css">
     <title>Company Profile</title>
 </head>
 
 
 <body>
 
+<?php
+include '../navbar.php';
+?>
 
 
   <div class="container justify-content-center mt-50 mb-50">
@@ -104,7 +108,11 @@ $page_first_result = ($page - 1) * $results_per_page;
               </div>
 
 
-              <nav class="mx-auto" aria-label="Page navigation example">
+              
+            <?php
+            } 
+            ?>                                                        
+            <nav class="mx-auto" aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <?php
@@ -142,8 +150,7 @@ $page_first_result = ($page - 1) * $results_per_page;
                 </li>
               </ul>
             </nav>
-            <?php
-            }
+          <?php
           } 
           else{
             echo '

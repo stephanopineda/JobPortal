@@ -111,7 +111,7 @@
             </ul>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="nav-link" href="../logout.php">Sign Out</a></li>
+          <li><a class="nav-link" href="../../logout.php">Sign Out</a></li>
       </ul>
 
   </div>

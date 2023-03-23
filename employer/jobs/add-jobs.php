@@ -2,7 +2,7 @@
 
 <?php 
   include('../../connections.php');
-  include('../../sessions.php');
+  // include('../../sessions.php');
 
 
 ?>
@@ -97,7 +97,7 @@
                 $jobType = $_POST['job_type']; 
                 $workSetup = $_POST['workSetup']; 
                 $jobSalary = $_POST['salary'];
-                $companyID = $_SESSION['companyId'];    
+                $companyID = 1;    //temp
                 $tablename="job_list";
                 $columnquery="*";
  
@@ -114,8 +114,8 @@
                         echo "Job Exist";
                     }
                   } else {
-                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary, CompanyId)";
-                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary', '$companyID')";
+                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary)";
+                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary')";
                     insertData($conn,$dataquery,$valuequery);
                   }
             }
