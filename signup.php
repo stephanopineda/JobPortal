@@ -95,20 +95,14 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
-                $fname = $_POST['fname'];
-                $lname = $_POST['Lname']; 
                 $name = $fname . " " . $lname;
                 $email = $_POST['email'];   
                 $password = $_POST['password']; 
                 $usertype = $_POST['usertype'];      
                 $tablename="users";
                 $columnquery="*";
- 
-               
                 
                 $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
-
-
 
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -117,11 +111,9 @@
                         echo "Account Exist";
                     }
                   } else {
-                    $dataquery = "users(username,name,email,password,usertype)";
-                    $valuequery="('$username','$name','$email','$password','$usertype')";
-
+                    $dataquery = "users(username,email,password,usertype)";
+                    $valuequery="('$username','$email','$password','$usertype')";
                     insertData($conn,$dataquery,$valuequery);
-                    $_SESSION['user_id']=$row['id'];
                     $_SESSION['username']=$username;
                     $_SESSION['user_type']=$usertype;
                     // echo "Account Created";
@@ -132,8 +124,8 @@
                     }
                     else if($usertype == "Employer"){
                       echo '<script>
-                      window.location.href = "employer/employer-register.php";
-                    </script>';
+                        window.location.href = "employer/employer-register.php";
+                      </script>';
                     }
                     else{
                       echo "Error";

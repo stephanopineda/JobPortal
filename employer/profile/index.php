@@ -25,7 +25,8 @@
     </div>
 
     <?php
-    $sql = "SELECT * FROM company_list";
+    $company_id = $_SESSION['company_id'];
+    $sql = "SELECT * FROM company_list WHERE company_id = '$company_id'";
     $result = $conn->query($sql);
     
     // Check if there is any data
