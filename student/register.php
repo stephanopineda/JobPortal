@@ -30,7 +30,6 @@
                   } else {
                     $dataquery = "student_profile(firstname,lastname,email,course,contact_no,address,birthdate,sex,bio, p_img, userID)";
                     $valuequery="('$firstname','$lastname','$email','$course','$contact_no','$address','$birthdate','$sex','$bio','$p_img','$user_id')";
-                    
                     insertData($conn,$dataquery,$valuequery);
                     
                     if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){

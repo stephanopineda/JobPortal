@@ -63,7 +63,7 @@
 
           <?php            
             if(isset($_POST['submit'])){
-              $student_id = $_SESSION['user_id'];
+              $student_id = $_SESSION['student_id'];
               $dataquery = "job_applications (jobID, studentID, status)";
               $valuequery = "($jobID, $student_id, 'Pending')";
               insertData($conn, $dataquery, $valuequery);

@@ -35,7 +35,7 @@
                 </tr>
             </thead>
                 <?php
-                    $result = selectData($conn,"job_list","*");
+                    $result = selectWHERE($conn,"job_list","*", "CompanyId", $_SESSION['company_id']);
                     $resultCheck = mysqli_num_rows($result);
     
                     if ($resultCheck > 0) {

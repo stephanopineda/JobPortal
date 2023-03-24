@@ -7,3 +7,8 @@
     else{
         header('location: ../../index.php');
     }
+    
+    $user_id=$_SESSION['user_id'];
+    $result = selectWhere($conn, 'company_list', '*', 'userID', "$user_id");
+    $row = $result->fetch_assoc();
+    $_SESSION['company_id'] = $row['company_id'];

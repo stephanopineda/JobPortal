@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
         $user_id=$_SESSION['user_id'];
         $result = selectWhere($conn, 'company_list', '*', 'userID', "$user_id");
         $row = $result->fetch_assoc();
-        $_SESSION['company_id'] = $row['id'];
+        $_SESSION['company_id'] = $row['company_id'];
         
         if(move_uploaded_file($_FILES['logo']['tmp_name'], $target)){
             echo "Image uploaded successfully";

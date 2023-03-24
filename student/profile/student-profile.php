@@ -29,7 +29,7 @@
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
                 
-                $student_id = $_SESSION['user_id'];
+                $student_id = $_SESSION['student_id'];
                 $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
