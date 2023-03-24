@@ -11,21 +11,15 @@
                 $birthdate = $_POST['birthdate'];
                 $bio = $_POST['bio'];
                 
+                $user_id=$_SESSION['user_id'];
+                
                 $p_img = $_FILES['p_img']['name'];
                 $target = "../assets/img/student-profile/".basename($_FILES['p_img']['name']);
 
-                
-
-                
-
                 $tablename="student_profile";
                 $columnquery="*";
- 
-               
-                
+
                 $result = selectWhere($conn, $tablename, $columnquery, 'email', $email);
-
-
 
                 if ($result->num_rows > 0) {
                     // output data of each row
@@ -34,8 +28,8 @@
                         echo "Account Exist";
                     }
                   } else {
-                    $dataquery = "student_profile(firstname,lastname,email,course,contact_no,address,birthdate,sex,bio, p_img)";
-                    $valuequery="('$firstname','$lastname','$email','$course','$contact_no','$address','$birthdate','$sex','$bio','$p_img')";
+                    $dataquery = "student_profile(firstname,lastname,email,course,contact_no,address,birthdate,sex,bio, p_img, userID)";
+                    $valuequery="('$firstname','$lastname','$email','$course','$contact_no','$address','$birthdate','$sex','$bio','$p_img','$user_id')";
                     
                     insertData($conn,$dataquery,$valuequery);
                     

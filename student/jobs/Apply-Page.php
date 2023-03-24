@@ -7,7 +7,7 @@
 <html lang="en">
 
 <?php
-  $jobID = 1;
+  $jobID = $_GET['jobID'];
   $result = selectWhere($conn, 'job_list', '*', 'jobID',$jobID);
   if ($result->num_rows > 0) {
     $row = mysqli_fetch_assoc($result);
@@ -17,7 +17,8 @@
     $jobCategory = $row['jobCategory'];
     $jobType = $row['jobType'];
     $workSetup = $row['workSetup'];
-    $jobSalary =$row['jobSalary'];
+    $min =$row['min'];
+    $max =$row['max'];
     $CompanyId =$row['CompanyId'];
 
     $cresult = selectWhere($conn, 'company_list', '*', 'company_id',$CompanyId);
@@ -34,7 +35,7 @@
     <link rel="stylesheet" href="assets/CSS/styles.css">
     <link rel="stylesheet" href="assets/CSS/login-bg.css">
     <title>Apply Now</title>
-
+</head>
 <body>
  
 
@@ -47,7 +48,7 @@
       <div class=" container py-2">
         <p class="mt-3"><strong> Job Title: </strong><?php echo $jobTitle; ?> </p>
         <p class="mt-3"><strong> Company Name: </strong><?php echo $companyName; ?> </p>  
-        <p class="mt-3"><strong> Job Salary: </strong><?php echo "P".$jobSalary; ?> </p> 
+        <p class="mt-3"><strong> Job Salary: </strong><?php echo $min." - ".$max ?> </p> 
         <p class="mt-3"><strong> Work Setup: </strong><?php echo $workSetup; ?> </p>
         <p class="mt-3"><strong> Job Type: </strong><?php echo $jobType; ?> </p>  
         <p class="mt-3"><strong> Job Qualifications: </strong><?php echo $jobQuali; ?> </p>       
@@ -73,7 +74,4 @@
         </div>
       </div>
     </div>
-   
-
-
   </div>

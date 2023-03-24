@@ -47,13 +47,12 @@
               }
               }
             ?>
-              <!-- <img src="../../assets\img\no-profile.png" alt="" class="rounded-circle" height="40px"> -->
             
             </a>
           
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a class="dropdown-item" href="../profile/student-profile.php">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Account Settings</a></li>
+              <!-- <li><a class="dropdown-item" href="#">My Applications</a></li> -->
               <li><a class="dropdown-item" href="../../logout.php">Logout</a></li>
             </ul>
           </div>

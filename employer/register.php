@@ -1,5 +1,6 @@
 <?php
 
+$userID=$_SESSION['user_id'];
 
 if(isset($_POST['submit'])){
 
@@ -18,10 +19,16 @@ if(isset($_POST['submit'])){
     $columnquery="*";
 
     // insert data
-    $sql = "INSERT INTO $tablename (name,employer_name, email, address, contact_no, size, logo, overview) values 
-    ('$name','$employer_name', '$email', '$address', '$contact', '$size', '$logo', '$overview')";
+    $sql = "INSERT INTO $tablename (name,employer_name, email, address, contact_no, size, logo, overview, userID) values 
+    ('$name','$employer_name', '$email', '$address', '$contact', '$size', '$logo', '$overview', $userID)";
 
     if ($conn->query($sql) === TRUE) {
+
+        
+        $user_id=$_SESSION['user_id'];
+        $result = selectWhere($conn, 'company_list', '*', 'userID', "$user_id");
+        $row = $result->fetch_assoc();
+        $_SESSION['company_id'] = $row['id'];
         
         if(move_uploaded_file($_FILES['logo']['tmp_name'], $target)){
             echo "Image uploaded successfully";

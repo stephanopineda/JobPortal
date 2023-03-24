@@ -20,7 +20,6 @@
         
         <h1>Jobs</h1>
         <a href="add-jobs.php">Add Job</a>
-
         <table>
             <thead>
                 <tr>
@@ -36,27 +35,27 @@
                 </tr>
             </thead>
                 <?php
-                                $result = selectData($conn,"job_list","*");
-                                $resultCheck = mysqli_num_rows($result);
-                
-                                if ($resultCheck > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "<tr>
-                                        <td>" . $row['jobTitle'] . "</td
-                                        ><td>" . $row['jobSummary'] . "</td>
-                                        <td>" . $row['jobQuali'] . "</td>
-                                        <td>" . $row['jobCategory'] . "</td>
-                                        <td>" . $row['jobType'] . "</td>
-                                        <td>" . $row['workSetup'] . "</td>
-                                        <td>" . $row['min'] . " - ". $row['max']. "</td>
-                                        <td>
-                                            <a href='edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
-                                            <a href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
-                                        </td>
-                                        </tr>";
+                    $result = selectData($conn,"job_list","*");
+                    $resultCheck = mysqli_num_rows($result);
+    
+                    if ($resultCheck > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                            <td>" . $row['jobTitle'] . "</td
+                            ><td>" . $row['jobSummary'] . "</td>
+                            <td>" . $row['jobQuali'] . "</td>
+                            <td>" . $row['jobCategory'] . "</td>
+                            <td>" . $row['jobType'] . "</td>
+                            <td>" . $row['workSetup'] . "</td>
+                            <td>" . $row['min'] . " - ". $row['max']. "</td>
+                            <td>
+                                <a href='edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
+                                <a href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
+                            </td>
+                            </tr>";
 
-                                    }
-                                }
+                        }
+                    }
                 ?>
             <tbody>
                 <?php

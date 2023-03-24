@@ -1,11 +1,8 @@
-
-
 <?php 
   include('../../connections.php');
   include('../sessions.php');
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +17,7 @@
 <body style="background-image: url('');">
 
   <div id="PostJobCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
-    <form action= add-jobs.php method= "POST">
+    <form method= "POST">
 
       <div class="form-group">
         <label for="job_title">Job Title</label>
@@ -83,50 +80,43 @@
           >
       </div>
       <br>
-      
       <br>
       <button type="submit" class="btn btn-primary" name="postJob">Post</button>
-
-
-      <?php
-            
-            if(isset($_POST['postJob'])){
-                $jobTitle = $_POST['job_title'];
-                $jobSummary = $_POST['job_summary']; 
-                $jobQuali = $_POST['job_reqs'];   
-                $jobCategory = $_POST['job_category']; 
-                $jobType = $_POST['job_type']; 
-                $workSetup = $_POST['workSetup']; 
-                $min = $_POST['min'];
-                $max = $_POST['max'];
-                $companyID = $_SESSION['id'];
-                $tablename="job_list";
-                $columnquery="*";
- 
-               
-                
-                $result = selectWhere($conn, $tablename, $columnquery, 'jobTitle', $jobTitle);
-
-
-
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                        
-                        echo "Job Exist";
-                    }
-                  } else {
-                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, min, max, companyID)";
-                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$min' , '$max', $companyID)";
-                    insertData($conn,$dataquery,$valuequery);
-
-                    header("Location: index.php");
-                  }
-            }
-        ?>
     </form>
+
+
+    
+    <?php          
+    $company_id=$_SESSION['company_id'];
+          
+    if(isset($_POST['postJob'])){
+        $jobTitle = $_POST['job_title'];
+        $jobSummary = $_POST['job_summary']; 
+        $jobQuali = $_POST['job_reqs'];   
+        $jobCategory = $_POST['job_category']; 
+        $jobType = $_POST['job_type']; 
+        $workSetup = $_POST['workSetup']; 
+        $min = $_POST['min'];
+        $max = $_POST['max'];
+
+        $tablename="job_list";
+        $columnquery="*";
+        $result = selectWhere($conn, $tablename, $columnquery, 'jobTitle', $jobTitle);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "Job Exist";
+            }
+          } else {
+            $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, min, max, companyID)";
+            $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$min' , '$max', $company_id)";
+            insertData($conn, $dataquery, $valuequery);
+            header("Location: index.php");
+          }
+
+        }
+      ?>
+
   </div>
-
 </body>
-
 </html>

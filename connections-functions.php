@@ -5,13 +5,12 @@
     $conn->query($sql);
 
     // Create Table
-    function createTable($conn, $tablename, $tablequery){
-        $sql = "CREATE TABLE IF NOT EXISTS ".$tablename.
-        $tablequery;
+    function createTable($conn, $tablequery){
+        $sql = "CREATE TABLE IF NOT EXISTS ".$tablequery;
         $conn->query($sql);
     }
 
-    // Insert Data to Table
+    // Insert Data to Tablename(co)
     function insertData($conn, $dataquery, $valuequery){
         $sql = "INSERT INTO ".$dataquery."
         VALUES ".$valuequery;

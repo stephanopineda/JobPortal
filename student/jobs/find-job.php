@@ -14,9 +14,6 @@ if (!isset($_GET['page'])) {
 
 
 $page_first_result = ($page - 1) * $results_per_page;
-
-
-
 ?>
 
 
@@ -94,9 +91,9 @@ $page_first_result = ($page - 1) * $results_per_page;
                 <h5 class="card-title"><?php echo $row["jobTitle"]; ?> </h5>
                 <p class="skills"> <b> Job Summary: </b> <?php echo $row["jobSummary"]; ?> </p>
                 <p class="job_type"> <b> Job Type: </b> <?php echo $row["jobType"]; ?> </p>
-                <p class="salary"> <b> Salary: </b> <?php echo $row["min"]." - ". $row["max"]; ?> </p>
+                <p class="salary"> <b> Salary: </b> <?php echo $row["min"]."-".$row["max"]; ?> </p>
                 <p class="positions"> <b> Job Category: </b> <?php echo $row["jobCategory"]; ?> </p>
-                <a href="Apply-Page.php" class="btn btn-primary">Apply Now</a>
+                <a href="Apply-Page.php?jobID=<?php echo $row['jobID']; ?>" class="btn btn-primary">Apply Now</a>
                 
               </div>
             </div>
