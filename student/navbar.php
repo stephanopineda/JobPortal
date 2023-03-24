@@ -33,7 +33,7 @@
               <!-- Student Profile is shown here -->
 
             <?php  
-              $id = 1; //$_SESSION['id'];
+              $id = $_SESSION['user_id'];
               $sql = "SELECT * FROM student_profile WHERE id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
