@@ -93,15 +93,25 @@ include '../navbar.php';
                 <div class="col-12">
                   <div class="card">
                     <div class="row card-body">
+                    <div class="col-6 position-relative">
+                    <?php
+                $logo = $row['logo'];
+
+                if ($logo == NULL) {
+                  
+                    echo "<img src='../../assets/img/UI/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                } else {
+                    echo "<img src='../../assets/img/employer-profile/$logo' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                }
+                ?>
+                      </div>
                       <div class="col-6">
                         <h5 class="card-title"><?php echo $row["name"] ?></h5>
                         <p class="card-text"><?php echo $row["email"] ?></p>
                         <p class="card-text"><?php echo $row["address"] ?></p>
                         <a href="../company-profiles " class="btn btn-primary">See more</a>
                       </div>
-                      <div class="col-6 position-relative">
-                        <img class="col-6 position-absolute top-0 start-50" src="../student7.png" alt="sans" />
-                      </div>
+                      
                     </div>
                   </div>
                 </div>

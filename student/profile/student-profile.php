@@ -56,10 +56,10 @@
               <p class="text-center fs-3"><?php echo $fullname ?></p>
             </div>
             <div class="col-6">
-              <p>Bio</p>
+              <p class="fs-3">Bio</p>
             </div>
             <div class="col-12 mt-0 d-flex justify-content-evenly text-sm-start">
-              <p class="fs-6 d-flex justify-content-evenly text-md-start"><?php echo $row['bio'] ?></p>
+              <p class="fs-4 d-flex justify-content-evenly text-md-start"><?php echo $row['bio'] ?></p>
             </div>
           </div>
           <div class="row">
