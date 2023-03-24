@@ -1,9 +1,13 @@
+<?php
+    include '../../connections.php';
+    include('../sessions.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
-$jobID = 1;//papalitan ng session id
+$jobID = $_SESSION['id'];
 $result = selectWhere($conn, 'job_list', '*', 'jobID',$jobID);
 if ($result->num_rows > 0) {
     $row = mysqli_fetch_assoc($result);

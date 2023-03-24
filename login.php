@@ -1,6 +1,6 @@
 <?php
     include 'connections.php';
-    
+    include 'sessions.php';
 ?>
 
 <!DOCTYPE html>
@@ -60,34 +60,37 @@
                     </form>
 
                     <?php
-                    if(isset($_POST['submit'])){
-                      $username = $_POST['username'];
-                      $password = $_POST['password'];
-        
-                      $query = "SELECT * FROM `users` WHERE `username` = '$username'";
-                      $result = mysqli_query($conn, $query);
-                      $row = mysqli_fetch_assoc($result);
-                      if($row['username'] == $username && $row['password'] == $password){
-                
-                        if($row['userType'] == 'Student'){
-                          echo '<script>
-                          window.location.href = "student/dashboard/index.php";
-                        </script>';
+                      if(isset($_POST['submit'])){
+                        $username = $_POST['username'];
+                        $password = $_POST['password'];
+          
+                        $query = "SELECT * FROM `users` WHERE `username` = '$username'";
+                        $result = mysqli_query($conn, $query);
+                        $row = mysqli_fetch_assoc($result);
+                        if($row['username'] == $username && $row['password'] == $password){
+                          $_SESSION['user_id']=$row['userID'];
+                          $_SESSION['username']=$username;
+                          $_SESSION['user_type']=$row['userType'];
+                  
+                          if($row['userType'] == 'Student'){
+                            echo '<script>
+                            window.location.href = "student/dashboard/index.php";
+                          </script>';
+                          }
+                          else if($row['userType'] == 'Employer'){
+                            echo '<script>
+                            window.location.href = "employer/dashboard/index.php";
+                          </script>';
+                          }
+                          else{
+                            echo '<script>
+                            window.location.href = "index.php";
+                          </script>';
+                          }
+                        }else{
+                          echo "<script>alert('Invalid Email or Password')</script>";
                         }
-                        else if($row['userType'] == 'Employer'){
-                          echo '<script>
-                          window.location.href = "employer/dashboard/index.php";
-                        </script>';
-                        }
-                        else{
-                          echo '<script>
-                          window.location.href = "index.php";
-                        </script>';
-                        }
-                      }else{
-                        echo "<script>alert('Invalid Email or Password')</script>";
                       }
-                    }
                     ?>
                   </div>
                 </div>

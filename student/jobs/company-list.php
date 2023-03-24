@@ -2,7 +2,7 @@
 
 <?php
  include('../../connections.php');
-//  include('../../sessions.php');
+ include('../sessions.php');
 
 $results_per_page = 20;
 
