@@ -105,7 +105,8 @@
         `jobCategory` varchar(50) NOT NULL,
         `jobType` varchar(50) NOT NULL,
         `workSetup`  varchar(50) NOT NULL,
-        `jobSalary` int(11) NOT NULL,
+        `min` int(11) NOT NULL,
+        `max` int(11) NOT NULL,
         `CompanyId` int(11) NOT NULL
         )";
     createTable($conn, "job_list", $tablequery);

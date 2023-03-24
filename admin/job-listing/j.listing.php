@@ -119,7 +119,8 @@
               $row["jobCategory"] . "</td><td>" .
               $row["jobType"] . "</td><td>" .
               $row["workSetup"] . "</td><td>" .
-              $row["jobSalary"];
+              $row["min"]."-". $row["max"].
+              "</td><td>";
 
               echo "<td>";
               echo "<div class='btn-group'>";
