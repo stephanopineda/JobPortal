@@ -11,6 +11,8 @@ include('../sessions-admin.php')
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php include('../../header-link.php'); ?>
+
         <title>Student Profile</title>
     </head>
 
@@ -21,8 +23,63 @@ include('../sessions-admin.php')
         ?>
 
         <h1>Student Profile</h1>
+        <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">First Name</font>
+          </font>
+        </th>
+        
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Last Name</font>
+          </font>
+        </th>
 
-        <table>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Email</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Course</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Contact Number</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Address</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Birthdate</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Sex</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bio</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Actions</font>
+          </font>
+        </th>
+      </tr>
+        <!-- <table>
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -34,8 +91,53 @@ include('../sessions-admin.php')
                     <th>Sex</th>
                     <th>Bio</th>
                 </tr>
-            </thead>
+            </thead> -->
             <tbody>
+                <?php
+                    $result = selectData($conn,"student_profile","*");
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if ($resultCheck > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                            <td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>". $row['firstname'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>". $row['lastname'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>". $row['email'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>" . $row['course'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>" . $row['contact_no'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>". $row['address'] . "</font>
+                                </font></td
+                                ><td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>" . $row['birthdate'] . "</font>
+                                </font></td>
+                                <td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>" . $row['sex'] . "</font>
+                                </font></td>
+                                <td><font style='vertical-align: inherit;'>
+                                <font style='vertical-align: inherit;'>" . $row['bio'] . "</font>
+                                </font></td>
+                                ";
+                                echo "<td>";
+                                echo "<div class='btn-group'>";
+                                echo "<a class='btn btn-success' href='s.edit.php?id=". $row['id']."'> Edit </a>";
+                                echo "<a class='btn btn-danger' href='s.delete.php?id=". $row['id']."'>Delete </a>";
+                                echo "</div>";
+                                echo "</td>";
+                                echo "</tr>";
+                        }
+                    }
+                ?>
                 
             </tbody>
         </table>
