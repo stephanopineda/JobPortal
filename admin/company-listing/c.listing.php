@@ -183,7 +183,7 @@
 
     
     ?>
-      <input type="report" name="report" value="Generate Report"  class="btn btn-primary">
+      <input type="button" name="report" value="Generate Report"  class="btn btn-success">
 
     </tbody>
   </table>
