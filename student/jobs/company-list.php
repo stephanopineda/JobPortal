@@ -108,7 +108,11 @@ include '../navbar.php';
               </div>
 
 
-              <nav class="mx-auto" aria-label="Page navigation example">
+              
+            <?php
+            } 
+            ?>                                                        
+            <nav class="mx-auto" aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <?php
@@ -146,8 +150,7 @@ include '../navbar.php';
                 </li>
               </ul>
             </nav>
-            <?php
-            }
+          <?php
           } 
           else{
             echo '
