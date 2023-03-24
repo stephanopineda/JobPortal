@@ -1,5 +1,10 @@
 <?php
     include '../connections.php';
+    
+    $username=$_SESSION['username'];
+    $result = selectWhere($conn, 'users', '*', 'username', "$username");
+    $row = $result->fetch_assoc();
+    $_SESSION['user_id']=$row['userID'];
 ?>
 
 <!DOCTYPE html>

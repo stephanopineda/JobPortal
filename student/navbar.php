@@ -33,7 +33,7 @@
               <!-- Student Profile is shown here -->
 
             <?php  
-              $id = $_SESSION['user_id'];
+              $id = $_SESSION['student_id'];
               $sql = "SELECT * FROM student_profile WHERE id = '$id'";
               $result = mysqli_query($conn, $sql);
               $row = mysqli_fetch_assoc($result);
@@ -47,13 +47,12 @@
               }
               }
             ?>
-              <!-- <img src="../../assets\img\no-profile.png" alt="" class="rounded-circle" height="40px"> -->
             
             </a>
           
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a class="dropdown-item" href="../profile/student-profile.php">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Account Settings</a></li>
+              <!-- <li><a class="dropdown-item" href="#">My Applications</a></li> -->
               <li><a class="dropdown-item" href="../../logout.php">Logout</a></li>
             </ul>
           </div>
