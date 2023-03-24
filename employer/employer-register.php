@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-group" for="C.email">Employer Name:</label> 
+                        <label class="form-group" for="C.email">Contact Person:</label> 
                         <input class="form-control" type="text" name="employer_name" placeholder="Enter employer name" required><br>
                     </div>  
 
