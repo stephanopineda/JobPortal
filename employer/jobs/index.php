@@ -18,45 +18,65 @@
             include('../navbar.php');
         ?>
         
-        <h1>Jobs</h1>
-        <a href="add-jobs.php">Add Job</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Summary</th>
-                    <th>Qualification</th>
-                    <th>Category</th>
-                    <th>Job Type</th>
-                    <th>Work Setup</th>
-                    <th>Salary</th>
-                    <th>Actions</th>
-                    
-                </tr>
-            </thead>
-                <?php
-                    $result = selectWHERE($conn,"job_list","*", "CompanyId", $_SESSION['company_id']);
-                    $resultCheck = mysqli_num_rows($result);
+<div class="container pt-5">
+    <div class="row">
+    <div class="col-sm">
+     <h1>Jobs</h1>
+    </div>
+    <div class="col-sm">
+       <a type = "button" class="btn btn-warning align-content-lg-end" href="add-jobs.php">Add Job</a>
+    </div>
+   
+<table class="table">
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Summary</th>
+        <th>Qualification</th>
+        <th>Category</th>
+        <th>Job Type</th>
+        <th>Work Setup</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   <?php
+        $result = selectWHERE($conn,"job_list","*", "CompanyId", $_SESSION['company_id']);
+        $resultCheck = mysqli_num_rows($result);
     
-                    if ($resultCheck > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
-                            <td>" . $row['jobTitle'] . "</td
-                            ><td>" . $row['jobSummary'] . "</td>
-                            <td>" . $row['jobQuali'] . "</td>
-                            <td>" . $row['jobCategory'] . "</td>
-                            <td>" . $row['jobType'] . "</td>
-                            <td>" . $row['workSetup'] . "</td>
-                            <td>" . $row['min'] . " - ". $row['max']. "</td>
-                            <td>
-                                <a href='edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
-                                <a href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
-                            </td>
-                            </tr>";
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+            <td>" . $row['jobTitle'] . "</td>
+            <td>" . $row['jobSummary'] . "</td>
+            <td>" . $row['jobQuali'] . "</td>
+            <td>" . $row['jobCategory'] . "</td>
+            <td>" . $row['jobType'] . "</td>
+            <td>" . $row['workSetup'] . "</td>
+            <td>" . $row['min'] . " - ". $row['max']. "</td>
+            <td>
+                <a class='btn btn-primary' href='edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
+                 <a class='btn btn-danger' href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
+            </td>
+            </tr>";
 
                         }
                     }
                 ?>
+  </tbody>
+</table>
+
+</div>
+
+        <table>
+            <thead>
+                <tr>
+                    
+                    
+                </tr>
+            </thead>
+                
             <tbody>
                 <?php
                     
