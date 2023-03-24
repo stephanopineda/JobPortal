@@ -128,16 +128,48 @@
                 <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">Job Title</th>
-                        <th scope="col">Company Name</th>
-                        <th scope="col">Status</th>
+                          <th scope="col">Job Title</th>
+                          <th scope="col">Company Name</th>
+                          <th scope="col">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td>Welder</td>
-                        <td>Welder Inc.</td>
-                        <td>Accepted</td>
+                          <?php
+                            $student_id = $_SESSION['student_id'];
+                            $sql = "SELECT * FROM job_applications WHERE studentID = '$student_id' AND status = 'Pending'";
+                            $result = $conn->query($sql);
+                            $resultCheck = mysqli_num_rows($result);
+
+                            if($resultCheck > 0){
+                                while($row = $result->fetch_assoc()){
+                                    $job_id = $row['jobID'];
+                                    $sql2 = "SELECT * FROM job_list WHERE id = '$job_id'";
+                                    $result2 = $conn->query($sql2);
+                                    $resultCheck2 = mysqli_num_rows($result2);
+
+                                    if($resultCheck2 > 0){
+                                        while($row2 = $result2->fetch_assoc()){
+                                            $company_id = $row2['companyID'];
+                                            $sql3 = "SELECT * FROM company_profile WHERE id = '$company_id'";
+                                            $result3 = $conn->query($sql3);
+                                            $resultCheck3 = mysqli_num_rows($result3);
+
+                                            if($resultCheck3 > 0){
+                                                while($row3 = $result3->fetch_assoc()){
+                                                    echo "<td>" . $row2['job_title'] . "</td>";
+                                                    echo "<td>" . $row3['company_name'] . "</td>";
+                                                    echo "<td>" . $row['status'] . "</td>";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+
+                          ?>
+                        </tr>
                       </tbody>
                     </table>
                 </div>
