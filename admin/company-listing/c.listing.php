@@ -15,13 +15,12 @@
 </head>
 <body>
 
+
+
+    <html lang="en">
     <?php
         include('../navbar.php');
     ?>
-
-    <h1>Company Listing</h1>
-    <html lang="en">
-
 
     <div class="container py-5">
   <div class="row justify-content-center">
@@ -71,34 +70,34 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Contact Number</font>
-          </font>
-        </th>
-        <th scope="col">
-          <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">Contact Person</font>
           </font>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Remarks</font>
+            <font style="vertical-align: inherit;">Contact Number</font>
           </font>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Picture</font>
+            <font style="vertical-align: inherit;">Company Size</font>
           </font>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
+            <font style="vertical-align: inherit;">Logo</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Actions</font>
           </font>
         </th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
+      <!-- <tr>
         <td>
           <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">BPI</font>
@@ -135,13 +134,55 @@
           </font>
         </td>
         <td>
-          <font style="vertical-align: inherit;">
-            <input style="vertical-align: inherit;" class="btn btn-primary btn-sm" type="submit" value="Edit" />
-            <input style="vertical-align: inherit;" class="btn btn-danger btn-sm mr-5" type="submit" value="Delete" />
+          <font style='vertical-align: inherit;'>
+            <input style='vertical-align: inherit;' class='btn btn-primary btn-sm' type='submit' value='Edit' />
+            <input style='vertical-align: inherit;' class='btn btn-danger btn-sm mr-5' type='submit' value='Delete' />
           </font>
         </td>
-      </tr>
+      </tr> -->
 
+    <?php
+
+    $result = selectData($conn,"company_list","*");
+    $resultCheck = mysqli_num_rows($result);
+    
+
+    if ($resultCheck > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+          echo "<tr>
+          <td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>". $row['name'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>". $row['address'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>". $row['email'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>" . $row['employer_name'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>" . $row['contact_no'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>". $row['size'] . "</font>
+              </font></td
+              ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>" . $row['logo'] . "</font>
+              </font></td> 
+              <td>           
+              <font style='vertical-align: inherit;'>
+              <input style='vertical-align: inherit;' class='btn btn-primary btn-sm' type='submit' value='Edit'/>
+              <input style='vertical-align: inherit;' class='btn btn-danger btn-sm mr-5' type='submit' value='Delete'/>
+              </font>
+          </td>
+          </tr>";
+      }
+  }
+
+    
+    ?>
       <input type="report" name="report" value="Generate Report"  class="btn btn-primary">
 
     </tbody>
