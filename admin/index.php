@@ -27,14 +27,14 @@
                     <h1>Admin Portal</h1>
                     <br>
                     <div class=form-group>
-                        <label for="username">Username</label>
+                        <label class = "form-label fw-bold"for="username">Username</label>
                         <br>
                         <input class="form-control" type="text" name="username" placeholder="Enter username">
                     </div>
                     <br>
                     <div class=form-group>
                     
-                        <label for="password">Password</label>
+                        <label class="form-label fw-bold" for="password">Password</label>
                         <br>
                         <input class="form-control" type="password" name="password" placeholder="Enter password">
                     </div>
