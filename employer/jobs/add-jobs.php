@@ -54,7 +54,6 @@
             <option value="estate"> Real Estate </option>
             <option value="transpo"> Transportation/Logistics  </option>
             <option value="distribution"> Wholesale/Retail and Distribution  </option>
-            
         </select>
       </div>
       <br>
@@ -97,7 +96,7 @@
                 $jobType = $_POST['job_type']; 
                 $workSetup = $_POST['workSetup']; 
                 $jobSalary = $_POST['salary'];
-                $companyID = 1;    //temp
+                $companyID = $_SESSION['id'];    //temp
                 $tablename="job_list";
                 $columnquery="*";
  
@@ -114,8 +113,8 @@
                         echo "Job Exist";
                     }
                   } else {
-                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary)";
-                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary')";
+                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary, companyID)";
+                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary', $companyID)";
                     insertData($conn,$dataquery,$valuequery);
                   }
             }

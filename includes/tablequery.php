@@ -62,6 +62,15 @@
         )";
     createTable($conn, "student_profile", $tablequery);
 
+    // Job Application List Table
+    $tablequery = "(
+        application_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        jobID varchar(20) NOT NULL,
+        studentID varchar(20) NOT NULL,
+        status varchar(12) NOT NULL
+        )";
+    createTable($conn, "job_applications", $tablequery);
+
     // // Admin Accounts Table
     // $tablequery = "(
     //     `companyID` int,

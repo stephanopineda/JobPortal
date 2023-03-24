@@ -24,9 +24,9 @@
         <thead>
             <tr>
                 <th>Application ID</th>
-                <th>Credentials ID</th>
-                <th>Application Status</th>
+                <th>Student ID</th>
                 <th>Job ID</th>
+                <th>Application Status</th>
         </thead>
         
         <tbody>
