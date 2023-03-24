@@ -1,5 +1,6 @@
 <?php
     include ('connections.php');
+    include ('sessions.php');
 ?>
 
 <!DOCTYPE html>
@@ -120,10 +121,11 @@
                     $valuequery="('$username','$name','$email','$password','$usertype')";
 
                     insertData($conn,$dataquery,$valuequery);
-                    
+                    $_SESSION['user_id']=$row['id'];
+                    $_SESSION['username']=$username;
+                    $_SESSION['user_type']=$usertype;
                     // echo "Account Created";
                     if($usertype == "Student"){
-                      // header("Location: student.php");
                       echo '<script>
                         window.location.href = "student/student-register.php";
                       </script>';
