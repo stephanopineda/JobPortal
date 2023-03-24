@@ -43,17 +43,17 @@
         <label for="job_category">Job Category</label> <br> <br>
         <select id="job_category" name="job_category">
             <option value="none"> Choose Job Category  </option>
-            <option value="business"> Business and Financial Services  </option>
-            <option value="construction"> Construction  </option>
-            <option value="education"> Education  </option>
-            <option value="restaurant"> Food & Beverage/Catering/Restaurant </option>
-            <option value="health"> Health, Pharmaceuticals, and Biotech </option>
-            <option value="hospitality"> Hospitality </option>
-            <option value="it"> Information Technology </option>
-            <option value="law"> Law Firm </option>
-            <option value="estate"> Real Estate </option>
-            <option value="transpo"> Transportation/Logistics  </option>
-            <option value="distribution"> Wholesale/Retail and Distribution  </option>
+            <option value="Business and Financial Services"> Business and Financial Services  </option>
+            <option value="Construction"> Construction  </option>
+            <option value="Education"> Education  </option>
+            <option value="Food & Beverage/Catering/Restaurant"> Food & Beverage/Catering/Restaurant </option>
+            <option value="Health, Pharmaceuticals, and Biotech"> Health, Pharmaceuticals, and Biotech </option>
+            <option value="Hospitality"> Hospitality </option>
+            <option value="Information Technology"> Information Technology </option>
+            <option value="Law Firm"> Law Firm </option>
+            <option value="Real Estate"> Real Estate </option>
+            <option value="Transportation/Logistics "> Transportation/Logistics  </option>
+            <option value="Wholesale/Retail and Distribution"> Wholesale/Retail and Distribution  </option>
         </select>
       </div>
       <br>
