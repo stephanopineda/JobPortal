@@ -78,8 +78,10 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1salary">Salary</label>
-        <input type="text" name= "salary" class="form-control" 
-          placeholder="Enter Salary">
+        <input type="number" name= "min" class="form-control" 
+          > -
+          <input type="number" name= "max" class="form-control" 
+          >
       </div>
       <br>
       
@@ -96,7 +98,8 @@
                 $jobCategory = $_POST['job_category']; 
                 $jobType = $_POST['job_type']; 
                 $workSetup = $_POST['workSetup']; 
-                $jobSalary = $_POST['salary'];
+                $min = $_POST['min'];
+                $max = $_POST['max'];
                 $companyID = 1;    //temp
                 $tablename="job_list";
                 $columnquery="*";
@@ -114,9 +117,11 @@
                         echo "Job Exist";
                     }
                   } else {
-                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, jobSalary)";
-                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$jobSalary')";
+                    $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, min, max)";
+                    $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$min' , '$max')";
                     insertData($conn,$dataquery,$valuequery);
+
+                    header("Location: index.php");
                   }
             }
         ?>
