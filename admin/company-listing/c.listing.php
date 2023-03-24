@@ -170,14 +170,15 @@
               </font></td
               ><td><font style='vertical-align: inherit;'>
               <font style='vertical-align: inherit;'>" . $row['logo'] . "</font>
-              </font></td> 
-              <td>           
-              <font style='vertical-align: inherit;'>
-              <input style='vertical-align: inherit;' class='btn btn-primary btn-sm' type='submit' value='Edit'/>
-              <input style='vertical-align: inherit;' class='btn btn-danger btn-sm mr-5' type='submit' value='Delete'/>
-              </font>
-          </td>
-          </tr>";
+              </font></td>
+              ";
+              echo "<td>";
+              echo "<div class='btn-group'>";
+              echo "<a class='btn btn-success' href='c.edit.php?company_id=". $row['company_id']."'> Edit </a>";
+              echo "<a class='btn btn-danger' href='c.delete.php?company_id=". $row['company_id']."'>Delete </a>";
+              echo "</div>";
+              echo "</td>";
+              echo "</tr>";
       }
   }
 
