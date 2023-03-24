@@ -4,3 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/img/Job-Portal-icon2.png" type="image/x-icon">
+
+<!-- tables -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.css">
+<script src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script> -->

@@ -31,24 +31,24 @@
       </div>
 
       <div class="form-group">
-        <label for="job_title">Job Title</label>
+        <label for="job_title" class= "form-label mb-2 fw-bold">Job Title</label>
         <input type="text" class="form-control" name= "jobTitle" id="jobTitle" value= "<?php echo $row['jobTitle']; ?>">
       </div>
       <br>
 
       <div>
-        <label for="jobSummary">Job Summary</label>
-        <textarea id="jobSummary" class="form-control" name="jobSummary" value= "<?php echo $row['jobSummary']; ?>"  rows="8" cols="50"></textarea>
+        <label for="jobSummary" class= "form-label mb-2 fw-bold">Job Summary</label>
+        <textarea id="jobSummary" class="form-control" name="jobSummary"  rows="8" cols="50"><?php echo $row['jobSummary']; ?></textarea>
       </div> <br>
 
       <div>
-        <label for="jobQuali">Job Requirements</label>
-        <textarea id="jobQuali" class="form-control" name="jobQuali" value= "<?php echo $row['jobQuali']; ?>"  rows="8" cols="50"></textarea>
+        <label for="jobQuali" class= "form-label mb-2 fw-bold">Job Requirements</label>
+        <textarea id="jobQuali" class="form-control" name="jobQuali"   rows="8" cols="50"><?php echo $row['jobQuali']; ?></textarea>
       </div>
       <br>
 
       <div class="form-group">
-        <label for="jobCategory">Job Category</label> <br> <br>
+        <label for="jobCategory" class= "form-label mb-2 fw-bold">Job Category</label> <br> <br>
         <select id="jobCategory" name="jobCategory" value= "<?php echo $row['jobCategory']; ?>">
             <option value="none"> Choose Job Category  </option>
             <option value="business"> Business and Financial Services  </option>
@@ -68,7 +68,7 @@
       <br>
 
       <div class="form-group">
-        <label for="jobType">Job Type</label> <br> <br>
+        <label for="jobType" class= "form-label mb-2 fw-bold">Job Type</label> <br> <br>
         <select id="jobType" name="jobType" value= "<?php echo $row['jobType']; ?>">
             <option value="Full-Time"> Full-Time </option>
             <option value="Part-Time"> Part-Time </option>
@@ -77,20 +77,30 @@
       <br>
 
       <div class="form-group">
-        <label for="workSetup">Work Setup</label> <br> <br>
+        <label for="workSetup" class= "form-label mb-2 fw-bold">Work Setup</label> <br> <br>
         <select id="workSetup" name="workSetup" value= "<?php echo $row['workSetup']; ?>">
             <option value="Onsite"> On-site </option>
             <option value="WFH"> Work from Home </option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="exampleInputEmail1salary">Salary</label>
-        <input type="text" name= "jobSalary" class="form-control" value= "<?php echo $row['jobSalary']; ?>">
+      <br>
+      <div class="row">
+        <label for="exampleInputEmail1salary" class= "form-label mb-2 fw-bold">Salary</label>
+          
+        <div class="col">
+          <input type="text" name= "min" class="form-control" value= "<?php echo $row['min']; ?>"> 
+        </div>
+        -
+        <div class="col">
+          <input type="text" name= "max" class="form-control" value= "<?php echo $row['max']; ?>">
+    
+        </div>
       </div>
       <br>
-
-      <?php } ?>
+        <?php } ?>
       
       <br>
-      <button type="submit" class="btn btn-primary" name="updateJob">Post</button>
+    
+      <button type="submit" class="btn btn-primary" name="updateJob">Edit</button>
+      <button type="submit" class="btn btn-primary" name="cancel" href="j.listing.php">Cancel</button>
+    </form>
