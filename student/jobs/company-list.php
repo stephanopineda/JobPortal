@@ -100,7 +100,9 @@ include '../navbar.php';
                         <a href="../company-profiles " class="btn btn-primary">See more</a>
                       </div>
                       <div class="col-6 position-relative">
-                        <img class="col-6 position-absolute top-0 start-50" src="../student7.png" alt="sans" />
+                        <img class="col-6 position-absolute top-0 start-50 " src="../../assets/img/employer-profile/<?php 
+                        echo $row["logo"];
+                        ?>" alt="sans" style="width:100px; height:130px;"/> <!---- AYUSIN sizing-->
                       </div>
                     </div>
                   </div>

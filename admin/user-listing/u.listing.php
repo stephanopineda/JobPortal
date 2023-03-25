@@ -30,9 +30,9 @@
         <thead>
             <tr>
                 <th>Username</th>
-                <th>Name</th>
                 <th>Email</th>
-                <th>User Type</th>        
+                <th>User Type</th> 
+                <th>Actions</th>       
             </tr>
         </thead>
         <tbody>
@@ -44,10 +44,14 @@
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>";
                     echo "<td>".$row['username']."</td>";
-                    echo "<td>".$row['name']."</td>";
                     echo "<td>".$row['email']."</td>";
                     echo "<td>".$row['userType']."</td>";
+
+                    echo "<td><a href='u.edit.php?userID=".$row['userID']."'>Edit</a>";
+                    echo "<a href='u.delete.php?userID=".$row['userID']."'>Delete</a></td>";
                     echo "</tr>";
+
+
                 }
 
                 ?>

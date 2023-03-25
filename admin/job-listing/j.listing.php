@@ -19,13 +19,11 @@
         include('../navbar.php');
     ?>
 
-    <h1>Job Listing</h1>
     <html lang="en">
 
 
     <div class="container py-5">
     <div class="row justify-content-center">
-    <h2 class="mb-4 pb-4" style="text-align: center;">Admin</h2>
     <h2 class="mb-3 pb-3" style="text-align: left;">Job List</h2>
 
     <div class="row mb-2 pb-2">
