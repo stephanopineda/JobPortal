@@ -1,7 +1,7 @@
 <?php
 
     include('../../connections.php');
-    include('../../sessions.php');
+    // include('../../sessions.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 <body>
 
     <?php
-        include('../navbar.php');
+        include('../admin-navbar.php');
     ?>
 
     <h1>Application Listing</h1>
