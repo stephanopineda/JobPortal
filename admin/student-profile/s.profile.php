@@ -134,8 +134,8 @@
 
               echo "<td>";
               echo "<div class='btn-group'>";
-              echo "<a class='btn btn-success' href='./s.listing_edit.php?jobID= " .$row['id'] ."'>Edit </a>";
-              echo "<a class='btn btn-danger' href='./s.listing_delete.php?jobID= " .$row['id'] ."'>Delete </a>";
+              echo "<a class='btn btn-success' href='./s.listing_edit.php?jobID=" .$row['id'] ."'>Edit </a>";
+              echo "<a class='btn btn-danger' href='./s.listing_delete.php?jobID=" .$row['id'] ."'>Delete </a>";
               echo "</div>";
               echo "</td>";
 

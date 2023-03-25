@@ -1,7 +1,7 @@
 <?php
-if (isset ($_GET['id'])){
+if (isset ($_GET['studentID'])){
 
-    $id = $_GET["id"];
+    $id = $_GET["studentID"];
     include('../../connections.php');
 
     $sql = "DELETE FROM `student_profile` WHERE id = $id";
