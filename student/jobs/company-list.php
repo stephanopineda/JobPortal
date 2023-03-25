@@ -93,7 +93,7 @@ include '../navbar.php';
                 <div class="col-12">
                   <div class="card">
                     <div class="row card-body">
-                    <div class="col-6 position-relative">
+                    <div class="col-3 position-relative">
                     <?php
                 $logo = $row['logo'];
 
