@@ -38,6 +38,7 @@
                     $result = selectWHERE($conn,"job_list","*", "CompanyId", $_SESSION['company_id']);
                     $resultCheck = mysqli_num_rows($result);
     
+<<<<<<< Updated upstream
                     if ($resultCheck > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>
@@ -53,6 +54,23 @@
                                 <a href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
                             </td>
                             </tr>";
+=======
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+            <td>" . $row['jobTitle'] . "</td>
+            <td>" . $row['jobSummary'] . "</td>
+            <td>" . $row['jobQuali'] . "</td>
+            <td>" . $row['jobCategory'] . "</td>
+            <td>" . $row['jobType'] . "</td>
+            <td>" . $row['workSetup'] . "</td>
+            <td>" . $row['min'] . " - ". $row['max']. "</td>
+            <td>
+                <a class='btn btn-primary' href='./edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
+                 <a class='btn btn-danger' href='./delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
+            </td>
+            </tr>";
+>>>>>>> Stashed changes
 
                         }
                     }

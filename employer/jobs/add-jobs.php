@@ -15,7 +15,8 @@
 </head>
 
 <body style="background-image: url('');">
-
+<?php
+?>
   <div id="PostJobCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
     <form method= "POST">
 
