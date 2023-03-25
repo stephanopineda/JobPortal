@@ -4,7 +4,7 @@
 <a href="../profile/student-profile.php">User Profile</a>
 <a href="../logout.php">Logout</a> -->
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #800;">
     <div class="container-fluid">
       <a class="navbar-brand logo">
         <img src="../../assets/img/jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
