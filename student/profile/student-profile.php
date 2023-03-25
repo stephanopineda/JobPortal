@@ -27,7 +27,7 @@
         <div class="container-fluid mt-5 mr-5 pb-4 shadow rounded">
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
-            <?php
+              <?php
                 
                 $student_id = $_SESSION['student_id'];
                 $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
@@ -37,7 +37,7 @@
 
                 if ($resultCheck > 0) { 
                     $row = mysqli_fetch_assoc($result);
-                    $fullname = $row['firstname'] . ' ' . $row['lastname']; 
+                    $fullname = $row['firstname'].' '.$row['lastname']; 
                     ?>
                 
                 <?php
@@ -56,7 +56,7 @@
               <p class="text-center fs-3"><?php echo $fullname ?></p>
             </div>
             <div class="col-6">
-              <p>Bio</p>
+              <p><b>Bio</b></p>
             </div>
             <div class="col-12 mt-0 d-flex justify-content-evenly text-sm-start">
               <p class="fs-6 d-flex justify-content-evenly text-md-start"><?php echo $row['bio'] ?></p>
@@ -144,29 +144,31 @@
                             if($resultCheck > 0){
                                 while($row = $result->fetch_assoc()){
                                     $job_id = $row['jobID'];
-                                    $sql2 = "SELECT * FROM job_list WHERE id = '$job_id'";
+                                    $sql2 = "SELECT * FROM job_list WHERE jobID = '$job_id'";
                                     $result2 = $conn->query($sql2);
                                     $resultCheck2 = mysqli_num_rows($result2);
 
                                     if($resultCheck2 > 0){
-                                        while($row2 = $result2->fetch_assoc()){
-                                            $company_id = $row2['companyID'];
-                                            $sql3 = "SELECT * FROM company_profile WHERE id = '$company_id'";
-                                            $result3 = $conn->query($sql3);
-                                            $resultCheck3 = mysqli_num_rows($result3);
+                                        echo "<tr>";
+                                        while($row2 = $result2->fetch_assoc()){                                          
+                                          $company_id = $row2['CompanyId'];
+                                          $sql3 = "SELECT * FROM company_list WHERE company_id = '$company_id'";
+                                          $result3 = $conn->query($sql3);
+                                          $resultCheck3 = mysqli_num_rows($result3);
 
-                                            if($resultCheck3 > 0){
-                                                while($row3 = $result3->fetch_assoc()){
-                                                    echo "<td>" . $row2['job_title'] . "</td>";
-                                                    echo "<td>" . $row3['company_name'] . "</td>";
-                                                    echo "<td>" . $row['status'] . "</td>";
-                                                }
-                                            }
-                                        }
+                                          if($resultCheck3 > 0){
+                                              while($row3 = $result3->fetch_assoc()){
+                                                  echo "<td>" . $row2['jobTitle'] . "</td>";
+                                                  echo "<td>" . $row3['name'] . "</td>";
+                                                  echo "<td>" . $row['status'] . "</td>";
+                                              }
+                                          }
+                                      }
+                                        echo "</tr>";
+                                      }
                                     }
-                                }
                             }
-
+                          
 
                           ?>
                         </tr>

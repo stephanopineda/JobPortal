@@ -34,7 +34,7 @@
                         </div>
                         <br>
 
-                        <!-- <div class="row">
+                         <div class="row">
                           <div class="col">
                             <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
                             <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
@@ -46,7 +46,7 @@
                             <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
                           </div>
                         </div>
-                        <br> -->
+                        <br>
 
                         <div class="row">
                           <div class="col">
@@ -95,25 +95,18 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
-                $fname = $_POST['fname'];
-                $lname = $_POST['Lname']; 
                 $name = $fname . " " . $lname;
                 $email = $_POST['email'];   
                 $password = $_POST['password']; 
                 $usertype = $_POST['usertype'];      
-                $tablename="users";
+                $tablename="admin_accounts";
                 $columnquery="*";
- 
-               
                 
                 $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
-
-
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        
                         echo "Account Exist";
                     }
                   } else {
