@@ -19,7 +19,7 @@
         include('../admin-navbar.php');
     ?>
 
-    <h1></h1>
+    <h1>Job Listing</h1>
     <html lang="en">
 
 

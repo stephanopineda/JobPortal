@@ -109,7 +109,12 @@ include '../navbar.php';
                         <h5 class="card-title"><?php echo $row["name"] ?></h5>
                         <p class="card-text"><?php echo $row["email"] ?></p>
                         <p class="card-text"><?php echo $row["address"] ?></p>
-                        <a href="companyProfile.php " class="btn btn-primary">See more</a>
+                        <a href="../company-profiles " class="btn btn-primary">See more</a>
+                      </div>
+                      <div class="col-6 position-relative">
+                        <img class="col-6 position-absolute top-0 start-50 " src="../../assets/img/employer-profile/<?php 
+                        echo $row["logo"];
+                        ?>" alt="sans" style="width:100px; height:130px;"/> <!---- AYUSIN sizing-->
                       </div>
                       
                     </div>
