@@ -30,7 +30,7 @@
         <ul class="navbar-nav d-flex flex-row-reverse">
           <div class="dropdown">
 
-            <a class="btn stud-btn2 dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+
             <a class="btn  dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <!-- Student Profile is shown here -->
 
