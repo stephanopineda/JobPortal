@@ -28,13 +28,13 @@
                 <a class="nav-link fs-5 fw-bold " href="../dashboard/index.php">Home</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold " href="../profile/index.php">Application Listing</a>
+                <a class="nav-link fs-5 fw-bold " href="../profile/index.php">Profile</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold" href="../jobs/index.php">Job Listing</a>
+                <a class="nav-link fs-5 fw-bold" href="../jobs/index.php">Jobs</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold" href="#">Company Listing</a>
+                <a class="nav-link fs-5 fw-bold" href="#">Candidates</a>
               </li>
             </ul>
         </ul>
