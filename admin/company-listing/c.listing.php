@@ -73,7 +73,7 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Contact Person</font>
+            <font style="vertical-align: inherit;">Employer Name</font>
           </font>
         </th>
         <th scope="col">
@@ -163,6 +163,8 @@
               <font style='vertical-align: inherit;'>". $row['email'] . "</font>
               </font></td
               ><td><font style='vertical-align: inherit;'>
+              <font style='vertical-align: inherit;'>". $row['employer_name'] . "</font>
+              </font></td
               ><td><font style='vertical-align: inherit;'>
               <font style='vertical-align: inherit;'>" . $row['contact_no'] . "</font>
               </font></td

@@ -25,13 +25,13 @@
             ?>
             
             <div class="form-group">
-                <label for="job_title" class= "form-label mb-2 fw-bold">Username</label>
+                <label for="username    " class= "form-label mb-2 fw-bold">Username</label>
                 <input type="text" class="form-control" name= "username" id="username" value= "<?php echo $row['username']; ?>">
             </div>
             <br>
 
             <div>
-                <label for="jobSummary" class= "form-label mb-2 fw-bold">Email</label>
+                <label for="email" class= "form-label mb-2 fw-bold">Email</label>
                 <input type="text" class="form-control" name= "email" id="email" value= "<?php echo $row['email']; ?>">
             </div><br>
 
@@ -39,19 +39,32 @@
 
             
             <div>
-                <label for="jobQuali" class= "form-label mb-2 fw-bold">Password</label>
+                <label for="password class= "form-label mb-2 fw-bold">Password</label>
                 <input type="text" class="form-control" name= "password" id="password" value= "<?php echo $row['password']; ?>">
             </div>
+
+            <br>
+            
             <div class="form-group">
-            <label for="userType">User Type</label> <br> 
-        <select id="userType" name="userType">
-            <option value="Student"> Student </option>
-            <option value="Employer"> Employer </option>
-        </select>
+            <label for="userType" class= "form-label mb-2 fw-bold">User Type</label> <br> 
+            <select id="userType" name="userType">
+            <?php
+                if($row['userType'] == 'Student'){
+                    echo "<option value='Student' selected> Student </option>";
+                    echo "<option value='Employer'> Employer </option>";
+                    } else {
+                        echo "<option value='Student'> Student </option>";
+                        echo "<option value='Employer' selected> Employer </option>";
+                    }
+
+
+            ?>
+            </select>
+
       </div>
 
             <button type="submit" class="btn btn-primary" name="edit">Edit</button>
-            <button type="submit" class="btn btn-primary" name="cancel" href="u.listing.php">Cancel</button>
+            <a href="u.listing.php" class="btn btn-primary">Cancel</a>
     </form>
 </body>
 </html>

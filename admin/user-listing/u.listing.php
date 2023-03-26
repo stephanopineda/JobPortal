@@ -68,11 +68,7 @@
             <font style="vertical-align: inherit;"> Username</font>
           </font>
         </th>
-        <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Name</font>
-          </font>
-        </th>
+
         <th scope="col">
           <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">Email</font>
@@ -85,12 +81,7 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Job Type</font>
-          </font>
-        </th>
-        <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
+            <font style="vertical-align: inherit;">Actions</font>
           </font>
         </th>
       </tr>
@@ -103,9 +94,7 @@
       if ($result ->num_rows > 0){
           while($row = $result -> fetch_assoc()){
               echo "<tr><td>" . $row["userID"] . "</td><td>" .
-              $row["userID"] . "</td><td>" .
               $row["username"] . "</td><td>" .
-              $row["name"] . "</td><td>" .
               $row["email"] . "</td><td>" .
               $row["userType"];
               
@@ -113,8 +102,8 @@
 
               echo "<td>";
               echo "<div class='btn-group'>";
-              echo "<a class='btn btn-success' href='./u.listing_edit.php?jobID= " .$row['userID'] ."'>Edit </a>";
-              echo "<a class='btn btn-danger' href='./u.listing_delete.php?jobID= " .$row['userID'] ."'>Delete </a>";
+              echo "<a class='btn btn-success' href='./u.edit.php?userID=" .$row['userID'] ."'>Edit </a>";
+              echo "<a class='btn btn-danger' href='./u.delete.php?userID=" .$row['userID'] ."'>Delete </a>";
               echo "</div>";
               echo "</td>";
 

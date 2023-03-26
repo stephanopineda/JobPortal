@@ -79,12 +79,12 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Contact Number</font>
+            <font style="vertical-align: inherit;">Address</font>
           </font>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Address</font>
+            <font style="vertical-align: inherit;">Contact Number</font>
           </font>
         </th>
         <th scope="col">
@@ -99,17 +99,7 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
-          </font>
-        </th>
-        <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
-          </font>
-        </th>
-        <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
+            <font style="vertical-align: inherit;">Actions  </font>
           </font>
         </th>
       </tr>
@@ -121,21 +111,22 @@
 
       if ($result ->num_rows > 0){
           while($row = $result -> fetch_assoc()){
-              echo "<tr><td>" . $row["id"] . "</td><td>" .
+              echo "<tr><td>" .
               $row["firstname"] . "</td><td>" .
               $row["lastname"] . "</td><td>" .
-              
+              $row["email"] . "</td><td>" .
+              $row["course"] . "</td><td>" .
               $row["address"] . "</td><td>" .
+              $row["contact_no"] . "</td><td>" .
               $row["birthdate"] . "</td><td>" .
-              $row["sex"] . "</td><td>" .
-              $row["bio"];
+              $row["sex"] . "</td>";
               
             
 
               echo "<td>";
               echo "<div class='btn-group'>";
-              echo "<a class='btn btn-success' href='./s.listing_edit.php?jobID=" .$row['id'] ."'>Edit </a>";
-              echo "<a class='btn btn-danger' href='./s.listing_delete.php?jobID=" .$row['id'] ."'>Delete </a>";
+              echo "<a class='btn btn-success' href='./s.edit.php?id=" .$row['id'] ."'>Edit </a>";
+              echo "<a class='btn btn-danger' href='./s.delete.php?id=" .$row['id'] ."'>Delete </a>";
               echo "</div>";
               echo "</td>";
 
