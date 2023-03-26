@@ -19,6 +19,26 @@ include('../sessions.php');
 
     <?php
         include('../s-admin-navbar.php');
+
+        
+
+        //table sort
+        if(isset($_GET['order'])){
+          $order = $_GET['order'];
+        }
+        else{
+          $order = 'username';
+        }
+
+        if(isset($_GET['sort'])){
+          $sort = $_GET['sort'];
+        }
+        else{
+          $sort='ASC';
+        }
+
+        $order_by = $order . ' ' . $sort;
+            
     ?>
         
     <div class="container py-5">
@@ -46,9 +66,40 @@ include('../sessions.php');
         <label for="search" class="col-form-label">Search:</label>
       </div>
       <div class="col-auto">
-        <input type="text" id="search" class="form-control">
+      <form method="GET">
+        <input type="search" name="search" id="search" class="form-control">
+        <button type="submit" class="btn btn-primary">S</button>
+        </form>
+
       </div>
 
+
+      <?php 
+      if (isset($_GET['search'])) {
+
+        $search = $_GET['search'];
+
+      } 
+      else {
+
+        $search = 'default value';
+
+      }
+
+      //output all data
+
+      if($search == 'default value'){
+        $result = sortData($conn,"admin_accounts","*",$order_by);
+        $sort == 'DESC' ? $sort = 'ASC' : $sort = 'DESC';
+      }
+      else{
+        $sql = "SELECT * FROM admin_accounts WHERE CONCAT(username, name, email, admin_type) LIKE '$search%' ORDER BY username, name, email, admin_type DESC";
+        $result = $conn->query($sql);
+      }
+      $resultCheck = mysqli_num_rows($result);
+      echo $search;
+     
+      ?>
     </div>
 
   </div>
@@ -57,24 +108,32 @@ include('../sessions.php');
     <thead>
       <tr>
         <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">User Name</font>
-          </font>
+          <a href="?order=username&&sort=<?php echo $sort; ?>">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">User Name</font>
+            </font>
+          </a>
         </th>
         <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Name</font>
-          </font>
+        <a href="?order=name&&sort=<?php echo $sort; ?>">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Name</font>
+            </font>
+          </a>
         </th>
         <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Email</font>
-          </font>
+        <a href="?order=email&&sort=<?php echo $sort; ?>">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Email</font>
+            </font>
+          </a>
         </th>
         <th scope="col">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Admin</font>
-          </font>
+        <a href="?order=admin_type&&sort=<?php echo $sort; ?>">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Admin</font>
+            </font>
+          </a>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
@@ -85,13 +144,10 @@ include('../sessions.php');
     </thead>
 
             <?php
-                $result = selectData($conn,"admin_accounts","*");
-                $resultCheck = mysqli_num_rows($result);
-
-                if ($resultCheck > 0) {
+                 if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
-                        <td>" . $row['username'] . "</td
+                        <td> " . $row['username'] . "</td
                         ><td>" . $row['name'] . "</td>
                         <td>" . $row['email'] . "</td>
                         <td>" . $row['admin_type'] . "</td>";
