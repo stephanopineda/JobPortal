@@ -20,9 +20,6 @@
 
 <div class="container mb-3 pb-3">
  <div class="row mt-3">
-                <div class="col d-flex flex-row-reverse">
-                  <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
-                </div>
               </div>
   
     <div class="row mt-2">
