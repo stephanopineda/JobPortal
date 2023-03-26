@@ -37,16 +37,16 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
 
                     $p_img = $row['p_img'];
 
-                    if ($logo == null) { ?>
+                    if ($p_img == null) { ?>
 
-                        <img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                        <img src='../../assets/img/no-profile.png' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
                     <?php } else {
-                        echo "<img src='../../assets/img/student-profile/$p_img' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                        echo "<img src='../../assets/img/student-profile/$p_img' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
                     }
                 ?>
             </div>
-                <div class="col mt-auto me-n5">
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="col mt-auto n-margin">
+                    <button type="button" class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         +
                     </button>
 
@@ -61,7 +61,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <input type="file">
+                                    <input type="file" name="p_img" accept="image/png, image/jpg, image/jpeg, image/PNG">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -237,13 +237,14 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){
             echo "Image uploaded successfully";
             echo '<script>
-            window.location.href = "profile/student-profile.php";
+            window.location.href = "student-profile.php";
           </script>';
 
           if (mysqli_query($conn, $sql)) {
             echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
-            header("location:edit-profile.php");
-            echo "<script> </script>";
+            echo '<script>
+            window.location.href = "edit-profile.php";
+          </script>';
 
         } else {
             echo "Error updating record: " . mysqli_error($conn);
