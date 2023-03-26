@@ -95,6 +95,10 @@
                     WHERE id = '$adminID'";
                     if (mysqli_query($conn, $sql)) {
                         echo "<script type='text/javascript'>alert('Admin Updated Successfully!') </script>";
+                        
+                        $actions = "Edited $username profile.";
+                        include('../../to-log.php');
+                        
                         echo "<script type='text/javascript'>window.location.href = 'admin-accounts.php';</script>";
         
                     } else {
