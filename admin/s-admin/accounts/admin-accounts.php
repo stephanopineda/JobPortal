@@ -98,7 +98,7 @@ include('../sessions.php');
                         
                         echo "<td>";
                         echo "<div class='btn-group'>"; ?>
-                        <a class='btn btn-success' href='edit-admin.php?id= <?php echo $row['id']; ?>'>Edit</a>
+                        <a class='btn btn-success' href='edit-admin.php?id=<?php echo $row['id']; ?>'>Edit</a>
                         <?php
                         echo "<a class='btn btn-danger' href=''>Delete</a>";
                         echo "</div>";

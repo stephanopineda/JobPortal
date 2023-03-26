@@ -20,7 +20,7 @@
         include('../s-admin-navbar.php');
 
         $adminID = $_GET['id'];
-        selectWhere($conn, 'admin_accounts', '*', 'id', $adminID);
+        $result = selectWhere($conn, 'admin_accounts', '*', 'id', $adminID);
         $row = mysqli_fetch_assoc($result);
     ?>
 
@@ -30,21 +30,21 @@
             <div class="col-6 mx-auto mt-5">
                 <div class="container-sm mb-5 mt-5 py-5 p-5 bg-light login-form">
                 <form method="POST">
-                <h2>Add Admin</h2><br>
+                <h2>Edit Account</h2><br>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" value="<?php echo $row['name']?>">
+                    <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>">
                 </div>
                 <div id="adminnametaken">
                 </div>
                 <br>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" value="<?php echo $row['username']?>">
+                    <input type="text" class="form-control" name="username" value="<?php echo $row['username'];?>">
                 </div>
                 <div id="adminusertaken">
                 </div>
                 <br>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" value="<?php echo $row['email']?>">
+                    <input type="email" class="form-control" name="email" value="<?php echo $row['email'];?>">
                 </div>
                 <div id="adminemailtaken">
 
