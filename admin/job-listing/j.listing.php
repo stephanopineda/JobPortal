@@ -16,17 +16,15 @@
 <body>
 
     <?php
-        include('../navbar.php');
+        include('../admin-navbar.php');
     ?>
-
-    <h1>Job Listing</h1>
     <html lang="en">
 
 
     <div class="container py-5">
     <div class="row justify-content-center">
-    <h2 class="mb-4 pb-4" style="text-align: center;">Admin</h2>
-    <h2 class="mb-3 pb-3" style="text-align: left;">Job List</h2>
+    <h2 class="mb-4 pb-4" style="text-align: center;"></h2>
+    <h2 class="mb-3 pb-3 fw-bold" style="text-align: left;">Job List</h2>
 
     <div class="row mb-2 pb-2">
       <!-- <div class="col-auto mb-2"> -->
@@ -99,6 +97,11 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Actions</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;"></font>
           </font>
         </th>
@@ -119,8 +122,8 @@
               $row["jobCategory"] . "</td><td>" .
               $row["jobType"] . "</td><td>" .
               $row["workSetup"] . "</td><td>" .
-              $row["min"]."-". $row["max"].
-              "</td><td>";
+              $row["min"]." - ". $row["max"].
+              "</td>";
 
               echo "<td>";
               echo "<div class='btn-group'>";

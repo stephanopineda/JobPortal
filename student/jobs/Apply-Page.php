@@ -20,7 +20,7 @@
     $min =$row['min'];
     $max =$row['max'];
     $CompanyId =$row['CompanyId'];
-
+    $_SESSION['CompanyId'] = $CompanyId;
     $cresult = selectWhere($conn, 'company_list', '*', 'company_id',$CompanyId);
     $crow = mysqli_fetch_assoc($cresult);
 
@@ -58,7 +58,7 @@
         <div class="container-fluid">
           <form method="post">
             <input name="submit" type="submit" class="btn btn-primary" value="Apply">
-            <button type="cancel" class="btn btn-danger" href="../company-profiles.html">About Company</button>
+            <a type="button" class="btn btn-danger" href="companyProfile.php?company_id=<?php echo $CompanyId?>">About Company</a>
           </form>
 
           <?php            

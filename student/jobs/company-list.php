@@ -6,6 +6,10 @@
 
 $results_per_page = 20;
 
+$sql = "SELECT * FROM company_list";
+$all_company = $conn->query($sql);
+$number_of_result = mysqli_num_rows($all_company);
+$number_of_page = ceil($number_of_result / $results_per_page);
 
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -50,18 +54,18 @@ include '../navbar.php';
                 <h1 class="text-left">Company List</h1>
               </div>
               <div class="col" style="padding-left: 300px; padding-top: 15px;">
-
-                <form class="form-inline" action="company-list.php" method="GET">
-
-                  <div class="form-outline">
+              <form class="form-inline" action="company-list.php" method="GET">
+                <div class="input-group">
                     <input type="search" name="search" id="search" class="form-control" placeholder="Search here.." />
-                  </div>
-
-                  <div style="padding-left:10px;">
-                    <button type="submit" class="btn btn-danger">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
+                    <div class="input-group-append">
+                       <button type="submit" class="btn btn-danger">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        </button>
+                    </div>
+                </div>    
+                      
                 </form>
               </div>
             </div>
@@ -83,8 +87,7 @@ include '../navbar.php';
               $sql = "SELECT *FROM company_list WHERE 'name' LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
             }
             $all_company = mysqli_query($conn, $sql);
-            $number_of_result = mysqli_num_rows($all_company);
-            $number_of_page = ceil($number_of_result / $results_per_page);
+            
             // $row = mysqli_fetch_assoc($all_jobs);
             if($number_of_result > 0){
             while ($row = mysqli_fetch_assoc($all_company)) {
@@ -93,15 +96,24 @@ include '../navbar.php';
                 <div class="col-12">
                   <div class="card">
                     <div class="row card-body">
+                    <div class="col-3 position-relative">
+                    <?php
+                $logo = $row['logo'];
+
+                if ($logo == NULL) {
+                  
+                    echo "<img src='../../assets/img/UI/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                } else {
+                    echo "<img src='../../assets/img/employer-profile/$logo' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                }
+                ?>
+                      </div>
                       <div class="col-6">
                         <h5 class="card-title"><?php echo $row["name"] ?></h5>
                         <p class="card-text"><?php echo $row["email"] ?></p>
                         <p class="card-text"><?php echo $row["address"] ?></p>
-                        <a href="../company-profiles " class="btn btn-primary">See more</a>
-                      </div>
-                      <div class="col-6 position-relative">
-                        <img class="col-6 position-absolute top-0 start-50" src="../student7.png" alt="sans" />
-                      </div>
+                        <a href="CompanyProfile.php?company_id=<?php echo $row['company_id']?>" class="btn btn-primary">See more</a>
+                      </div>                      
                     </div>
                   </div>
                 </div>
