@@ -5,7 +5,7 @@ include('../../connections.php');
 include('../sessions.php');
 
 
-$results_per_page = 4;
+$results_per_page = 20;
 $sql = "SELECT * FROM job_list";
 $all_jobs = $conn->query($sql);
 $number_of_result = mysqli_num_rows($all_jobs);
