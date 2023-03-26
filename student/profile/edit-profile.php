@@ -230,7 +230,8 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         $p_img = $_FILES['p_img']['name'];
         $target = "../assets/img/student-profile/".basename($_FILES['p_img']['name']);
         $sql ="UPDATE student_profile 
-        SET p_img = '$p_img";
+        SET p_img = '$p_img'
+        WHERE id = $student_id";
 
 
         if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){
