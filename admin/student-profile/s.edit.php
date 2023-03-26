@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include('../../header-link.php'); ?>
+    <?php
+        include('../admin-navbar.php');
+    ?>
 
     <title>Edit Student Profile</title>
 </head>
