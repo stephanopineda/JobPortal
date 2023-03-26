@@ -38,7 +38,7 @@
         // Output the company profile data
         while($row = $result->fetch_assoc()) {
     ?>
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-15 ">
             <div class="container-fluid mr-8 pb-4 shadow rounded">
                 <div class="row">
@@ -55,10 +55,10 @@
                 ?>
                     </div>
                     <div class="col-12 mt-3">
-                        <p class="text-left fs-1" name="name"><?php echo $row["name"]; ?></p>
+                        <p class="text-left fs-1" name="name"><strong><?php echo $row["name"]; ?></strong></p>
                     </div>
                     <div class="col-12 mt-3">
-                        <p class="text-left fs-5">Employer Name</p>
+                        <p class="text-left fs-5"><b>Employer Name</b></p>
                         <h6 text-left fs-3><?php echo $row["employer_name"]; ?></h6>
                     </div>
                     <div class="col-12 mt-3">

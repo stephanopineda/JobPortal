@@ -18,12 +18,13 @@
     include '../navbar.php';  
 ?>
 
-<div class="container">
-    <br> <br>
+<div class="container mb-3 pb-3">
+ <div class="row mt-3">
+              </div>
   
-    <div class="row">
+    <div class="row mt-2">
       <div class="col-4 ">
-        <div class="container-fluid mt-5 mr-5 pb-4 shadow rounded">
+        <div class="container-fluid shadow rounded">
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
@@ -72,14 +73,9 @@
           </div>
         </div>
       </div>
-      <div class="col mt-5 ms-4">
+      <div class="col  ms-4">
         <div class="container-fluid">
-        <div class="row">
-                <div class="col d-flex flex-row-reverse mb-3">
-                  <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
-                </div>
-              </div>
-          <div class="row">
+                 <div class="row">
             <div class="col-12 pt-3 shadow rounded">
               <div class="container-fluid">
                 <div class="row">

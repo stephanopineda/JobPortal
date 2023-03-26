@@ -17,7 +17,7 @@
         <?php
             include('../navbar.php');
         ?>
-        
+
 <div class="container pt-5">
     <div class="row">
     <div class="col-sm">
@@ -45,7 +45,6 @@
    <?php
         $result = selectWHERE($conn,"job_list","*", "CompanyId", $_SESSION['company_id']);
         $resultCheck = mysqli_num_rows($result);
-    
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>
@@ -58,12 +57,29 @@
             <td>" . $row['min'] . " - ". $row['max']. "</td>
             <td>
                 <a class='btn btn-primary' href='edit-jobs.php?jobID=" . $row['jobID'] . "'>Edit</a>
-                 <a class='btn btn-danger' href='delete-jobs.php?jobID=" . $row['jobID'] . "'>Delete</a>
+                <a  data-toggle='modal' data-target='#exampleModalCenter' onclick class='btn btn-danger' >Delete</a> <!--<a class='btn btn-danger' href='delete-jobs.php?jobID=" . $row['jobID'] . "'>Delete</a>-->
+                 <div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+  <div class='modal-dialog modal-dialog-centered' role='document'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title' id='exampleModalLongTitle'>Job Delete Confirmation</h5>
+      </div>
+      <div class='modal-body'>
+        Do you really want to delete this Job?
+      </div>
+      <div class='modal-footer'>
+        <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+        <button href='delete-jobs.php?jobID=". $row['jobID']. "' type='button' class='btn btn-primary'>Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
             </td>
             </tr>";
 
                         }
                     }
+                    
                 ?>
   </tbody>
 </table>
