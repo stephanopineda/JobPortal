@@ -65,7 +65,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" name = "updataImg">Save changes</button>
+                                    <button type="submit" class="btn btn-primary" name = "updataImg">Save changes</button>
                                 </div>
                                 </form>
                             </div>
@@ -211,6 +211,12 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 <div class="col form-group">
                     <label for="sex" class="fw-bold">Sex</label>
                     <input type="text" class="form-control" name= "sex" id="sex" value= "<?php echo $row['sex']; ?>">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col form-group">
+                    <label for="sex" class="fw-bold">Bio</label>
+                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40" value= "<?php echo $row['bio']; ?>">
                 </div>
             </div>
             <div class="row mt-5">
