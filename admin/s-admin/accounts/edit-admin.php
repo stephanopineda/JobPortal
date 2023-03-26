@@ -95,7 +95,7 @@
                     WHERE id = '$adminID'";
                     if (mysqli_query($conn, $sql)) {
                         echo "<script type='text/javascript'>alert('Admin Updated Successfully!') </script>";
-                        header("location:admin-accounts.php");
+                        echo "<script type='text/javascript'>window.location.href = 'admin-accounts.php';</script>";
         
                     } else {
                         echo "Error updating record: " . mysqli_error($conn);

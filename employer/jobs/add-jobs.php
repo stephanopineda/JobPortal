@@ -112,6 +112,14 @@
             $dataquery = "job_list(jobTitle, jobSummary, jobQuali, jobCategory, jobType, workSetup, min, max, companyID)";
             $valuequery="('$jobTitle','$jobSummary','$jobQuali','$jobCategory','$jobType', '$workSetup', '$min' , '$max', $company_id)";
             insertData($conn, $dataquery, $valuequery);
+
+            $company_id = $_SESSION['company_id'];
+            $actions = "Added a job: $jobTitle";
+            $dataquery = "admin_logs(company_id, actions)";
+            $valuequery="('$company_id', '$actions')";
+
+            $sql = "INSERT INTO $dataquery VALUES $valuequery";
+            mysqli_query($conn, $sql);
             
             echo '<script>
             window.location.href = "index.php";
