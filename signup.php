@@ -11,87 +11,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'header-link.php'; ?>
     <link rel="stylesheet" href="assets/CSS/styles.css">
-    <link rel="stylesheet" href="assets/CSS/login-bg.css">
     <title>Sign Up</title>
 </head>
-<body>
 
-<section class="vh-100 d-flex justify-content-center align-items-center">
-      <div class="container py-5 pt-1 h-100 ">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10 ">
-            <div class="card" style="border-radius: 1.5rem;">
-              <div class="row g-0">
-                <div class="col-md-12 col-lg-12 px-5 d-flex align-items-center">
-                  <div class="card-body p-4 text-black">
+<body style="display: flex;">
 
-                      <form method="POST" enctype="multipart/form-data" onsubmit="">
-                        <h2>Sign Up</h2>
-                        <br>
-                        <div class="form-group">
-                          <label class="form-label" for="username">Username </label>
-                          <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
-                        </div>
-                        <div id="usernameerrormsg">
-
-
-                        </div>
-                        <br>
-
-                        <div class="row">
-                          <div class="col">
-                            <label class="form-label mb-2 fw-bold" for="password">Password</label>
-                            <input  class="form-control" type="password" name="password" placeholder="Enter password" >
-                          </div>
-
-                          <div class="col">
-                            <label  class="form-label mb-2 fw-bold" for="Cpassword">Confirm Password</label>
-                            <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <div id="passworderrormsg">
-
-                            </div>
-                          </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                    <label class="form-label mb-2 fw-bold" for="email">Email</label>
-                    <br>
-                    <input class="form-control" type="email" name="email" placeholder="Enter email">
-                    
-                    </div>
-                    <div id="emailerrormsg">
-
-                    </div><br>
-                        <label for="user_type" class="form-label mb-2 fw-bold">Role</label>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
-                          <label class="form-check-label" for="student">
-                          Student
-                        </div>  
-                          <br>
-                        <div class="form-check">  
-                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value = "Employer">
-                          <label class="form-check-label" for="employer">
-                          Employer
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary" name="register">Sign Up</button>
-                      </form>
-                      <br>  
-                      <p>Already have an account?<a href="login.php"> Log In</a></p>
+<section class="signup_container">
+      <div class="signup_bg">
+        <div class="signup_header">
+          <img src="assets/img/jobportal_logo3.png" class="header_icon"/>
         </div>
+
+        <form class="signup_form" method="POST" enctype="multipart/form-data" onsubmit="">
+          <span class="header_login">Sign Up</span>
+          <label class="signup_label" for="username">Username </label>
+          <input class="signup_input" type="text" name="username" placeholder="Enter username" required="">
+
+          <div class="password_div">
+            <div class="password_col">
+              <label class="signup_label" for="password">Password</label>
+              <input  class="signup_input3" type="password" name="password" placeholder="Enter password" >
+            </div>
+            <div class="password_col">
+              <label  class="signup_label" for="Cpassword">Confirm Password</label>
+              <input  class="signup_input3" type="password" name="password2" placeholder="Confirm password" >
+            </div>
+        </div>
+
+          <label class="signup_label" for="email">Email</label>
+          <input class="signup_input2" type="email" name="email" placeholder="Enter email">
+          <label for="user_type" class="signup_label">Role</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
+            <label class="signup_label" for="student">Student
+          </div>  
+          <div class="form-check">  
+            <input class="form-check-input" type="radio" name="usertype" id="usertype" value = "Employer">
+            <label class="signup_label" for="employer">Employer
+          </div>
+          <button type="submit" class="signup_button" name="register">Sign Up</button>
+          <p class="footer_text">Already have an account?<a href="login.php"> Log In</a></p>
+        </form>
+
+        <div class="signup_footer">
+          <span class="footer_text"> Job Portal Solutions 2023 Grp. 2 & 3 <br> All Rights Reserved </span>
+        </div>
+
       </div>
-    </div>
 
-  </div>
-
-
-
-        <?php
+      <?php
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
@@ -157,13 +125,6 @@
          
         ?>
 
-    </form>
-
-  </div>
-</div>
-</div>
-</div>
-</div>
 </section>
 
 
