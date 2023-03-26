@@ -33,7 +33,7 @@
             </div>
 
             
-            <form action="c.edit-conn.php" method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
                     <?php
                     $company_id = $_SESSION['company_id'];
                     $sql = "SELECT * FROM company_list WHERE company_id = '$company_id'";
@@ -107,6 +107,8 @@
                     <a href="index.php" class="btn btn-danger">Cancel</a> 
                     </div>
             </form>
+
+                    <?php include 'c.edit-conn.php'; ?>
                 </div>
             </div> 
             </div>
