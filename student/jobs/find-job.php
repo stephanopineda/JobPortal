@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <?php
- include('../../connections.php');
- include('../sessions.php');
+include('../../connections.php');
+include('../sessions.php');
 
 
 $results_per_page = 4;
@@ -25,41 +25,42 @@ $page_first_result = ($page - 1) * $results_per_page;
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include('../../header-link.php'); ?>
-    <link rel="stylesheet" href="../../assets/CSS/styles.css">
-    <title>Find Job</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php include('../../header-link.php'); ?>
+  <link rel="stylesheet" href="../../assets/CSS/styles.css">
+  <title>Find Job</title>
 </head>
 
 <body>
   <?php
 
-      include '../navbar.php';
+  include '../navbar.php';
   ?>
   <div class="container mt-5 div-margins">
     <div class="row">
       <div class="col-4 ml-auto">
-        <p class="header-text">Latest Job post</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.</p>
+        <p class="header-text">Latest Job posts</p>
+        <p>Find the latest job posts here. Seek the job that you desire. Good luck job seekers!</p>
       </div>
       <div class="col-2">
       </div>
       <div class="col-6 my-auto">
-        <div class="input-group pr-auto">
-          <form action="find-job.php" method="GET">
-            <div class="form-outline">
-              <input type="search" name="search" id="search" class="form-control" placeholder="Search here.." />
-            </div>
-            <button type="submit" class="btn btn-danger">
-              <i class="bi bi-search"></i>
+        <div class="input-group">
+          <div class="form-outline" style="display: flex; flex-direction:row; gap: .2rem">
+            <input type="search" id="form1" class="form-control" placeholder="search here..." />
+            <label class="form-label" for="form1"></label>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-search">Search</i>
             </button>
-          </form>
+          </div>
+
         </div>
+        </form>
       </div>
     </div>
+  </div>
   </div>
   <div class="container">
     <div class="row">
@@ -85,28 +86,37 @@ $page_first_result = ($page - 1) * $results_per_page;
       $all_jobs = $conn->query($sql);
 
       // $row = mysqli_fetch_assoc($all_jobs);
-      if($number_of_result > 0){
+      if ($number_of_result > 0) {
         while ($row = mysqli_fetch_assoc($all_jobs)) {
-        ?>
+          ?>
           <div class="col-3 mb-5">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title"><?php echo $row["jobTitle"]; ?> </h5>
-                <p class="skills"> <b> Job Summary: </b> <?php echo $row["jobSummary"]; ?> </p>
-                <p class="job_type"> <b> Job Type: </b> <?php echo $row["jobType"]; ?> </p>
-                <p class="salary"> <b> Salary: </b> <?php echo $row["min"]."-".$row["max"]; ?> </p>
-                <p class="positions"> <b> Job Category: </b> <?php echo $row["jobCategory"]; ?> </p>
+                <h5 class="card-title">
+                  <?php echo $row["jobTitle"]; ?>
+                </h5>
+                <p class="skills"> <b> Job Summary: </b>
+                  <?php echo $row["jobSummary"]; ?>
+                </p>
+                <p class="job_type"> <b> Job Type: </b>
+                  <?php echo $row["jobType"]; ?>
+                </p>
+                <p class="salary"> <b> Salary: </b>
+                  <?php echo $row["min"] . "-" . $row["max"]; ?>
+                </p>
+                <p class="positions"> <b> Job Category: </b>
+                  <?php echo $row["jobCategory"]; ?>
+                </p>
                 <a href="Apply-Page.php?jobID=<?php echo $row['jobID']; ?>" class="btn btn-primary">Apply Now</a>
-                
+
               </div>
             </div>
           </div>
 
-        <?php
+          <?php
         }
-      }
-      else{
-        echo'
+      } else {
+        echo '
           <div class = "col-12 text-center">
           <p class = "fs-1 bold"> No Entries Found </p>
           </div>';
@@ -154,7 +164,7 @@ $page_first_result = ($page - 1) * $results_per_page;
 
     </div>
   </div>
- 
+
 
 </body>
 
