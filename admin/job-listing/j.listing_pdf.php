@@ -15,7 +15,8 @@
                           <td>'.$row["jobCategory"].'</td> 
                           <td>'.$row["jobType"].'</td> 
                           <td>'.$row["workSetup"].'</td> 
-                          <td>'.$row["jobSalary"].'</td> 
+                          <td>'.$row["min"].'</td> 
+                          <td>'.$row["max"].'</td> 
                      </tr>  
                           ';  
       }  
@@ -50,7 +51,8 @@
                 <th align= "center" width="10%"><b>Job Category</b></th>
                 <th align= "center" width="10%"><b>Job Type</b></th>
                 <th align= "center" width="10%"><b>Work Setup</b></th>
-                <th align= "center" width="15%"><b>Job Salary</b></th>   
+                <th align= "center" width="8%"><b>Job Salary (Min)</b></th>   
+                <th align= "center" width="8%"><b>Job Salary (Max)</b></th>   
            </tr>  
       ';  
       $content .= fetch_data();  
