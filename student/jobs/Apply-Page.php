@@ -58,7 +58,7 @@
         <div class="container-fluid">
           <form method="post">
             <input name="submit" type="submit" class="btn btn-primary" value="Apply">
-            <a type="button" class="btn btn-danger" href="companyProfile.php">About Company</a>
+            <a type="button" class="btn btn-danger" href="companyProfile.php?company_id=<?php echo $CompanyId?>">About Company</a>
           </form>
 
           <?php            
