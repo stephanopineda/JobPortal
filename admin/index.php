@@ -43,6 +43,7 @@
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                             $_SESSION['username']=$username;
+                            $_SESSION['admin_id']=$row['id'];
                             $_SESSION['admin_type']=$row['admin_type'];
                             
                             if($row['admin_type']=='Superadmin'){

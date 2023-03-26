@@ -35,13 +35,13 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 <div class="col d-flex flex-row-reverse">
                 <?php
 
-                    $logo = $row['p_img'];
+                    $p_img = $row['p_img'];
 
                     if ($logo == null) { ?>
 
                         <img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
                     <?php } else {
-                        echo "<img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                        echo "<img src='../../assets/img/student-profile/$p_img' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
                     }
                 ?>
             </div>
@@ -53,7 +53,9 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                 <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
+
                             <div class="modal-content">
+                                <form action="" method="POST">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Picture</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -65,12 +67,13 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary" name = "updataImg">Save changes</button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <form action="POST">
+        <form method="POST">
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="name" class="fw-bold">First Name</label>
@@ -227,7 +230,8 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         $p_img = $_FILES['p_img']['name'];
         $target = "../assets/img/student-profile/".basename($_FILES['p_img']['name']);
         $sql ="UPDATE student_profile 
-        SET p_img = '$p_img";
+        SET p_img = '$p_img'
+        WHERE id = $student_id";
 
 
         if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){
@@ -261,40 +265,19 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         $bio = $_POST['bio'];
 
         
-
-        $tablename="users";
-        $columnquery="*";
-
-        $result = selectWhere($conn, $tablename, $columnquery, 'email', $email);
-
-
-        if ($result->num_rows > 0) {
-
-            echo "<script>
-            document.getElementById('editEmail').innerHTML = 'Email Taken.';
-          </script>";
-        }
-
-        else {
             $sql ="UPDATE student_profile 
                 SET firstname='$fname', lastname='$lname', email='$email', course='$course', contact_no='$contact_no', address='$address', birthdate='$birthdate', sex='$sex', bio='$bio' 
                 WHERE id='$student_id'";
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
-                header("location:student-profile.php");
-                echo "<script> </script>";
+                echo '<script>
+                        window.location.href = "student-profile.php";
+                      </script>';
 
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
-            }
-        }
-        
-            
-
-
-
-        
+            }       
 }
 ?>
     </body>

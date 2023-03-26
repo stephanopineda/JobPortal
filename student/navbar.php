@@ -4,7 +4,7 @@
 <a href="../profile/student-profile.php">User Profile</a>
 <a href="../logout.php">Logout</a> -->
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #F6C724, #7C2424);">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: linear-gradient(to left, #F6C724, #7C2424);">
     <div class="container-fluid">
       <a class="navbar-brand logo" href="../../index.php">
         <img src="../../assets/img/jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
@@ -54,7 +54,7 @@
               
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a class="dropdown-item" href="../profile/student-profile.php">Profile</a></li>
-              <li><a class="dropdown-item" href="#">My Applications</a></li>
+              <li><a class="dropdown-item" href="../jobs/my-applications.php">My Applications</a></li>
               <li><a class="dropdown-item" href="../../logout.php">Logout</a></li>
             </ul>
           </div>
