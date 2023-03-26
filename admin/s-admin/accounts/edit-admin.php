@@ -88,46 +88,19 @@
                 $tablename="admin_accounts";
                 $columnquery="*";
                 
-                $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
-
-                $nresult = selectWhere($conn, $tablename, $columnquery, 'name', $name);
-
-                $eresult = selectWhere($conn, $tablename, $columnquery, 'email', $email);
+                
         
-        
-                if ($eresult->num_rows > 0) {
-        
-                    echo "<script>
-                    document.getElementById('adminemailtaken').innerHTML = 'Email Taken.';
-                  </script>";
-                }
-
-                if ($nresult->num_rows > 0) {
-        
-                    echo "<script>
-                    document.getElementById('adminnametaken').innerHTML = 'Name Taken.';
-                  </script>";
-                }
-
-                if ($result->num_rows > 0) {
-        
-                    echo "<script>
-                    document.getElementById('adminusertaken').innerHTML = 'Username Taken.';
-                  </script>";
-                }
-        
-                if($result->num_rows <= 0 && $eresult->num_rows <= 0 && $nresult->num_rows <= 0) {
-                    $sql ="UPDATE admin_accounts
-                        SET username='$username', name='$name', email='$email', admin_type='$admintype'
-                        WHERE id = '$adminID'";
+                $sql ="UPDATE admin_accounts
+                    SET username='$username', name='$name', email='$email', admin_type='$admintype'
+                    WHERE id = '$adminID'";
                     if (mysqli_query($conn, $sql)) {
                         echo "<script type='text/javascript'>alert('Admin Updated Successfully!') </script>";
-                        header("location:admin-accounts.php");
+                        echo "<script type='text/javascript'>window.location.href = 'admin-accounts.php';</script>";
         
                     } else {
                         echo "Error updating record: " . mysqli_error($conn);
                     }
-                }
+                
             }
         ?>
 
