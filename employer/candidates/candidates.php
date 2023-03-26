@@ -121,8 +121,8 @@
                 <div class='col-12 col-sm-6 col-md-4 col-lg-3'>
                 <div class='candidate'>
                   <div class='picture'>
-                    <!-- <img class='img-fluid' src='../../assets/img/student-profile/<?php echo $row2['p_img'];?>' alt='student pic'> -->
-                    <img class='img-fluid' src='' alt='student pic'>
+                    <img class='img-fluid' src='../../assets/img/student-profile/<?php echo $row2['p_img'];?>' alt='student pic'>
+                    <img class='img-fluid' src='' alt=''>
                   </div>
                   <div class='candidate-content'>
                     <h5 class='name'><?php echo $row2['firstname']." ".$row2['lastname'];?></h5>
