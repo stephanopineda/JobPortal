@@ -6,7 +6,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #F6C724, #7C2424);">
     <div class="container-fluid">
-      <a class="navbar-brand logo">
+      <a class="navbar-brand logo" href="../../index.php">
         <img src="../../assets/img/jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
 
       </a>
