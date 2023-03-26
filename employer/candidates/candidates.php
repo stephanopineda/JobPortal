@@ -121,7 +121,7 @@
                   <div class='candidate-content'>
                     <h5 class='name'>Student Name</h5>
                     <h6 class='admin_index_formtitle'>Web Developer</h6>
-                    <p class='button'><a href='student-profile.php?student_id=1'>View Profile</a></p>
+                    <p class='button'><a href='student-profile.php?student_id=<?php echo $row['studentID']; ?>'>View Profile</a></p>
                   </div>
                 </div>
               </div>
