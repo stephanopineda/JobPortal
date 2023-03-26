@@ -15,9 +15,13 @@
 </head>
 
 <body style="background-image: url('');">
-
+  
   <div id="PostJobCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
     <form action= j.listing_edit_conn.php method= "POST">
+    <div class="col-md-12 text-center">
+      <h1> Edit Job Listing </h1>
+    </div> <br>
+
         <?php
             
             $jobID = $_GET['jobID'];
@@ -107,14 +111,13 @@
         -
         <div class="col">
           <input type="text" name= "max" class="form-control" value= "<?php echo $row['max']; ?>">
-    
-        </div>
+        </div> <br>
       </div>
       <br>
         <?php } ?>
       
       <br>
     
-      <button type="submit" class="btn btn-primary" name="updateJob">Edit</button>
-      <a href="j.listing.php" class="btn btn-primary">Cancel</a>
+      <button type="submit" class="btn btn-primary" name="updateJob">Update</button>
+      <a href="j.listing.php" class="btn btn-danger">Cancel</a>
     </form>
