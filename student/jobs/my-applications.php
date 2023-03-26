@@ -66,7 +66,7 @@
                                           echo "<td>" . $row2['jobTitle'] . "</td>";
                                           echo "<td>" . $row3['name'] . "</td>";
                                           echo "<td>" . $row['status'] . "</td>";
-                                          echo "<td> <button class='btn btn-danger btn-sm'> Cancel </button></td>";
+                                          echo "<td> <a class='btn btn-danger' href=''>Cancel</button></td>";
                                       }
                                   }
                               }
