@@ -112,7 +112,7 @@
               <div class="candidate-content">
                 <h5 class="name">Candidate Name</h5>
                 <h6 class="title">Web Developer</h6>
-                <p class="view"><a href="url">View Profile</a></p>
+                <p class="view"><a href="student-profile.php?student_id=1">View Profile</a></p>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@
       </div>
 
     <?php
-            include('../navbar.php');
+            //include('../footer.php');
         ?>
     </body>
 </html>
