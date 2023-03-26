@@ -31,4 +31,10 @@
         $result = $conn->query($sql);
         return $result;
     }
+    function sortData($conn, $tablename, $columnquery, $orderBy){
+        $sql = "SELECT $columnquery FROM $tablename
+        ORDER BY $orderBy";
+        $result = $conn->query($sql);
+        return $result;
+    }
 }

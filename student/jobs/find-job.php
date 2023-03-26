@@ -47,11 +47,11 @@ $page_first_result = ($page - 1) * $results_per_page;
       <div class="col-2">
       </div>
       <div class="col-6 my-auto">
+        <form action="" method = "GET">
         <div class="input-group">
           <div class="form-outline" style="display: flex; flex-direction:row; gap: .2rem">
-            <input type="search" id="form1" class="form-control" placeholder="search here..." />
-            <label class="form-label" for="form1"></label>
-            <button type="button" class="btn btn-primary">
+            <input type="search" name="search" id="search" class="form-control" placeholder="search here..." />
+            <button type="submit" class="btn btn-primary">
               <i class="fas fa-search">Search</i>
             </button>
           </div>
@@ -68,11 +68,11 @@ $page_first_result = ($page - 1) * $results_per_page;
       <?php
 
       if (isset($_GET['search']) && !empty($_GET['search'])) {
-        // Perform the search using $_GET['q']
+
         $search = $_GET['search'];
-        // ...
+
       } else {
-        // Display an error message or provide a default value
+
         $search = 'default value';
         // ...
       }
@@ -80,7 +80,7 @@ $page_first_result = ($page - 1) * $results_per_page;
       if ($search == 'default value') {
         $sql = "SELECT *FROM job_list LIMIT " . $page_first_result . ',' . $results_per_page;
       } else {
-        $sql = "SELECT *FROM job_list WHERE jobTitle LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
+        $sql = "SELECT * FROM job_list WHERE CONCAT(jobTitle, jobSummary, jobType, jobCategory) LIKE '%$search%' ORDER BY jobTitle, jobSummary, jobType, jobCategory DESC LIMIT " . $page_first_result . ',' . $results_per_page;
       }
       
       $all_jobs = $conn->query($sql);
