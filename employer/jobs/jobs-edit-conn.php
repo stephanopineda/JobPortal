@@ -15,6 +15,14 @@ if(isset($_POST['submit'])) {
 
     $sql = "UPDATE job_list SET jobTitle = '$jobTitle', jobSummary = '$jobSummary', jobQuali = '$jobQuali', jobCategory = '$jobCategory', workSetup = '$workSetup', min = '$min', max = '$max' WHERE jobID = '$jobID'";
 
+    $company_id = $_SESSION['company_id'];
+    $actions = "Edited a job: $jobTitle";
+    $dataquery = "admin_logs(company_id, actions)";
+    $valuequery="('$company_id', '$actions')";
+
+    $sql = "INSERT INTO $dataquery VALUES $valuequery";
+    mysqli_query($conn, $sql);
+
 
     if (mysqli_query($conn, $sql)) {
        
