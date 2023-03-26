@@ -25,7 +25,7 @@
           <ul class="navbar-nav mx-auto ">
             <li class="nav-item mx-3">
 
-                <a class="nav-link fs-5 fw-bold " href="../dashboard/index.php">Student Profile</a>
+                <a class="nav-link fs-5 fw-bold " href="../dashboard/index.php">Home</a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link fs-5 fw-bold " href="../profile/index.php">Application Listing</a>

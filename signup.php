@@ -41,12 +41,12 @@
                         <div class="row">
                           <div class="col">
                             <label class="form-label mb-2 fw-bold" for="password">Password</label>
-                            <input  class="form-control" type="password" name="password" placeholder="Enter password" >
+                            <input  class="form-control" type="password" name="password" placeholder="Enter password" required>
                           </div>
 
                           <div class="col">
                             <label  class="form-label mb-2 fw-bold" for="Cpassword">Confirm Password</label>
-                            <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
+                            <input  class="form-control" type="password" name="password2" placeholder="Confirm password" required >
                           </div>
                         </div>
                         <div class="row">
@@ -60,7 +60,7 @@
                         <div class="form-group">
                     <label class="form-label mb-2 fw-bold" for="email">Email</label>
                     <br>
-                    <input class="form-control" type="email" name="email" placeholder="Enter email">
+                    <input class="form-control" type="email" name="email" placeholder="Enter email" required>
                     
                     </div>
                     <div id="emailerrormsg">
@@ -68,11 +68,11 @@
                     </div><br>
                         <label for="user_type" class="form-label mb-2 fw-bold">Role</label>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
+                          <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student" required>
                           <label class="form-check-label" for="student">
                           Student
                         </div>  
-                          <br>
+                        <br>
                         <div class="form-check">  
                           <input class="form-check-input" type="radio" name="usertype" id="usertype" value = "Employer">
                           <label class="form-check-label" for="employer">
