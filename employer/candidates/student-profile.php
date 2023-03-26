@@ -78,12 +78,7 @@
       </div>
       <div class="col mt-5 ms-4">
         <div class="container-fluid">
-        <div class="row">
-                <div class="col d-flex flex-row-reverse">
-                  <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
-                </div>
-              </div>
-          <div class="row">
+                  <div class="row">
             <div class="col-12 pt-3 shadow rounded">
               <div class="container-fluid">
                 <div class="row">

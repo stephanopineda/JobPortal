@@ -54,12 +54,34 @@
         <p class="mt-3"><strong> Job Qualifications: </strong><?php echo $jobQuali; ?> </p>       
         <p class="mt-3"><strong> Job Category: </strong><?php echo $jobCategory; ?> </p>    
         <p class="mt-3"><strong> Job Summary </strong> <?php echo $jobSummary; ?> </p> 
+       
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
         
-        <div class="container-fluid">
-          <form method="post">
+      </div>
+      <div class="modal-body">
+       Confirm Job Application to this company.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form method="post">
             <input name="submit" type="submit" class="btn btn-primary" value="Apply">
+              </form>
+      </div>
+    </div>
+  </div>
+</div>
+        
+         <div class="container-fluid">
+           <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Apply</button>
             <a type="button" class="btn btn-danger" href="companyProfile.php?company_id=<?php echo $CompanyId?>">About Company</a>
-          </form>
+       
 
           <?php            
             if(isset($_POST['submit'])){
