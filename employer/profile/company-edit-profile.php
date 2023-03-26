@@ -49,32 +49,32 @@
                     <div>
                     <form  action="c.edit-conn.php" method="post" enctype="multipart/form-data">
                     <label class="form-label fw-bold" for="name">Company Name: </label><br>
-                        <input type="type" name="name" placeholder="<?php echo $row['name']?>">
+                        <input type="type" name="name" placeholder="<?php echo $row['name']?>" value="<?php echo $row['name']?>">
                     </div>
                     <div >
                     <label class="form-label fw-bold" for="employer_name">Employer Name: </label><br>
-                        <input type="type" name="employer_name" placeholder="<?php echo $row['employer_name']?>">
+                        <input type="type" name="employer_name" placeholder="<?php echo $row['employer_name']?>" value="<?php echo $row['employer_name']?>">
                     </div>
                     <div >
                     <label class="form-label fw-bold" for="address">Email: </label><br>
-                        <input type="type" name="email" placeholder="<?php echo $row['address']?>">
+                        <input type="type" name="email" placeholder="<?php echo $row['email']?>" value="<?php echo $row['email']?>">
                     </div>
                     <div >
                     <label class="form-label fw-bold" for="address">Address: </label><br>
-                        <input type="type" name="address" placeholder="<?php echo $row['address']?>">
+                        <input type="type" name="address" placeholder="<?php echo $row['address']?>" value="<?php echo $row['address']?>">
                     </div>
                     <div >
                     <label class="form-label fw-bold" for="Contact Number:">Contact Number: </label><br>
-                        <input type="type" name="contact_no" placeholder="<?php echo $row['contact_no']?>">
+                        <input type="type" name="contact_no" placeholder="<?php echo $row['contact_no']?>" value="<?php echo $row['contact_no']?>">
                     </div>
                     <div >
                     <label class="form-label fw-bold" for="size">Company Size: </label><br>
-                        <input type="type" name="size" placeholder="<?php echo $row['size']?>">
+                        <input type="type" name="size" placeholder="<?php echo $row['size']?>" value="<?php echo $row['size']?>">
                     </div>
                     
                     <div >
                     <label class="form-label fw-bold" for="name">Overview: </label><br>
-                        <input type="type" name="overview" placeholder="<?php echo $row['overview']?>">
+                        <input type="type" name="overview" placeholder="<?php echo $row['overview']?>" value="<?php echo $row['overview']?>">
                     </div>
                     
                     </div>
