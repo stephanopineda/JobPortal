@@ -37,7 +37,9 @@
     <title>Apply Now</title>
 </head>
 <body>
- 
+ <?php
+ include ('../navbar.php');
+ ?>
 
   
   <div class="container-xl">
@@ -61,11 +63,11 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Ready to Apply now?</h5>
         
       </div>
       <div class="modal-body">
-       Confirm Job Application to this company.
+       Are you sure you want to apply to this company?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -89,7 +91,9 @@
               $dataquery = "job_applications (jobID, studentID, status)";
               $valuequery = "($jobID, $student_id, 'Pending')";
               insertData($conn, $dataquery, $valuequery);
-              header("Location:my-applications.php");
+              echo '<script>
+              window.location.href = "../jobs/my-applications.php";
+            </script>';
             }
           ?>
 
