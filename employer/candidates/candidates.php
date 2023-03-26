@@ -132,7 +132,7 @@
                     ?>'>View Profile</a></p>
                   </div>
                 </div>
-              </div>";
+              </div>
               <?php
               }
 
