@@ -89,7 +89,7 @@
               $dataquery = "job_applications (jobID, studentID, status)";
               $valuequery = "($jobID, $student_id, 'Pending')";
               insertData($conn, $dataquery, $valuequery);
-              header("Location: find-job.php");
+              header("Location: /Job Portal/JobPortal/student/jobs/my-applications.php");
             }
           ?>
 
