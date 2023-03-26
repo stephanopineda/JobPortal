@@ -106,20 +106,29 @@
         <div class="row">
 
         <?php
-
             $sql = "SELECT * FROM job_applications";
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_assoc($result)){
+                
+                $student_id = $row['studentID'];
+                $sql = "SELECT * FROM student_profile WHERE id = '$student_id'";
+                $result2 = mysqli_query($conn, $sql);
+                $row2 = mysqli_fetch_assoc($result2);
+
+                $name = $row2['firstname'] . " " . $row2['lastname'];
+                $bio = $row2['bio'];
+                $img = $row2['p_img'];
+
                 echo " <div class='col-12 col-sm-6 col-md-4 col-lg-3'>
                 <div class='candidate'>
                   <div class='picture'>
-                    <img class='img-fluid' src='' alt='student pic'>
+                    <img class='img-fluid' src='../../assets/img/student-profile/$img' alt='student pic'>
                   </div>
                   <div class='candidate-content'>
-                    <h5 class='name'>Candidate Name</h5>
-                    <h6 class='admin_index_formtitle'>Web Developer</h6>
+                    <h5 class='name'>$name</h5>
+                    <h6 class='admin_index_formtitle'>$bio</h6>
                     <p class='view'><a href='url'>View Profile</a></p>
                   </div>
                 </div>
