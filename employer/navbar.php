@@ -34,7 +34,7 @@
                 <a class="nav-link fs-5 fw-bold" href="../jobs/index.php">Jobs</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold" href="#">Candidates</a>
+                <a class="nav-link fs-5 fw-bold" href="../candidates/candidates.php">Candidates</a>
               </li>
             </ul>
         </ul>
