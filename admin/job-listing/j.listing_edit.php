@@ -56,7 +56,7 @@
 
       <div class="form-group">
         <label for="jobCategory" class= "form-label mb-2 fw-bold">Job Category</label> <br> <br>
-        <select id="jobCategory" name="jobCategory" value= "<?php echo $row['jobCategory']; ?>">
+        <select id="jobCategory" class="form-control" name="jobCategory" value= "<?php echo $row['jobCategory']; ?>">
             <option value="none"> Choose Job Category  </option>
             <option value="business"> Business and Financial Services  </option>
             <option value="construction"> Construction  </option>
@@ -76,7 +76,7 @@
 
       <div class="form-group">
         <label for="jobType" class= "form-label mb-2 fw-bold">Job Type</label> <br> <br>
-        <select id="jobType" name="jobType" value= "<?php echo $row['jobType']; ?>">
+        <select id="jobType" class="form-control" name="jobType" value= "<?php echo $row['jobType']; ?>">
               <?php
           if($row['jobType'] == "Full-Time"){
             echo "<option value='Full-Time' selected> Full-Time </option>";
@@ -92,7 +92,7 @@
 
       <div class="form-group">
         <label for="workSetup" class= "form-label mb-2 fw-bold">Work Setup</label> <br> <br>
-        <select id="workSetup" name="workSetup" value= "<?php echo $row['workSetup']; ?>">
+        <select id="workSetup" class="form-control" name="workSetup" value= "<?php echo $row['workSetup']; ?>">
         <?php
           if($row['workSetup'] == "Onsite"){
             echo "<option value='Onsite' selected> On-site </option>";
@@ -105,7 +105,7 @@
         </select>
       </div>
       <br>
-      <div class="row">
+      <div class="form-group">
         <label for="exampleInputEmail1salary" class= "form-label mb-2 fw-bold">Salary</label>
           
         <div class="col">
