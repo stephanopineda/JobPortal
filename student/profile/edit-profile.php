@@ -35,13 +35,13 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 <div class="col d-flex flex-row-reverse">
                 <?php
 
-                    $logo = $row['p_img'];
+                    $p_img = $row['p_img'];
 
                     if ($logo == null) { ?>
 
                         <img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
                     <?php } else {
-                        echo "<img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
+                        echo "<img src='../../assets/img/student-profile/$p_img' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
                     }
                 ?>
             </div>
@@ -53,7 +53,9 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                 <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
+
                             <div class="modal-content">
+                                <form action="" method="POST">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Picture</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -65,6 +67,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary" name = "updataImg">Save changes</button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
