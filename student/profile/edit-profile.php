@@ -61,7 +61,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <input type="file">
+                                    <input type="file" name="p_img" accept="image/png, image/jpg, image/jpeg, image/PNG">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
