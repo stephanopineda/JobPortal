@@ -96,3 +96,12 @@
         FOREIGN KEY (`studentID`) REFERENCES `student_profile`(`id`)
       )";
     createTable($conn, $tablequery);
+
+    // Sadmin Logs Table
+    $tablequery = "`s_admin_logs` (
+      `id` int(11) NOT NULL,
+      `admin_id` int(11) NOT NULL,
+      `admin_type` enum('Superadmin','Admin') NOT NULL,
+      `actions` varchar(255) NOT NULL
+    )";
+  createTable($conn, $tablequery);
