@@ -97,6 +97,11 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Actions</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;"></font>
           </font>
         </th>
@@ -118,7 +123,7 @@
               $row["jobType"] . "</td><td>" .
               $row["workSetup"] . "</td><td>" .
               $row["min"]." - ". $row["max"].
-              "</td><td>";
+              "</td>";
 
               echo "<td>";
               echo "<div class='btn-group'>";
