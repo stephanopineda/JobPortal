@@ -73,7 +73,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                     </div>
                 </div>
             </div>
-        <form action="POST">
+        <form method="POST">
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="name" class="fw-bold">First Name</label>
@@ -265,40 +265,19 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         $bio = $_POST['bio'];
 
         
-
-        $tablename="users";
-        $columnquery="*";
-
-        $result = selectWhere($conn, $tablename, $columnquery, 'email', $email);
-
-
-        if ($result->num_rows > 0) {
-
-            echo "<script>
-            document.getElementById('editEmail').innerHTML = 'Email Taken.';
-          </script>";
-        }
-
-        else {
             $sql ="UPDATE student_profile 
                 SET firstname='$fname', lastname='$lname', email='$email', course='$course', contact_no='$contact_no', address='$address', birthdate='$birthdate', sex='$sex', bio='$bio' 
                 WHERE id='$student_id'";
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
-                header("location:student-profile.php");
-                echo "<script> </script>";
+                echo '<script>
+                        window.location.href = "student-profile.php";
+                      </script>';
 
             } else {
                 echo "Error updating record: " . mysqli_error($conn);
-            }
-        }
-        
-            
-
-
-
-        
+            }       
 }
 ?>
     </body>
