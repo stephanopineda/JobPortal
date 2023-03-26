@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '../../header-link.php'; ?>
     <link rel="stylesheet" href="../../assets/CSS/styles.css">
-    <!-- <link rel="stylesheet" href="../../assets/CSS/student-bg.css"> -->
     <title>Student Profile</title>
 </head>
 <body>
@@ -75,6 +74,11 @@
       </div>
       <div class="col mt-5 ms-4">
         <div class="container-fluid">
+        <div class="row">
+                <div class="col d-flex flex-row-reverse">
+                  <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
+                </div>
+              </div>
           <div class="row">
             <div class="col-12 pt-3 shadow rounded">
               <div class="container-fluid">
@@ -118,7 +122,7 @@
             }
                 ?>
             <div class="row">
-                <div class="col-12 mt-5 shadow rounded">
+                <div class="col-12 mt-5 shadow rounded mb-3">
                 <div class="container-fluid">
                 <div class="row">
                   <div class="col">
