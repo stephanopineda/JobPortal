@@ -6,6 +6,10 @@
 
 $results_per_page = 20;
 
+$sql = "SELECT * FROM company_list";
+$all_company = $conn->query($sql);
+$number_of_result = mysqli_num_rows($all_company);
+$number_of_page = ceil($number_of_result / $results_per_page);
 
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -83,8 +87,7 @@ include '../navbar.php';
               $sql = "SELECT *FROM company_list WHERE 'name' LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
             }
             $all_company = mysqli_query($conn, $sql);
-            $number_of_result = mysqli_num_rows($all_company);
-            $number_of_page = ceil($number_of_result / $results_per_page);
+            
             // $row = mysqli_fetch_assoc($all_jobs);
             if($number_of_result > 0){
             while ($row = mysqli_fetch_assoc($all_company)) {

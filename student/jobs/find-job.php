@@ -4,8 +4,12 @@
  include('../../connections.php');
  include('../sessions.php');
 
-$results_per_page = 4;
 
+$results_per_page = 4;
+$sql = "SELECT * FROM job_list";
+$all_jobs = $conn->query($sql);
+$number_of_result = mysqli_num_rows($all_jobs);
+$number_of_page = ceil($number_of_result / $results_per_page);
 if (!isset($_GET['page'])) {
   $page = 1;
 } else {
@@ -77,9 +81,8 @@ $page_first_result = ($page - 1) * $results_per_page;
       } else {
         $sql = "SELECT *FROM job_list WHERE jobTitle LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
       }
-      $all_jobs = mysqli_query($conn, $sql);
-      $number_of_result = mysqli_num_rows($all_jobs);
-      $number_of_page = ceil($number_of_result / $results_per_page);
+      
+      $all_jobs = $conn->query($sql);
 
       // $row = mysqli_fetch_assoc($all_jobs);
       if($number_of_result > 0){
