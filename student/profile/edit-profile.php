@@ -55,7 +55,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                         <div class="modal-dialog modal-dialog-centered">
 
                             <div class="modal-content">
-                                <form action="" method="POST">
+                                <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Picture</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -65,7 +65,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" name = "updataImg">Save changes</button>
+                                    <button type="submit" class="btn btn-primary" name ="updateImg" value="p_img">Save changes</button>
                                 </div>
                                 </form>
                             </div>
@@ -234,31 +234,23 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
 <?php
     if(isset($_POST['updateImg'])){
         $p_img = $_FILES['p_img']['name'];
-        $target = "../assets/img/student-profile/".basename($_FILES['p_img']['name']);
+        $target = "../../assets/img/student-profile/".basename($_FILES['p_img']['name']);
         $sql ="UPDATE student_profile 
         SET p_img = '$p_img'
         WHERE id = $student_id";
 
-
-        if(move_uploaded_file($_FILES['p_img']['tmp_name'], $target)){
-            echo "Image uploaded successfully";
+        
+        if (mysqli_query($conn, $sql)) {
+            move_uploaded_file($_FILES['p_img']['tmp_name'], $target);
+            echo "<script type='text/javascript'>alert('Profile Picture Updated Successfully!') </script>";
             echo '<script>
-            window.location.href = "student-profile.php";
-          </script>';
-
-          if (mysqli_query($conn, $sql)) {
-            echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
-            echo '<script>
-            window.location.href = "edit-profile.php";
-          </script>';
-
+                    window.location.href = "student-profile.php";
+                  </script>';
         } else {
-            echo "Error updating record: " . mysqli_error($conn);
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
 
-        }else{
-            echo "There was a problem uploading image";
-        }
+
     }
     if(isset($_POST['updateInfo'])){
         $fname = $_POST['firstname'];
