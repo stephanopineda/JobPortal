@@ -84,7 +84,7 @@ include '../navbar.php';
             if ($search == 'default value') {
               $sql = "SELECT *FROM company_list LIMIT " . $page_first_result . ',' . $results_per_page;
             } else {
-              $sql = "SELECT *FROM company_list WHERE 'name' LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
+              $sql = "SELECT * FROM company_list WHERE CONCAT(name, employer_name, email, address) LIKE '%$search%' ORDER BY name, employer_name, email, address DESC LIMIT " . $page_first_result . ',' . $results_per_page;
             }
             $all_company = mysqli_query($conn, $sql);
             
