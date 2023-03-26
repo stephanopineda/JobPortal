@@ -56,8 +56,8 @@
             <td>" . $row['workSetup'] . "</td>
             <td>" . $row['min'] . " - ". $row['max']. "</td>
             <td>
-                <a class='btn btn-primary' href='edit-jobs.php?id=" . $row['jobID'] . "'>Edit</a>
-                 <a class='btn btn-danger' href='delete-jobs.php?id=" . $row['jobID'] . "'>Delete</a>
+                <a class='btn btn-primary' href='edit-jobs.php?jobID=" . $row['jobID'] . "'>Edit</a>
+                 <a class='btn btn-danger' href='delete-jobs.php?jobID=" . $row['jobID'] . "'>Delete</a>
             </td>
             </tr>";
 
