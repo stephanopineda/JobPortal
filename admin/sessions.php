@@ -6,3 +6,8 @@
             header('Location: dashboard\dashboard.php');
         }
     }
+
+    $username=$_SESSION['username'];
+    $result = selectWhere($conn, 'admin_accounts', '*', 'username', "$username");
+    $row = $result->fetch_assoc();
+    $_SESSION['admin_id'] = $row['id'];

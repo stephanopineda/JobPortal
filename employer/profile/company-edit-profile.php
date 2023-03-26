@@ -17,6 +17,10 @@
     }
     </style>
 
+        <?php
+            include('../navbar.php');
+        ?>
+
 
     </head>
 
