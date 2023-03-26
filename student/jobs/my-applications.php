@@ -29,7 +29,7 @@
             </div>
 
             <div class="row px-5">
-                <table class="table">
+                <table class="table border">
                     <thead>
                       <tr>
                         <th scope="col">Job Title</th>
