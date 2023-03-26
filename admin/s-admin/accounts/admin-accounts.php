@@ -98,7 +98,6 @@ include('../sessions.php');
         $result = $conn->query($sql);
       }
       $resultCheck = mysqli_num_rows($result);
-      echo $search;
      
       ?>
     </div>
