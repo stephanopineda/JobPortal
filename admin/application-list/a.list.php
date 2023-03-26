@@ -28,13 +28,41 @@
         <thead>
             <tr>
                 <th>Application ID</th>
-                <th>Student ID</th>
                 <th>Job ID</th>
+                <th>Student ID</th>
                 <th>Application Status</th>
         </thead>
         
         <tbody>
+            <?php
+            $sql = "SELECT * FROM job_applications";
+            $result = $conn -> query($sql);
 
+            if ($result ->num_rows > 0){
+                while($row = $result -> fetch_assoc()){
+                    echo "<tr><td>" .
+                    $row["application_id"] . "</td><td>" .
+                    $row["jobID"] . "</td><td>" .
+                    $row["studentID"] . "</td><td>" .
+                    $row["status"] . "</td>";
+
+                    echo "<td>";
+                    echo "<div class='btn-group'>";
+                    echo "<a class='btn btn-danger' href='a.delete.php?id=" .$row['application_id'] ."'>Delete </a>";
+                    echo "</div>";
+                    echo "</td>";
+
+                    echo "</tr>";
+
+
+
+                }
+            }
+            else{
+                    
+            }
+            $conn->close();
+            ?> 
         </tbody>
         
         <tbody>
