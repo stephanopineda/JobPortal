@@ -32,18 +32,22 @@
                 <form method="POST">
                 <h2>Edit Account</h2><br>
                 <div class="form-group">
+                    <label for="name" class="fw-bold">Name</label>
                     <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>">
                 </div>
                 <div id="adminnametaken">
                 </div>
                 <br>
                 <div class="form-group">
+                    <label for="username" class="fw-bold">Username</label>
+                    
                     <input type="text" class="form-control" name="username" value="<?php echo $row['username'];?>">
                 </div>
                 <div id="adminusertaken">
                 </div>
                 <br>
                 <div class="form-group">
+                <label for="email" class="fw-bold">Email</label>
                     <input type="email" class="form-control" name="email" value="<?php echo $row['email'];?>">
                 </div>
                 <div id="adminemailtaken">
@@ -51,7 +55,18 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <input list="browsers" class="form-control" name="browser" id="browser" placeholder="Admin Type">
+                    <label for="admin_type" class="fw-bold">Admin Type: </label>
+                    <select name="admin_type">
+                        <?php
+                            if($row['admin_type'] == 'Admin'){
+                                echo "<option value='Admin' selected>Admin</option>";
+                                echo "<option value='Superadmin'>Superadmin</option>";
+                            }else{
+                                echo "<option value='Admin'>Admin</option>";
+                                echo "<option value='Superadmin' selected>Superadmin</option>";
+                            }
+                        ?>
+                    </select>
                 </div>
                 <br><br>
                 <input type="submit" class="btn btn-primary" name="updateAdmin" value="Update">
@@ -60,10 +75,7 @@
             </div>
         </div>
     </div>
-        <datalist id="browsers">
-            <option value="Admin">
-            <option value="Superadmin">
-        </datalist>
+
         
         <?php
              
@@ -72,7 +84,7 @@
                 $name = $_POST['name'];    
                 $username = $_POST['username'];
                 $email = $_POST['email']; 
-                $admintype = $_POST['browser'];      
+                $admintype = $_POST['admin_type'];      
                 $tablename="admin_accounts";
                 $columnquery="*";
                 
