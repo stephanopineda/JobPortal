@@ -18,8 +18,6 @@
     <?php
         include('../admin-navbar.php');
     ?>
-
-    <h1></h1>
     <html lang="en">
 
 
@@ -119,7 +117,7 @@
               $row["jobCategory"] . "</td><td>" .
               $row["jobType"] . "</td><td>" .
               $row["workSetup"] . "</td><td>" .
-              $row["min"]."-". $row["max"].
+              $row["min"]." - ". $row["max"].
               "</td><td>";
 
               echo "<td>";

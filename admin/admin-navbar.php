@@ -23,21 +23,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item mx-3">
+
+                <a class="nav-link fs-5 fw-bold text-white" href="../dashboard/dashboard.php">Logs</a>
+              </li>
+              <li class="nav-item mx-3">
             <li class="nav-item mx-3">
 
-                <a class="nav-link fs-5 fw-bold text-white" href="../user-listing\u.listing.php">User Listing</a>
+                <a class="nav-link fs-5 fw-bold text-white" href="../user-listing/u.listing.php">User Listing</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold text-white" href="../student-profile\s.profile.php">Student Profile</a>
+                <a class="nav-link fs-5 fw-bold text-white" href="../student-profile/s.profile.php">Student Profile</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold text-white" href="../jobs/index.php">Application Listing</a>
+                <a class="nav-link fs-5 fw-bold text-white" href="../application-list/a.list.php">Application Listing</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold text-white" href="../company-listing\c.listing.php">Company Listing</a>
+                <a class="nav-link fs-5 fw-bold text-white" href="../company-listing/c.listing.php">Company Listing</a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link fs-5 fw-bold text-white" href="../job-listing\j.listing.php">Job Listing</a>
+                <a class="nav-link fs-5 fw-bold text-white" href="../job-listing/j.listing.php">Job Listing</a>
               </li>
             </ul>
         </ul>

@@ -109,9 +109,8 @@ include '../navbar.php';
                         <h5 class="card-title"><?php echo $row["name"] ?></h5>
                         <p class="card-text"><?php echo $row["email"] ?></p>
                         <p class="card-text"><?php echo $row["address"] ?></p>
-                        <a href="companyProfile.php " class="btn btn-primary">See more</a>
-                      </div>
-                      
+                        <a href="CompanyProfile.php" class="btn btn-primary">See more</a>
+                      </div>                      
                     </div>
                   </div>
                 </div>

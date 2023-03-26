@@ -70,8 +70,15 @@
       <div class="form-group">
         <label for="jobType" class= "form-label mb-2 fw-bold">Job Type</label> <br> <br>
         <select id="jobType" name="jobType" value= "<?php echo $row['jobType']; ?>">
-            <option value="Full-Time"> Full-Time </option>
-            <option value="Part-Time"> Part-Time </option>
+              <?php
+          if($row['jobType'] == "Full-Time"){
+            echo "<option value='Full-Time' selected> Full-Time </option>";
+            echo "<option value='Part-Time'> Part-Time </option>";
+          }else{
+            echo "<option value='Full-Time'> Full-Time </option>";
+            echo "<option value='Part-Time' selected> Part-Time </option>";
+            }
+              ?>
         </select>
       </div>
       <br>
@@ -79,8 +86,15 @@
       <div class="form-group">
         <label for="workSetup" class= "form-label mb-2 fw-bold">Work Setup</label> <br> <br>
         <select id="workSetup" name="workSetup" value= "<?php echo $row['workSetup']; ?>">
-            <option value="Onsite"> On-site </option>
-            <option value="WFH"> Work from Home </option>
+        <?php
+          if($row['workSetup'] == "Onsite"){
+            echo "<option value='Onsite' selected> On-site </option>";
+            echo "<option value='WFH'> Work from Home </option>";
+          }else{
+            echo "<option value='Onsite'> On-site </option>";
+            echo "<option value='WFH' selected> Work from Home </option>";
+          }
+          ?>
         </select>
       </div>
       <br>
@@ -102,5 +116,5 @@
       <br>
     
       <button type="submit" class="btn btn-primary" name="updateJob">Edit</button>
-      <button type="submit" class="btn btn-primary" name="cancel" href="j.listing.php">Cancel</button>
+      <a href="j.listing.php" class="btn btn-primary">Cancel</a>
     </form>

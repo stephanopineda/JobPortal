@@ -51,7 +51,7 @@
                 ?>
                     </div>
                     <div class="col d-flex flex-row-reverse">
-                        <a href="company-edit-profile.html" class="btn btn-danger">Edit Profile</a>
+                        <a href="company-edit-profile.php" class="btn btn-danger">Edit Profile</a>
                     </div>
                     <div class="col-12 mt-3">
                         <p class="text-left fs-1" name="name"><?php echo $row["name"]; ?></p>

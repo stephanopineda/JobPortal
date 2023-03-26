@@ -28,8 +28,10 @@
           </li>
         </ul>
         <ul class="navbar-nav d-flex flex-row-reverse">
-          <div class="dropdown" style="background-color: #7C2424;">
-            <a class="btn stud-btn2 dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="dropdown">
+
+
+            <a class="btn  dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <!-- Student Profile is shown here -->
 
             <?php  
@@ -41,15 +43,15 @@
 
               if ($resultCheck > 0) {
                   if($row['p_img'] == ''){
-                  echo '<img src="../../assets/img/no-profile.png" alt="" class="rounded-circle" width="40px"   height="40px">';
+                  echo '<img src="../../assets/img/no-profile.png" alt="" class="rounded-circle" width="40px"   height="40px" >';
                 }else{
-                  echo '<img src="../../assets/img/student-profile/'.$row['p_img'].'" alt="" class="rounded-circle" width="50px" height="50px">';
+                  echo '<img src="../../assets/img/student-profile/'.$row['p_img'].'" alt="" class="rounded-circle" width="50px" height="50px" background-color="#7C2424)">';
               }
               }
             ?>
             
             </a>
-          
+              
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a class="dropdown-item" href="../profile/student-profile.php">Profile</a></li>
               <!-- <li><a class="dropdown-item" href="#">My Applications</a></li> -->

@@ -27,7 +27,7 @@
         <div class="container-fluid mt-5 mr-5 pb-4 shadow rounded">
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
-              <?php
+            <?php
                 
                 $student_id = $_SESSION['student_id'];
                 $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
@@ -37,7 +37,7 @@
 
                 if ($resultCheck > 0) { 
                     $row = mysqli_fetch_assoc($result);
-                    $fullname = $row['firstname'].' '.$row['lastname']; 
+                    $fullname = $row['firstname'] . ' ' . $row['lastname']; 
                     ?>
                 
                 <?php
