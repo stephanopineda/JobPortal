@@ -30,8 +30,8 @@
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
-                $_SESSION['student_id'] = $_GET['student_id'];
-                $student_id = $_SESSION['student_id'];
+                $student_id = $_GET['student_id'];
+                $application_id = $_GET['app_id'];
 
                 $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
                 $result = mysqli_query($conn, $sql);
@@ -78,12 +78,7 @@
       </div>
       <div class="col mt-5 ms-4">
         <div class="container-fluid">
-        <div class="row">
-                <div class="col d-flex flex-row-reverse">
-                  <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
-                </div>
-              </div>
-          <div class="row">
+                  <div class="row">
             <div class="col-12 pt-3 shadow rounded">
               <div class="container-fluid">
                 <div class="row">
@@ -125,70 +120,13 @@
             <?php 
             }
                 ?>
-          <div class="row">
-              <div class="col-12 mt-5 shadow rounded">
-              <div class="container-fluid">
-              <div class="row">
-                <div class="col">
-                  <p class="fs-1 bold">Pending Applications</p>
-                </div>
-              </div>
-              <table class="table">
-                  <thead>
-                      <tr>
-                        <th scope="col">Job Title</th>
-                        <th scope="col">Company Name</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                        <?php
-                          $student_id = $_SESSION['student_id'];
-                          $sql = "SELECT * FROM job_applications WHERE studentID = '$student_id' AND status = 'Pending'";
-                          $result = $conn->query($sql);
-                          $resultCheck = mysqli_num_rows($result);
-
-                          if($resultCheck > 0){
-                            while($row = $result->fetch_assoc()){
-                              $job_id = $row['jobID'];
-                              $sql2 = "SELECT * FROM job_list WHERE jobID = '$job_id'";
-                              $result2 = $conn->query($sql2);
-                              $resultCheck2 = mysqli_num_rows($result2);
-
-                              if($resultCheck2 > 0){
-                                echo "<tr>";
-                                while($row2 = $result2->fetch_assoc()){                                          
-                                  $company_id = $row2['CompanyId'];
-                                  $sql3 = "SELECT * FROM company_list WHERE company_id = '$company_id'";
-                                  $result3 = $conn->query($sql3);
-                                  $resultCheck3 = mysqli_num_rows($result3);
-
-                                  if($resultCheck3 > 0){
-                                      while($row3 = $result3->fetch_assoc()){
-                                          echo "<td>" . $row2['jobTitle'] . "</td>";
-                                          echo "<td>" . $row3['name'] . "</td>";
-                                          echo "<td>" . $row['status'] . "</td>";
-                                      }
-                                  }
-                              }
-                                echo "</tr>";
-                              }
-                            }
-                          } 
-
-                        ?>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
-            </div>
-          </div>
       </div>
     </div>
     <div class="container d-flex justify-content">
     <div class="row mt-3 mb-3 pt-3 pb-3 mx-auto">
-      <div class="col-sm"><a type="button" class="btn btn-success">ACCEPT</a>      <a type="button" class="btn btn-danger">REJECT</a></div>
+      <div class="col-sm">
+        <a type="button" class="btn btn-success" href="approved.php?app_id=<?php echo $application_id;?>">ACCEPT</a>
+        <a type="button" class="btn btn-danger" href="rejected.php?app_id=<?php echo $application_id;?>">REJECT</a></div>
     </div>
     </div>
   </div>

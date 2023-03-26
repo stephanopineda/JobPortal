@@ -1,10 +1,21 @@
 <?php
-if (isset ($_GET['studentID'])){
+if (isset ($_GET['id'])){
 
-    $id = $_GET["studentID"];
+    $studentId = $_GET["id"];
     include('../../connections.php');
 
-    $sql = "DELETE FROM `student_profile` WHERE id = $id";
+    $uidSql = "SELECT userID FROM `student_profile` WHERE id = $studentId";
+    $result = mysqli_query($conn, $uidSql);
+    $row = $result->fetch_assoc();
+    $uid = $row['userID'];
+
+    $sql = "DELETE FROM `job_applications` WHERE studentID = $studentId";
+    $conn->query($sql);
+
+    $sql = "DELETE FROM `student_profile` WHERE id = $studentId";
+    $conn->query($sql);
+
+    $sql = "DELETE FROM `users` WHERE userID = $uid";
     $conn->query($sql);
 }
 
