@@ -105,3 +105,11 @@
       `actions` varchar(255) NOT NULL
     )";
   createTable($conn, $tablequery);
+
+  // Sadmin Logs Table
+  $tablequery = "`admin_logs` (
+    `id` int(11) NOT NULL,
+    `company_id` int(11) NOT NULL,
+    `actions` varchar(255) NOT NULL
+  )";
+createTable($conn, $tablequery);
