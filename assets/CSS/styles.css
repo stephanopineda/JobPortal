@@ -300,3 +300,13 @@ span {
   justify-content: flex-end;
   gap: 1rem;
 }
+
+.cheese{
+  text-decoration: none;
+  color: black;
+}
+
+.cheese:hover{
+  text-decoration: none;
+  color: black;
+}
