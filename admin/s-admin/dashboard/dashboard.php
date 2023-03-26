@@ -15,11 +15,10 @@
 
     <body>
 
-        <?php
-        
-            include('../navbar.php');
-        
-        ?>
+
+    <?php
+        include('../s-admin-navbar.php');
+    ?>
 
             <h1>Admin Logs</h1>
         
