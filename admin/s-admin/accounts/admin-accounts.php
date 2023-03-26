@@ -12,6 +12,7 @@ include('../sessions.php');
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php include('../../../header-link.php'); ?>
+        <link rel="stylesheet" href="../../../assets/CSS/styles.css">
         <title>Admin Accounts</title>
 
     </head>
@@ -108,28 +109,28 @@ include('../sessions.php');
     <thead>
       <tr>
         <th scope="col">
-          <a href="?order=username&&sort=<?php echo $sort; ?>">
+          <a href="?order=username&&sort=<?php echo $sort; ?>" class="cheese">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">User Name</font>
             </font>
           </a>
         </th>
         <th scope="col">
-        <a href="?order=name&&sort=<?php echo $sort; ?>">
+        <a href="?order=name&&sort=<?php echo $sort; ?>" class="cheese">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">Name</font>
             </font>
           </a>
         </th>
         <th scope="col">
-        <a href="?order=email&&sort=<?php echo $sort; ?>">
+        <a href="?order=email&&sort=<?php echo $sort; ?>" class="cheese">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">Email</font>
             </font>
           </a>
         </th>
         <th scope="col">
-        <a href="?order=admin_type&&sort=<?php echo $sort; ?>">
+        <a href="?order=admin_type&&sort=<?php echo $sort; ?>" class="cheese">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">Admin</font>
             </font>
