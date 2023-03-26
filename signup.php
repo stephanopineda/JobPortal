@@ -38,20 +38,6 @@
                         </div>
                         <br>
 
-                         <div class="row">
-                          <div class="col">
-                            <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
-                            <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
-                          </div>
-                          <br>
-                          
-                          <div class="col">
-                            <label class= "form-label mb-2 fw-bold" for="Last-name">Last Name</label>
-                            <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
-                          </div>
-                        </div>
-                        <br>
-
                         <div class="row">
                           <div class="col">
                             <label class="form-label mb-2 fw-bold" for="password">Password</label>
@@ -109,11 +95,8 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
-                $fname = $_POST['fname'];
-                $lname = $_POST['Lname']; 
                 $password1 = $_POST['password']; 
                 $password2 = $_POST['password2']; 
-                $name = $fname . " " . $lname;
                 $email = $_POST['email'];   
                 $usertype = $_POST['usertype'];      
                 $tablename="admin_accounts";
@@ -147,8 +130,8 @@
                   }
 
                   if ($result->num_rows <= 0 && $eresult->num_rows <= 0 && $password1 == $password2) {
-                    $dataquery = "users(username,name,email,password,usertype)";
-                    $valuequery="('$username','$name','$email','$password1','$usertype')";
+                    $dataquery = "users(username,email,password,usertype)";
+                    $valuequery="('$username','$email','$password1','$usertype')";
 
                     insertData($conn,$dataquery,$valuequery);
                     $_SESSION['username']=$username;
