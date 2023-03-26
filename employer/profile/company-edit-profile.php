@@ -17,8 +17,6 @@
     }
     </style>
 
-
-
     </head>
 
 
@@ -107,12 +105,15 @@
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
                 
                     <a href="index.php" class="btn btn-danger">Cancel</a> 
+                    </div>
             </form>
                 </div>
-                    </div> 
+            </div> 
             </div>
         </div>
-    </div>
-    </body>
+    </div> 
+</div>
+                   
+    </body> <br> <br>
     
 </html>

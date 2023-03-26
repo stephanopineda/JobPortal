@@ -30,8 +30,8 @@
           <div class="row">
             <div class="col-12 mx-auto text-center mt-3" style="height: 150px;">
             <?php
-                $_SESSION['student_id'] = $_GET['student_id'];
-                $student_id = $_SESSION['student_id'];
+                $student_id = $_GET['student_id'];
+                $application_id = $_GET['app_id'];
 
                 $sql = "SELECT * FROM student_profile WHERE id = '$student_id';";
                 $result = mysqli_query($conn, $sql);
@@ -120,12 +120,13 @@
             <?php 
             }
                 ?>
-          
       </div>
     </div>
     <div class="container d-flex justify-content">
     <div class="row mt-3 mb-3 pt-3 pb-3 mx-auto">
-      <div class="col-sm"><a type="button" class="btn btn-success">ACCEPT</a>      <a type="button" class="btn btn-danger">REJECT</a></div>
+      <div class="col-sm">
+        <a type="button" class="btn btn-success" href="approved.php?app_id=<?php echo $application_id;?>">ACCEPT</a>
+        <a type="button" class="btn btn-danger" href="rejected.php?app_id=<?php echo $application_id;?>">REJECT</a></div>
     </div>
     </div>
   </div>

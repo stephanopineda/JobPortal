@@ -43,7 +43,12 @@
         <label for="search" class="col-form-label">Search:</label>
       </div>
       <div class="col-auto">
-        <input type="text" id="search" class="form-control">
+      <form action="" method="GET">
+        <input type="search" name="search" id="search" class="form-control">
+        <button type="submit" class="btn btn-primary">
+              <i class="fas fa-search">Search</i>
+            </button>
+          </form>
       </div>
       <form action="c.listing_pdf.php" method="post">  
       <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate Report" />  
@@ -146,12 +151,26 @@
 
     <?php
 
-    $result = selectData($conn,"company_list","*");
-    $resultCheck = mysqli_num_rows($result);
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+  // Perform the search using $_GET['q']
+  $search = $_GET['search'];
+  // ...
+} else {
+  // Display an error message or provide a default value
+  $search = 'default value';
+  // ...
+}
+
+if ($search == 'default value') {
+  $sql = "SELECT *FROM company_list";
+} else {
+  $sql = "SELECT * FROM company_list WHERE CONCAT(name, employer_name, email, address) LIKE '%$search%' ORDER BY name, employer_name, email, address DESC";
+}
+$all_company = mysqli_query($conn, $sql);
     
 
-    if ($resultCheck > 0) {
-      while ($row = mysqli_fetch_assoc($result)) {
+    if ($all_company ->num_rows > 0) {
+      while ($row = mysqli_fetch_assoc($all_company)) {
           echo "<tr>
           <td><font style='vertical-align: inherit;'>
               <font style='vertical-align: inherit;'>". $row['name'] . "</font>

@@ -19,10 +19,13 @@
         
         <div class="container mt-5">
     <div class="row">
-      <div class="col-15">
-      <h1 class='text-center'>Edit Jobs</h1>
-      </div>
     </div>
+    <div id="PostJobCon" class="container-sm mt-5 py-5 p-5 bg-light login-form">
+    <div class="col-15 ">
+            <form action="" method="post">
+            <div class="col-md-12 text-center">
+                <h1> <strong> Edit Jobs </strong></h1>
+                </div> <br>
 
     <?php
     $jobID = $_GET['jobID'];
@@ -33,95 +36,216 @@
 
 <div class="col-15 ">
             <form action="" method="post">
+
+            <div class="form-group">
                 <input type="hidden" name="<?php echo $row['jobID']?>" value=
                 '<?php echo $row['jobID']?>'>
+            </div>
 
-                <label for="jobTitle" class="fw-bold">Job Title</label>
+            <div class="form-group">
+                <label for="jobTitle" class= "form-label mb-2 fw-bold">Job Title</label>
                 <br>
-                <input type="text" value='<?php echo $row['jobTitle'] ?>' name="jobTitle">
+                <input type="text" class="form-control" value='<?php echo $row['jobTitle'] ?>' name="jobTitle">
+                
+            </div><br>
+
+            <div class="form-group">
+                <label for="Job Summary" class= "form-label mb-2 fw-bold">Job Summary</label>
                 <br>
-                <label for="Job Summary" class="fw-bold">Job Summary</label>
+                <input type="text" class="form-control" value='<?php echo $row['jobSummary'] ?>' name="jobSummary">
+               
+            </div><br>
+
+            <div class="form-group">
+                <label for="quali" class= "form-label mb-2 fw-bold">Job Qualification</label>
                 <br>
-                <input type="text" value='<?php echo $row['jobSummary'] ?>' name="jobSummary">
+                <input type="text" class="form-control" value='<?php echo $row['jobQuali'] ?>' name="jobQuali">
+                
+            </div><br>
+
+            <div class="form-group">
+                <label for="jobTitle" class= "form-label mb-2 fw-bold">Job Category</label>
                 <br>
-                <label for="quali" class="fw-bold">Job Qualification</label>
-                <br>
-                <input type="text" value='<?php echo $row['jobQuali'] ?>' name="jobQuali">
-                <br>
-                <label for="jobTitle" class="fw-bold">Job Category</label>
-                <br>
-                <select name="jobCategory">
+                <select name="jobCategory" class="form-control">
                     <?php
-                    if($row['jobCategory'] == 'IT'){
-                        echo "<option value='IT' selected> IT </option>";
-                        echo "<option value='Accounting'> Accounting </option>";
-                        echo "<option value='Marketing'> Marketing </option>";
-                        echo "<option value='Human Resource'> Human Resource </option>";
-                        echo "<option value='Sales'> Sales </option>";
-                        echo "<option value='Others'> Others </option>";
-                        } elseif($row['jobCategory'] == 'Accounting'){
-                            echo "<option value='IT'> IT </option>";
-                            echo "<option value='Accounting' selected> Accounting </option>";
-                            echo "<option value='Marketing'> Marketing </option>";
-                            echo "<option value='Human Resource'> Human Resource </option>";
-                            echo "<option value='Sales'> Sales </option>";
-                            echo "<option value='Others'> Others </option>";
-                        } elseif($row['jobCategory'] == 'Marketing'){
-                            echo "<option value='IT'> IT </option>";
-                            echo "<option value='Accounting'> Accounting </option>";
-                            echo "<option value='Marketing' selected> Marketing </option>";
-                            echo "<option value='Human Resource'> Human Resource </option>";
-                            echo "<option value='Sales'> Sales </option>";
-                            echo "<option value='Others'> Others </option>";
-                        } elseif($row['jobCategory'] == 'Human Resource'){
-                            echo "<option value='IT'> IT </option>";
-                            echo "<option value='Accounting'> Accounting </option>";
-                            echo "<option value='Marketing'> Marketing </option>";
-                            echo "<option value='Human Resource' selected> Human Resource </option>";
-                            echo "<option value='Sales'> Sales </option>";
-                            echo "<option value='Others'> Others </option>";
-                        } elseif($row['jobCategory'] == 'Sales'){
-                            echo "<option value='IT'> IT </option>";
-                            echo "<option value='Accounting'> Accounting </option>";
-                            echo "<option value='Marketing'> Marketing </option>";
-                            echo "<option value='Human Resource'> Human Resource </option>";
-                            echo "<option value='Sales' selected> Sales </option>";
-                            echo "<option value='Others'> Others </option>";
-                        } else{
-                            echo "<option value='IT'> IT </option>";
-                            echo "<option value='Accounting'> Accounting </option>";
-                            echo "<option value='Marketing'> Marketing </option>";
-                            echo "<option value='Human Resource'> Human Resource </option>";
-                            echo "<option value='Sales'> Sales </option>";
-                            echo "<option value='Others' selected> Others </option>";
-                        }
+                    if($row['jobCategory'] == 'Business and Financial Services' ){
+                        echo "<option value='Business and Financial Services' selected> Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' selected> Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+
+                    } elseif($row['jobCategory'] == 'Construction'){
+                        echo "<option value='Business and Financial Services'> Business and Financial Services </option>";
+                        echo "<option value='Construction' selected> Construction </option>";
+                        echo "<option value='Education'> Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant'> Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech'> Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality'> Hospitality </option>";
+                        echo "<option value='Information Technology'> Information Technology </option>";
+                        echo "<option value='Law Firm'> Law Firm </option>";
+                        echo "<option value='Real Estate'> Real Estate </option>";
+                        echo "<option value='Transportation/Logistics'> Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution'> Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Education'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' selected> Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Food & Beverage/Catering/Restaurant'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' selected> Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Health, Pharmaceuticals, and Biotech'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' selected> Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Hospitality'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' selected> Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Information Technology'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' selected> Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Law Firm'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' selected> Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Real Estate'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' selected> Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Transportation/Logistics'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' selected> Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' > Wholesale/Retail and Distribution </option>";
+                        
+                    } elseif($row['jobCategory'] == 'Wholesale/Retail and Distribution'){
+                        echo "<option value='Business and Financial Services' > Business and Financial Services </option>";
+                        echo "<option value='Construction' > Construction </option>";
+                        echo "<option value='Education' > Education </option>";
+                        echo "<option value='Food & Beverage/Catering/Restaurant' > Food & Beverage/Catering/Restaurant </option>";
+                        echo "<option value='Health, Pharmaceuticals, and Biotech' > Health, Pharmaceuticals, and Biotech </option>";
+                        echo "<option value='Hospitality' > Hospitality </option>";
+                        echo "<option value='Information Technology' > Information Technology </option>";
+                        echo "<option value='Law Firm' > Law Firm </option>";
+                        echo "<option value='Real Estate' > Real Estate </option>";
+                        echo "<option value='Transportation/Logistics' > Transportation/Logistics </option>";
+                        echo "<option value='Wholesale/Retail and Distribution' selected> Wholesale/Retail and Distribution </option>";
+                        
+                    }
                     ?>
 
                 </select>
+                </div><br>
+               
+            <div class="form-group">
+                <label for="jobTitle" class= "form-label mb-2 fw-bold">Work Setup</label>
                 <br>
-                <label for="jobTitle" class="fw-bold">Work Setup</label>
-                <br>
-                <select name="workSetup" id="workSetup">
+                <select name="workSetup" id="workSetup" class="form-control">
                     <?php
                     if($row['workSetup'] == 'WFH'){
                         echo "<option value='WFH' selected>Work from Home </option>";
-                        echo "<option value='On-site'>On-site</option>";
-                        } else{
-                            echo "<option value='WFH'>Work from Home </option>";
-                            echo "<option value='On-site'  selected>On-site</option>";
-                        }
+                    }
                     ?>
                 </select>
+               
+            </div> <br>
+
+            <div class="form-group">
+                <label for="jobTitle" class= "form-label mb-2 fw-bold">Salary</label>
                 <br>
-                <label for="jobTitle" class="fw-bold">Salary</label>
-                <br>
-                <input type="text" value='<?php echo $row['min'] ?>' name="min">
-                <input type="text" value='<?php echo $row['max'] ?>' name="max">
+                <div class="col">
+                <input type="text" name= "min" class="form-control" value= "<?php echo $row['min']; ?>"> 
+                </div>
+                -
+                <div class="col">
+                <input type="text" name= "max" class="form-control" value= "<?php echo $row['max']; ?>">
+                </div> <br>
                 <br>
                 <br>
                 <?php
                 include ('jobs-edit-conn.php');
                 ?>
+                </div>  <br>
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
                     <a href="index.php" class="btn btn-danger">Cancel</a> 
             </form>
