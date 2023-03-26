@@ -95,6 +95,10 @@
                     $dataquery = "admin_accounts(username,name,email,password,admin_type)";
                     $valuequery="('$username','$name','$email','$password','$admintype')";
                     insertData($conn,$dataquery,$valuequery);
+
+                    $actions = "Added $username as $admintype.";
+                    include('../../to-log.php');
+
                     header('Location: admin-accounts.php');
                   }
             }

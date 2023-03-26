@@ -147,22 +147,19 @@ include('../sessions.php');
                  if ($resultCheck > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>
-                        <td> " . $row['username'] . "</td
-                        ><td>" . $row['name'] . "</td>
+
+                        <td>" . $row['username'] . "</td>
+                        <td>" . $row['name'] . "</td>
                         <td>" . $row['email'] . "</td>
                         <td>" . $row['admin_type'] . "</td>";
                         
                         echo "<td>";
-                        echo "<div class='btn-group'>"; ?>
-                        <a class='btn btn-success' href='edit-admin.php?id=<?php echo $row['id']; ?>'>Edit</a>
-                        <?php
-                        echo "<a class='btn btn-danger' href=''>Delete</a>";
+                        echo "<div class='btn-group'>";
+                        echo "<a class='btn btn-success' href='edit-admin.php?id=" . $row['id'] ."'>Edit</a>";
+                        echo "<a class='btn btn-danger' href='delete-admin.php?id=" . $row['id'] ."'>Delete</a>";
                         echo "</div>";
                         echo "</td>";
-          
                         echo "</tr>";
-
- 
                     }
                 }
                 ?>
