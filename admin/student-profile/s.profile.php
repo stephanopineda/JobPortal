@@ -125,8 +125,8 @@
 
               echo "<td>";
               echo "<div class='btn-group'>";
-              echo "<a class='btn btn-success' href='./s.edit.php?id=" .$row['id'] ."'>Edit </a>";
-              echo "<a class='btn btn-danger' href='./s.delete.php?id=" .$row['id'] ."'>Delete </a>";
+              echo "<a class='btn btn-success' href='s.edit.php?id=" .$row['id'] ."'>Edit </a>";
+              echo "<a class='btn btn-danger' href='s.delete.php?id=" .$row['id'] ."'>Delete </a>";
               echo "</div>";
               echo "</td>";
 
