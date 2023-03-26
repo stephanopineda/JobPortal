@@ -45,7 +45,12 @@
         <label for="search" class="col-form-label">Search:</label>
       </div>
       <div class="col-auto">
-        <input type="text" id="search" class="form-control">
+      <form action="" method="GET">
+        <input type="search" name="search" id="search" class="form-control">
+        <button type="submit" class="btn btn-primary">
+              <i class="fas fa-search">Search</i>
+            </button>
+          </form>
       </div>
     </div> <br>
     <form action="u.listing_pdf.php" method="post">  
@@ -88,8 +93,22 @@
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT * FROM users";
-      $result = $conn -> query($sql);
+      if (isset($_GET['search']) && !empty($_GET['search'])) {
+
+        $search = $_GET['search'];
+
+      } else {
+
+        $search = 'default value';
+        // ...
+      }
+
+      if ($search == 'default value') {
+        $sql = "SELECT * FROM users";
+      } else {
+        $sql = "SELECT * FROM users WHERE CONCAT(username, email, userType) LIKE '%$search%' ORDER BY username, email, userType DESC";
+      }
+      $result = $conn->query($sql);
 
       if ($result ->num_rows > 0){
           while($row = $result -> fetch_assoc()){
