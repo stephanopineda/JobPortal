@@ -11,30 +11,85 @@ include('../sessions.php');
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <?php include('../../../header-link.php'); ?>
         <title>Admin Accounts</title>
 
     </head>
     <body>
 
-        <?php        
-            include('../navbar.php');
-        ?>
+    <?php
+        include('../s-admin-navbar.php');
+    ?>
         
-        <h1>Admin Accounts</h1>
+    <div class="container py-5">
+    <div class="row justify-content-center">
+    <h2 class="mb-4 pb-4" style="text-align: center;"></h2>
+    <h2 class="mb-2 fw-bold" style="text-align: left;">Admin Accounts</h2>
+    <div class="mb-5">
+    <a href="add-admin.php" class="btn btn-primary" role="button">Add Admin Account</a>
+    </div>
+    <div class="mb-2">
+    <form action="admin-accounts_pdf.php" method="post">  
+        <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate Report" />  
+        </form>
+    </div>
 
-        <a href="add-admin.php">Add Admin Accounts</a>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Admin Type</th>
-                    <th>Actions</th>        
-                </tr>
-            </thead>
+    <div class="row mb-3 pb-3">
+      <!-- <div class="col-auto mb-2"> -->
+
+
+      <div class="col-auto">
+        <label for="entries" class="col-sm-1 col-form-label">Show</label>
+      </div>
+      <div class="col-1">
+        <input type="text" class="form-control" id="entries">
+      </div>
+      <div class="col-1 col-md-7">
+        <label for="entries" class="col-sm-1 col-form-label">entries</label>
+      </div>
+      <!-- search bar -->
+      <div class="col-auto">
+        <label for="search" class="col-form-label">Search:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="search" class="form-control">
+      </div>
+
+    </div>
+
+  </div>
+
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">User Name</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Name</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Email</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Admin</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Actions</font>
+          </font>
+        </th>
+      </tr>
+    </thead>
+
             <?php
                 $result = selectData($conn,"admin_accounts","*");
                 $resultCheck = mysqli_num_rows($result);
@@ -45,9 +100,18 @@ include('../sessions.php');
                         <td>" . $row['username'] . "</td
                         ><td>" . $row['name'] . "</td>
                         <td>" . $row['email'] . "</td>
-                        <td>" . $row['admin_type'] . "</td>
-                        <td>Action</td>
-                        </tr>";
+                        <td>" . $row['admin_type'] . "</td>";
+                        
+                        echo "<td>";
+                        echo "<div class='btn-group'>";
+                        echo "<a class='btn btn-success' href=''>Edit </a>";
+                        echo "<a class='btn btn-danger' href=''>Delete </a>";
+                        echo "</div>";
+                        echo "</td>";
+          
+                        echo "</tr>";
+
+
                     }
                 }
                 ?>
