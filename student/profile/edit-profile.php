@@ -37,7 +37,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
 
                     $p_img = $row['p_img'];
 
-                    if ($logo == null) { ?>
+                    if ($p_img == null) { ?>
 
                         <img src='../../assets/img/no-profile.png' class='img-fluid' alt='profile picture' style='height: 150px; width: 150px;'>";
                     <?php } else {
