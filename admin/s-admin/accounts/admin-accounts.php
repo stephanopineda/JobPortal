@@ -28,12 +28,6 @@ include('../sessions.php');
     <div class="mb-5">
     <a href="add-admin.php" class="btn btn-primary" role="button">Add Admin Account</a>
     </div>
-    <div class="mb-2">
-    <form action="admin-accounts_pdf.php" method="post">  
-        <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate Report" />  
-        </form>
-    </div>
-
     <div class="row mb-3 pb-3">
       <!-- <div class="col-auto mb-2"> -->
 
