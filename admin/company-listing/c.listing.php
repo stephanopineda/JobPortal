@@ -19,13 +19,13 @@
 
     <html lang="en">
     <?php
-        include('../navbar.php');
+        include('../admin-navbar.php');
     ?>
 
     <div class="container py-5">
     <div class="row justify-content-center">
-    <h2 class="mb-4 pb-4" style="text-align: center;">Admin</h2>
-    <h2 class="mb-3 pb-3" style="text-align: left;">Company List</h2>
+    <h2 class="mb-4 pb-4" style="text-align: center;"></h2>
+    <h2 class="mb-3 pb-3 fw-bold" style="text-align: left;">Company List</h2>
 
     <div class="row mb-2 pb-2">
       <!-- <div class="col-auto mb-2"> -->
@@ -45,6 +45,9 @@
       <div class="col-auto">
         <input type="text" id="search" class="form-control">
       </div>
+      <form action="c.listing_pdf.php" method="post">  
+      <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate Report" />  
+    </form>
     </div>
 
   </div>
@@ -70,7 +73,7 @@
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Contact Person</font>
+            <font style="vertical-align: inherit;">Employer Name</font>
           </font>
         </th>
         <th scope="col">
@@ -160,7 +163,7 @@
               <font style='vertical-align: inherit;'>". $row['email'] . "</font>
               </font></td
               ><td><font style='vertical-align: inherit;'>
-              <font style='vertical-align: inherit;'>" . $row['employer_name'] . "</font>
+              <font style='vertical-align: inherit;'>". $row['employer_name'] . "</font>
               </font></td
               ><td><font style='vertical-align: inherit;'>
               <font style='vertical-align: inherit;'>" . $row['contact_no'] . "</font>
@@ -184,7 +187,7 @@
 
     
     ?>
-      <input type="button" name="report" value="Generate Report"  class="btn btn-success">
+      
 
     </tbody>
   </table>

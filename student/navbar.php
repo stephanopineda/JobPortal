@@ -4,13 +4,13 @@
 <a href="../profile/student-profile.php">User Profile</a>
 <a href="../logout.php">Logout</a> -->
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #800;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #F6C724, #7C2424);">
     <div class="container-fluid">
       <a class="navbar-brand logo">
         <img src="../../assets/img/jobportal_logo1.png" height="120px" width="275px"  class="d-inline-block align-text-top">
-        
+
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"  
         aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,18 +18,20 @@
         <ul class="navbar-nav mx-auto">
           
           <li class="nav-item">
-            <a class="nav-link fs-3 fw-bold" href="../dashboard/index.php">Home</a>
+            <a class="nav-link fs-5 fw-bold text-white" href="../dashboard/index.php">Home</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link  fs-3 fw-bold " href="../jobs/company-list.php">Company Lists</a>
+            <a class="nav-link  fs-5 fw-bold text-white" href="../jobs/company-list.php">Company Lists</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-3 fw-bold " href="../jobs/find-job.php">Find A Job</a>
+            <a class="nav-link fs-5 fw-bold text-white" href="../jobs/find-job.php">Find A Job</a>
           </li>
         </ul>
         <ul class="navbar-nav d-flex flex-row-reverse">
           <div class="dropdown">
-            <a class="btn stud-btn2 dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+            <a class="btn  dropdown-toggle text-center" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <!-- Student Profile is shown here -->
 
             <?php  
@@ -41,15 +43,15 @@
 
               if ($resultCheck > 0) {
                   if($row['p_img'] == ''){
-                  echo '<img src="../../assets/img/no-profile.png" alt="" class="rounded-circle" width="40px"   height="40px">';
+                  echo '<img src="../../assets/img/no-profile.png" alt="" class="rounded-circle" width="40px"   height="40px" >';
                 }else{
-                  echo '<img src="../../assets/img/student-profile/'.$row['p_img'].'" alt="" class="rounded-circle" width="50px" height="50px">';
+                  echo '<img src="../../assets/img/student-profile/'.$row['p_img'].'" alt="" class="rounded-circle" width="50px" height="50px" background-color="#7C2424)">';
               }
               }
             ?>
             
             </a>
-          
+              
             <ul class="dropdown-menu dropdown-menu-right">
               <li><a class="dropdown-item" href="../profile/student-profile.php">Profile</a></li>
               <!-- <li><a class="dropdown-item" href="#">My Applications</a></li> -->

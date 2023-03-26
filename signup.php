@@ -32,9 +32,13 @@
                           <label class="form-label" for="username">Username </label>
                           <input class="form-control" type="text" name="username" placeholder="Enter username" required="">
                         </div>
+                        <div id="usernameerrormsg">
+
+
+                        </div>
                         <br>
 
-                        <!-- <div class="row">
+                         <div class="row">
                           <div class="col">
                             <label class= "form-label mb-2 fw-bold" for="First-name" >First Name</label>
                             <input class="form-control" type="text" name="fname" placeholder="Enter first name" required="">
@@ -46,7 +50,7 @@
                             <input class="form-control" type="text" name="Lname" placeholder="Enter first name" required="">
                           </div>
                         </div>
-                        <br> -->
+                        <br>
 
                         <div class="row">
                           <div class="col">
@@ -59,13 +63,23 @@
                             <input  class="form-control" type="password" name="password2" placeholder="Confirm password" >
                           </div>
                         </div>
+                        <div class="row">
+                          <div class="col">
+                            <div id="passworderrormsg">
+
+                            </div>
+                          </div>
+                        </div>
                         <br>
                         <div class="form-group">
                     <label class="form-label mb-2 fw-bold" for="email">Email</label>
                     <br>
                     <input class="form-control" type="email" name="email" placeholder="Enter email">
-                    <br>
+                    
                     </div>
+                    <div id="emailerrormsg">
+
+                    </div><br>
                         <label for="user_type" class="form-label mb-2 fw-bold">Role</label>
                         <div class="form-check">
                           <input class="form-check-input" type="radio" name="usertype" id="usertype" value ="Student">
@@ -95,29 +109,53 @@
             
             if(isset($_POST['register'])){
                 $username = $_POST['username'];
+                $fname = $_POST['fname'];
+                $lname = $_POST['Lname']; 
+                $password1 = $_POST['password']; 
+                $password2 = $_POST['password2']; 
                 $name = $fname . " " . $lname;
                 $email = $_POST['email'];   
-                $password = $_POST['password']; 
                 $usertype = $_POST['usertype'];      
-                $tablename="users";
+                $tablename="admin_accounts";
                 $columnquery="*";
                 
+
+                            
                 $result = selectWhere($conn, $tablename, $columnquery, 'username', $username);
 
+                $eresult = selectWhere($conn, $tablename, $columnquery, 'email', $email);
+
+
+
                 if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                        
-                        echo "Account Exist";
-                    }
-                  } else {
-                    $dataquery = "users(username,email,password,usertype)";
-                    $valuequery="('$username','$email','$password','$usertype')";
+ 
+                      echo "<script>
+                      document.getElementById('usernameerrormsg').innerHTML = 'Username Taken.';
+                    </script>";
+
+                  } 
+                  if ($eresult->num_rows > 0) {
+    
+                      echo "<script>
+                      document.getElementById('emailerrormsg').innerHTML = 'Email Taken.';
+                    </script>";
+                  }
+                  if($password1 != $password2){
+                    echo "<script>
+                      document.getElementById('passworderrormsg').innerHTML = 'Password does not match.';
+                    </script>";
+                  }
+
+                  if ($result->num_rows <= 0 && $eresult->num_rows <= 0 && $password1 == $password2) {
+                    $dataquery = "users(username,name,email,password,usertype)";
+                    $valuequery="('$username','$name','$email','$password1','$usertype')";
+
                     insertData($conn,$dataquery,$valuequery);
                     $_SESSION['username']=$username;
                     $_SESSION['user_type']=$usertype;
                     // echo "Account Created";
                     if($usertype == "Student"){
+                      // header("Location: student.php");
                       echo '<script>
                         window.location.href = "student/student-register.php";
                       </script>';
@@ -132,6 +170,8 @@
                     }
                   }
             }
+          
+         
         ?>
 
     </form>

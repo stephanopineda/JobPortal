@@ -10,6 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Company Profile</title>
+        <?php
+        include('../../header-link.php');
+        ?>
     </head>
 
     <body>
@@ -25,8 +28,7 @@
     </div>
 
     <?php
-    $company_id = $_SESSION['company_id'];
-    $sql = "SELECT * FROM company_list WHERE company_id = '$company_id'";
+    $sql = "SELECT * FROM company_list";
     $result = $conn->query($sql);
     
     // Check if there is any data
@@ -49,9 +51,6 @@
                     echo "<img src='../../assets/img/employer-profile/$logo' class='img-fluid rounded-circle' alt='profile picture' style='height: 150px; width: 150px;'>";
                 }
                 ?>
-                    </div>
-                    <div class="col d-flex flex-row-reverse">
-                        <a href="company-edit-profile.php" class="btn btn-danger">Edit Profile</a>
                     </div>
                     <div class="col-12 mt-3">
                         <p class="text-left fs-1" name="name"><?php echo $row["name"]; ?></p>
