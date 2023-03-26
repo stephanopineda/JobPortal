@@ -44,7 +44,15 @@
         <label for="search" class="col-form-label">Search:</label>
       </div>
       <div class="col-auto">
-        <input type="text" id="search" class="form-control">
+      <form action="" method="GET">
+        <input type="search" name="search" id="search" class="form-control">
+        <button type="submit" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
       </div>
     </div> <br>
     <form action="s.profile_pdf.php" method="post">  
@@ -106,8 +114,22 @@
     </thead>
     <tbody>
       <?php
-      $sql = "SELECT * FROM student_profile";
-      $result = $conn -> query($sql);
+      if (isset($_GET['search']) && !empty($_GET['search'])) {
+
+        $search = $_GET['search'];
+
+      } else {
+
+        $search = 'default value';
+        // ...
+      }
+
+      if ($search == 'default value') {
+        $sql = "SELECT * FROM student_profile";
+      } else {
+        $sql = "SELECT * FROM student_profile WHERE CONCAT(firstname, lastname, email, course, address, contact_no, birthdate, sex) LIKE '%$search%' ORDER BY firstname, lastname, email, course, address, contact_no, birthdate, sex DESC";
+      }
+      $result = $conn->query($sql);
 
       if ($result ->num_rows > 0){
           while($row = $result -> fetch_assoc()){

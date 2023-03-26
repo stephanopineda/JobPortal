@@ -19,7 +19,7 @@
 <?php
    include '../navbar.php';  
 ?>
-<div class="container">
+<div class="container my-3">
     <div class="row p-5 border mt-5 shadow">
         <div class="container">
             <div class="row">
@@ -42,7 +42,7 @@
                       <tr>
                         <?php
                           $student_id = $_SESSION['student_id'];
-                          $sql = "SELECT * FROM job_applications WHERE studentID = '$student_id' AND status = 'Pending'";
+                          $sql = "SELECT * FROM job_applications WHERE studentID = '$student_id'";
                           $result = $conn->query($sql);
                           $resultCheck = mysqli_num_rows($result);
 
