@@ -191,7 +191,8 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
 
         else {
             $sql ="UPDATE student_profile 
-                SET firstname='$fname', lastname='$lname', email='$email', course='$course', contact_no='$contact_no', address='$address', birthdate='$birthdate', sex='$sex', bio='$bio' WHERE id='$student_id'";
+                SET firstname='$fname', lastname='$lname', email='$email', course='$course', contact_no='$contact_no', address='$address', birthdate='$birthdate', sex='$sex', bio='$bio' 
+                WHERE id='$student_id'";
 
             if (mysqli_query($conn, $sql)) {
                 echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
