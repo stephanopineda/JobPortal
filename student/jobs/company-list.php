@@ -6,6 +6,10 @@
 
 $results_per_page = 20;
 
+$sql = "SELECT * FROM company_list";
+$all_company = $conn->query($sql);
+$number_of_result = mysqli_num_rows($all_company);
+$number_of_page = ceil($number_of_result / $results_per_page);
 
 if (!isset($_GET['page'])) {
   $page = 1;
@@ -83,8 +87,7 @@ include '../navbar.php';
               $sql = "SELECT *FROM company_list WHERE 'name' LIKE '%$search%' LIMIT " . $page_first_result . ',' . $results_per_page;
             }
             $all_company = mysqli_query($conn, $sql);
-            $number_of_result = mysqli_num_rows($all_company);
-            $number_of_page = ceil($number_of_result / $results_per_page);
+            
             // $row = mysqli_fetch_assoc($all_jobs);
             if($number_of_result > 0){
             while ($row = mysqli_fetch_assoc($all_company)) {
@@ -93,7 +96,7 @@ include '../navbar.php';
                 <div class="col-12">
                   <div class="card">
                     <div class="row card-body">
-                    <div class="col-6 position-relative">
+                    <div class="col-3 position-relative">
                     <?php
                 $logo = $row['logo'];
 
@@ -109,7 +112,7 @@ include '../navbar.php';
                         <h5 class="card-title"><?php echo $row["name"] ?></h5>
                         <p class="card-text"><?php echo $row["email"] ?></p>
                         <p class="card-text"><?php echo $row["address"] ?></p>
-                        <a href="CompanyProfile.php" class="btn btn-primary">See more</a>
+                        <a href="CompanyProfile.php?company_id=<?php echo $row['company_id']?>" class="btn btn-primary">See more</a>
                       </div>                      
                     </div>
                   </div>

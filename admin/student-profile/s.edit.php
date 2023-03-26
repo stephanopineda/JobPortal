@@ -64,7 +64,7 @@
     </div>
     <br>
     <button type="submit" class="btn btn-primary" name="update">Update</button>
-    <a href="s.profile.php" class="btn btn-primary">Cancel</a>
+    <a href="s.profile.php" class="btn btn-danger">Cancel</a>
 </form>
     
 

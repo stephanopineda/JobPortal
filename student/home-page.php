@@ -70,13 +70,13 @@ include 'navbar.php';
             <a class=" text-white" href="../student\home-page.php">Home </a>
           </li>
           <li class="">
-            <a class=" text-white" href="#">Find A Job</a>
+            <a class=" text-white" href="../student\jobs\find-job.php">Find A Job</a>
           </li>
           <li class="">
             <a class=" text-white" href="#">My Profile</a>
           </li>
           <li class="">
-            <a class=" text-white" href="#">Company Profiles</a>
+            <a class=" text-white" href="#">Company Lists</a>
           </li>
           <li class="">
             <a class=" text-white" href="#">About Us</a>

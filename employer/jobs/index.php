@@ -23,10 +23,11 @@
     <div class="col-sm">
      <h1>Jobs</h1>
     </div>
+    <form>
     <div class="col-sm">
        <a type = "button" class="btn btn-warning align-content-lg-end" href="add-jobs.php">Add Job</a>
     </div>
-   
+</form> <br><br>
 <table class="table">
   <thead>
     <tr>

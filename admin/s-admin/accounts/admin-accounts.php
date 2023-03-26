@@ -97,15 +97,16 @@ include('../sessions.php');
                         <td>" . $row['admin_type'] . "</td>";
                         
                         echo "<td>";
-                        echo "<div class='btn-group'>";
-                        echo "<a class='btn btn-success' href=''>Edit </a>";
-                        echo "<a class='btn btn-danger' href=''>Delete </a>";
+                        echo "<div class='btn-group'>"; ?>
+                        <a class='btn btn-success' href='edit-admin.php?id=<?php echo $row['id']; ?>'>Edit</a>
+                        <?php
+                        echo "<a class='btn btn-danger' href=''>Delete</a>";
                         echo "</div>";
                         echo "</td>";
           
                         echo "</tr>";
 
-
+ 
                     }
                 }
                 ?>

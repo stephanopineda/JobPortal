@@ -12,7 +12,7 @@
 </style>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #F6C724, #7C2424);">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: linear-gradient(to left, #F6C724, #7C2424);">
         <div class="container-fluid">
           <a class="navbar-brand logo" href="../dashboard/index.php">
             <img src="../../assets\img\jobportal_logo1.png" width="275px" class="d-inline-block align-text-top">

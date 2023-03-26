@@ -32,7 +32,7 @@
     ?>
 
 <div class="col-15 ">
-            <form action="jobs-edit-conn.php" method="post">
+            <form action="" method="post">
                 <input type="hidden" name="<?php echo $row['jobID']?>" value=
                 '<?php echo $row['jobID']?>'>
 
@@ -103,12 +103,12 @@
                 <br>
                 <select name="workSetup" id="workSetup">
                     <?php
-                    if($row['workSetup'] == 'Full-Time'){
-                        echo "<option value='Full Time' selected> Full Time </option>";
-                        echo "<option value='Part Time'> Part Time </option>";
+                    if($row['workSetup'] == 'WFH'){
+                        echo "<option value='WFH' selected>Work from Home </option>";
+                        echo "<option value='On-site'>On-site</option>";
                         } else{
-                            echo "<option value='Full Time'> Full Time </option>";
-                            echo "<option value='Part Time' selected> Part Time </option>";
+                            echo "<option value='WFH'>Work from Home </option>";
+                            echo "<option value='On-site'  selected>On-site</option>";
                         }
                     ?>
                 </select>
@@ -119,7 +119,9 @@
                 <input type="text" value='<?php echo $row['max'] ?>' name="max">
                 <br>
                 <br>
-                
+                <?php
+                include ('jobs-edit-conn.php');
+                ?>
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
                     <a href="index.php" class="btn btn-danger">Cancel</a> 
             </form>

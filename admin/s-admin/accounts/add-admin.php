@@ -28,38 +28,48 @@
                 <form method="POST">
                 <h2>Add Admin</h2><br>
                 <div class="form-group">
+                    <label class=fw-bold>Name</label>
                     <input type="text" class="form-control" name="name" placeholder="Name">
                 </div>
                 <br>
                 <div class="form-group">
+                    
+                    <label class=fw-bold>Username</label>
                     <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
                 <br>
                 <div class="form-group">
+                    
+                    <label class=fw-bold>Email</label>
                     <input type="email" class="form-control" name="email" placeholder="Email">
                 </div>
                 <br>
                 <div class="form-group">
+                    
+                    <label class=fw-bold>Password</label>
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
                 <br>
                 <div class="form-group">
+                    
+                    <label class=fw-bold>Confirm Password</label>
                     <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
                 </div>
                 <br>
                 <div class="form-group">
-                    <input list="browsers" class="form-control" name="browser" id="browser" placeholder="Admin Type">
+                    <label class="fw-bold">Admin Type: </label>
+                    <select name="admin_type" >
+                        <option value="Admin">Admin</option>
+                        <option value="Superadmin">Superadmin</option>
+                    </select>
                 </div>
                 <br><br>
                 <input type="submit" class="btn btn-primary" name="register" value="Sign Up">
+                <a href="admin-accounts.php" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         </div>
     </div>
-        <datalist id="browsers">
-            <option value="Admin">
-            <option value="Superadmin">
-        </datalist>
         
         <?php
             
@@ -68,7 +78,7 @@
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $password = $_POST['password']; 
-                $admintype = $_POST['browser'];      
+                $admintype = $_POST['admin_type'];      
                 $tablename="admin_accounts";
                 $columnquery="*";
                 
