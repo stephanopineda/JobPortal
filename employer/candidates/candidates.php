@@ -112,18 +112,20 @@
 
             if(mysqli_num_rows($result)>0){
               while($row = mysqli_fetch_assoc($result)){
-                echo " <div class='col-12 col-sm-6 col-md-4 col-lg-3'>
+                ?>
+                <div class='col-12 col-sm-6 col-md-4 col-lg-3'>
                 <div class='candidate'>
                   <div class='picture'>
                     <img class='img-fluid' src='' alt='student pic'>
                   </div>
                   <div class='candidate-content'>
-                    <h5 class='name'>Candidate Name</h5>
+                    <h5 class='name'>Student Name</h5>
                     <h6 class='admin_index_formtitle'>Web Developer</h6>
-                    <p class='view'><a href='url'>View Profile</a></p>
+                    <p class='button'><a href='student-profile.php?student_id=<?php echo $row['studentID']; ?>'>View Profile</a></p>
                   </div>
                 </div>
-              </div>";
+              </div>
+              <?php
               }
 
             }
@@ -131,6 +133,10 @@
 
         </div>
       </div>
+
+    <?php
+            //include('../footer.php');
+        ?>
     </body>
 </html>
 
