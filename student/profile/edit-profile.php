@@ -218,7 +218,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                     <button type="submit" class="btn btn-primary" name="updateInfo">Update</button>
                 </div>
                 <div class="col">
-                    <a href="s.profile.php" class="btn btn-danger">Cancel</a>
+                    <a href="student-profile.php" class="btn btn-danger">Cancel</a>
                 </div>
             </div>
         </form>

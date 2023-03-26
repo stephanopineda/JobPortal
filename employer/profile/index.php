@@ -34,7 +34,7 @@
         // Output the company profile data
         while($row = $result->fetch_assoc()) {
     ?>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-15 ">
             <div class="container-fluid mr-8 pb-4 shadow rounded">
             <div class="col-8 mx-auto mt-5">

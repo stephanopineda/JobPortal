@@ -85,7 +85,7 @@
     
     <div class="pt-5 px-5 pb-0">
     <h1>Candidates</h1>
-    <br>
+    <!-- <br>
 
 <div class="candidate-links">
     <nav>
@@ -95,7 +95,7 @@
           <li><a href="#">Rejected</a></li>
         </ul>
       </nav>
-</div>
+</div> -->
       
 
 
@@ -132,7 +132,7 @@
                     ?>'>View Profile</a></p>
                   </div>
                 </div>
-              </div>";
+              </div>
               <?php
               }
 
