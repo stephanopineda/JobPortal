@@ -75,7 +75,7 @@
       <div class="col mt-5 ms-4">
         <div class="container-fluid">
         <div class="row">
-                <div class="col d-flex flex-row-reverse">
+                <div class="col d-flex flex-row-reverse mb-3">
                   <a href="edit-profile.php" class="btn btn-primary">Edit Profile</a>
                 </div>
               </div>
