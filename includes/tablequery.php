@@ -86,7 +86,7 @@
     createTable($conn, $tablequery);
     
     // Job Applications Table
-    $tablequery = "CREATE TABLE `job_applications` (
+    $tablequery = "`job_applications` (
       `application_id` int AUTO_INCREMENT,
       `jobID` int,
       `studentID` int,
