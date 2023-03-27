@@ -77,30 +77,23 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="name" class="fw-bold">First Name</label>
-                    <input type="text" class="form-control" name= "firstname" id="firstname" value= "<?php echo $row['firstname']; ?>">
+                    <input type="text" class="form-control" name= "firstname" id="firstname" value= "<?php echo $row['firstname']; ?>" REQUIRED>
                 </div>
                 <div class="col form-group">
                     <label for="address" class="fw-bold">Last Name</label>
-                    <input type="text" class="form-control" name= "lastname" id="lastname" value= "<?php echo $row['lastname']; ?>">
+                    <input type="text" class="form-control" name= "lastname" id="lastname" value= "<?php echo $row['lastname']; ?>" REQUIRED>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class=" col form-group">
                     <label for="email" class="fw-bold">Email</label>
-                    <input type="text" class="form-control" name= "email" id="email" value= "<?php echo $row['email']; ?>">
-                </div>
-            </div>
-            <div class="row">
-                <div class ="col">
-                    <div id="editEmail">
-
-                    </div>
+                    <input type="text" class="form-control" name= "email" id="email" value= "<?php echo $row['email']; ?>" REQUIRED>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col form-group">
                 <label class="signup_label" for="course">Program:</label> 
-                <select class="select_dropdown" id="course" name="course" value= "<?php echo $row['course']; ?>">
+                <select class="select_dropdown" id="course" name="course" value= "<?php echo $row['course']; ?>" REQUIRED>
                     <option value=""> Choose Course </option>
                     <optgroup label="College of Accountancy and Finance (CAF)">
                     <option value="Accountancy"> Bachelor of Science in Accountancy (BSA)  </option>
@@ -192,31 +185,37 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="contact_no" class="fw-bold">Contact Number</label>
-                    <input type="text" class="form-control" name= "contact_no" id="contact_no" value= "<?php echo $row['contact_no']; ?>">
+                    <input type="text" class="form-control" name= "contact_no" id="contact_no" value= "<?php echo $row['contact_no']; ?>" REQUIRED>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="address" class="fw-bold">Address</label>
-                    <input type="text" class="form-control" name= "address" id="address" value= "<?php echo $row['address']; ?>">
+                    <input type="text" class="form-control" name= "address" id="address" value= "<?php echo $row['address']; ?>" REQUIRED>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="form-group">
                     <label for="birthdate" class="fw-bold">Birthdate</label>
-                    <input type="text" class="form-control" name= "birthdate" id="birthdate" value= "<?php echo $row['birthdate']; ?>">
+                    <input type="date" class="form-control" name= "birthdate" id="birthdate" value= "<?php echo $row['birthdate']; ?>" REQUIRED>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col form-group">
-                    <label for="sex" class="fw-bold">Sex</label>
-                    <input type="text" class="form-control" name= "sex" id="sex" value= "<?php echo $row['sex']; ?>">
+                    
+                    <label for="sex" class="fw-bold">Sex </label>
+                    <select class="select_dropdown" id="sex" name="sex" value= "<?php echo $row['sex']; ?>" REQUIRED>
+                        <option value=""> Choose Option </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option> 
+                </select>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="sex" class="fw-bold">Bio</label>
-                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40"><?php echo $row['bio']; ?></textarea>
+                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40" REQUIRED><?php echo $row['bio']; ?></textarea>
                 </div>
             </div>
             <div class="row mt-5">
