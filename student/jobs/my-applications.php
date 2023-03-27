@@ -43,9 +43,9 @@
                         <?php
 
 
-                          function statusCheck($status){
+                          function statusCheck($status, $app_id){
                             if($status=='Pending'){
-                              echo "<td> <a class='btn btn-danger' href=''>Cancel</button></td>";
+                              echo "<td> <a class='btn btn-danger' href='cancel-app.php?app_id=$app_id'>Cancel</button></td>";
                             }
                             else{
                               echo "<td></td>";
@@ -77,7 +77,7 @@
                                           echo "<td>" . $row2['jobTitle'] . "</td>";
                                           echo "<td>" . $row3['name'] . "</td>";
                                           echo "<td>" . $row['status'] . "</td>";
-                                          statusCheck($row['status']);
+                                          statusCheck($row['status'], $row['application_id']);
                                       }
                                   }
                               }
