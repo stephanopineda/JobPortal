@@ -216,7 +216,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="sex" class="fw-bold">Bio</label>
-                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40" value= "<?php echo $row['bio']; ?>">
+                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40"><?php echo $row['bio']; ?></textarea>
                 </div>
             </div>
             <div class="row mt-5">
