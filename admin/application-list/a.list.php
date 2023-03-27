@@ -15,6 +15,14 @@
     ?>
     <title>Application Listing</title>
 </head>
+
+<style>
+		/* Set display property of button and input to inline-block */
+		button, input[type="text"] {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	</style>
 <body>
 
     <?php
@@ -29,7 +37,7 @@
 
     <div class="row mb-2 pb-2">
       <!-- <div class="col-auto mb-2"> -->
-      <div class="col-auto">
+      <!-- <div class="col-auto">
         <label for="entries" class="col-sm-1 col-form-label">Show</label>
       </div>
       <div class="col-1">
@@ -37,14 +45,16 @@
       </div>
       <div class="col-1 col-md-7">
         <label for="entries" class="col-sm-1 col-form-label">entries</label>
-      </div>
+      </div> -->
       <!-- search bar(or palitan mo nalang nung search bar na gawa nyo) -->
+      
       <div class="col-auto">
         <label for="search" class="col-form-label">Search:</label>
       </div>
       <div class="col-auto">
       <form action="" method="GET">
         <input type="search" name="search" id="search" class="form-control">
+        
         <button type="submit" class="btn btn-primary">
               <i class="fas fa-search">Search</i>
             </button>
