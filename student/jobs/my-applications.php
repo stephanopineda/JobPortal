@@ -41,6 +41,17 @@
                   <tbody>
                       <tr>
                         <?php
+
+
+                          function statusCheck($status){
+                            if($status=='Pending'){
+                              echo "<td> <a class='btn btn-danger' href=''>Cancel</button></td>";
+                            }
+                            else{
+                              echo "<td></td>";
+                            }
+                          }
+
                           $student_id = $_SESSION['student_id'];
                           $sql = "SELECT * FROM job_applications WHERE studentID = '$student_id'";
                           $result = $conn->query($sql);
@@ -66,7 +77,7 @@
                                           echo "<td>" . $row2['jobTitle'] . "</td>";
                                           echo "<td>" . $row3['name'] . "</td>";
                                           echo "<td>" . $row['status'] . "</td>";
-                                          echo "<td> <a class='btn btn-danger' href=''>Cancel</button></td>";
+                                          statusCheck($row['status']);
                                       }
                                   }
                               }
