@@ -29,7 +29,7 @@
 
     <div class="row mb-2 pb-2">
       <!-- <div class="col-auto mb-2"> -->
-      <!-- <div class="col-auto">
+      <div class="col-auto">
         <label for="entries" class="col-sm-1 col-form-label">Show</label>
       </div>
       <div class="col-1">
@@ -37,7 +37,7 @@
       </div>
       <div class="col-1 col-md-7">
         <label for="entries" class="col-sm-1 col-form-label">entries</label>
-      </div> -->
+      </div>
       <!-- search bar(or palitan mo nalang nung search bar na gawa nyo) -->
       <div class="col-auto">
         <label for="search" class="col-form-label">Search:</label>
@@ -63,18 +63,23 @@
       <tr>
       <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"> Application ID</font>
+            <font style="vertical-align: inherit;">Application ID</font>
           </font>
         </th>
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"> Job ID</font>
+            <font style="vertical-align: inherit;">Job Title</font>
           </font>
         </th>
 
         <th scope="col">
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Student ID</font>
+            <font style="vertical-align: inherit;">Student Name</font>
+          </font>
+        </th>
+        <th scope="col">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Company Name</font>
           </font>
         </th>
         <th scope="col">
@@ -96,10 +101,28 @@
 
             if ($result ->num_rows > 0){
                 while($row = $result -> fetch_assoc()){
+                    $jobID = $row['jobID'];
+                    $student_id = $row['studentID'];
+                    $company_id = $row['companyID'];
+                    
+                    $sql2 = "SELECT * FROM job_list WHERE jobID = '$jobID'";
+                    $result2 = $conn -> query($sql2);
+                    $row2 = $result2 -> fetch_assoc();
+                    
+                    $sql3 = "SELECT * FROM student_profile WHERE id = '$student_id'";
+                    $result3 = $conn -> query($sql3);
+                    $row3 = $result3 -> fetch_assoc();
+
+                    $sql4 = "SELECT * FROM company_list WHERE company_id = '$company_id'";
+                    $result4 = $conn -> query($sql4);
+                    $row4 = $result4 -> fetch_assoc();
+
+
                     echo "<tr><td>" .
                     $row["application_id"] . "</td><td>" .
-                    $row["jobID"] . "</td><td>" .
-                    $row["studentID"] . "</td><td>" .
+                    $row2["jobTitle"] . "</td><td>" .
+                    $row3["firstname"]." ". $row3['lastname']. "</td><td>" .
+                    $row4["employer_name"] . "</td><td>" .
                     $row["status"] . "</td>";
 
                     echo "<td>";
@@ -107,15 +130,9 @@
                     echo "<a class='btn btn-danger' href='a.delete.php?id=" .$row['application_id'] ."'>Delete </a>";
                     echo "</div>";
                     echo "</td>";
-
                     echo "</tr>";
 
-
-
                 }
-            }
-            else{
-                    
             }
             $conn->close();
             ?> 

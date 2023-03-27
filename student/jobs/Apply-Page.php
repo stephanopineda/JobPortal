@@ -25,6 +25,18 @@
     $crow = mysqli_fetch_assoc($cresult);
 
     $companyName = $crow['name'];
+
+             
+    if(isset($_POST['submit'])){
+
+      $student_id = $_SESSION['student_id'];
+      $dataquery = "job_applications (jobID, studentID, companyID, status)";
+      $valuequery = "($jobID, $student_id, $CompanyId, 'Pending')";
+      insertData($conn, $dataquery, $valuequery);
+      echo '<script>
+      window.location.href = "../jobs/my-applications.php";
+    </script>';
+    }
   }
 ?>
 
@@ -83,19 +95,6 @@
            <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Apply</button>
             <a type="button" class="btn btn-danger" href="companyProfile.php?company_id=<?php echo $CompanyId?>">About Company</a>
-       
-
-          <?php            
-            if(isset($_POST['submit'])){
-              $student_id = $_SESSION['student_id'];
-              $dataquery = "job_applications (jobID, studentID, status)";
-              $valuequery = "($jobID, $student_id, 'Pending')";
-              insertData($conn, $dataquery, $valuequery);
-              echo '<script>
-              window.location.href = "../jobs/my-applications.php";
-            </script>';
-            }
-          ?>
 
         </div>
       </div>

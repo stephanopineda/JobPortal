@@ -55,7 +55,7 @@
         `firstname` varchar(24),
         `lastname` varchar(24),
         `email` varchar(50),
-        `course` varchar(20),
+        `course` varchar(50),
         `contact_no` varchar(12),
         `address` varchar(140),
         `birthdate` date,
@@ -86,15 +86,17 @@
     createTable($conn, $tablequery);
     
     // Job Applications Table
-    $tablequery = "`job_applications` (
-        `application_id` int AUTO_INCREMENT,
-        `jobID` int,
-        `studentID` int,
-        `status` varchar(10),
-        PRIMARY KEY (`application_id`),
-        FOREIGN KEY (`jobID`) REFERENCES `job_list`(`jobID`),
-        FOREIGN KEY (`studentID`) REFERENCES `student_profile`(`id`)
-      )";
+    $tablequery = "CREATE TABLE `job_applications` (
+      `application_id` int AUTO_INCREMENT,
+      `jobID` int,
+      `studentID` int,
+      `companyID` int,
+      `status` varchar(10),
+      PRIMARY KEY (`application_id`),
+      FOREIGN KEY (`jobID`) REFERENCES `job_list`(`jobID`),
+      FOREIGN KEY (`studentID`) REFERENCES `student_profile`(`id`),
+      FOREIGN KEY (`companyID`) REFERENCES `company_list`(`company_id`)
+    )";
     createTable($conn, $tablequery);
 
     // Sadmin Logs Table
