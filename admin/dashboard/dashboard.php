@@ -84,9 +84,14 @@
 
                 if(mysqli_num_rows($result) > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
+                      $company_id = $row['company_id'];
+                      $sql = "SELECT * FROM company_list WHERE company_id = $company_id";
+                      $result2 = mysqli_query($conn, $sql);
+                      $row2 = mysqli_fetch_assoc($result2);
+
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td>";
-                        echo "<td>" . $row['company_id'] . "</td>";
+                        echo "<td>" . $row2['name'] . "</td>";
                         echo "<td>" . $row['actions'] . "</td>";
                         echo "</tr>";
                     }

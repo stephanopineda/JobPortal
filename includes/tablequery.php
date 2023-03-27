@@ -99,7 +99,7 @@
 
     // Sadmin Logs Table
     $tablequery = "`s_admin_logs` (
-      `id` int(11) NOT NULL,
+      `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
       `admin_id` int(11) NOT NULL,
       `admin_type` enum('Superadmin','Admin') NOT NULL,
       `actions` varchar(255) NOT NULL
@@ -108,7 +108,7 @@
 
   // Sadmin Logs Table
   $tablequery = "`admin_logs` (
-    `id` int(11) NOT NULL,
+    `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `company_id` int(11) NOT NULL,
     `actions` varchar(255) NOT NULL
   )";

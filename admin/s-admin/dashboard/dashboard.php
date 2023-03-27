@@ -90,9 +90,15 @@
 
                     if(mysqli_num_rows($result)>0){
                         while($row = mysqli_fetch_assoc($result)){
+                          $admin_id = $row['admin_id'];
+                          $sql2 = "SELECT * FROM admin_accounts WHERE id = '$admin_id'";
+                          $result2 = mysqli_query($conn, $sql2);
+                          $row2 = mysqli_fetch_assoc($result2);
+
+
                             echo "<tr>";
                             echo "<td>" . $row['id'] . "</td>";
-                            echo "<td>" . $row['admin_id'] . "</td>";
+                            echo "<td>" . $row2['username'] . "</td>";
                             echo "<td>" . $row['admin_type'] . "</td>";
                             echo "<td>" . $row['actions'] . "</td>";
                             echo "</tr>";

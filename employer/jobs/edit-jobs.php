@@ -32,13 +32,15 @@
     $sql = "SELECT * FROM job_list WHERE jobID = '$jobID'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
+
+    include 'jobs-edit-conn.php'
     ?>
 
 <div class="col-15 ">
             <form action="jobs-edit-conn.php" enctype="multipart/form-data" method="post">
 
             <div class="form-group">
-                <input type="hidden" name="<?php echo $row['jobID']?>" value=
+                <input type="hidden" name="jobID" value=
                 '<?php echo $row['jobID']?>'>
             </div>
 
