@@ -60,7 +60,7 @@
         `address` varchar(140),
         `birthdate` date,
         `sex` varchar(6),
-        `bio` varchar(140),
+        `bio` text(140),
         `p_img` varchar(50),
         `userID` int,
         PRIMARY KEY (`id`),
