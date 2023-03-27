@@ -106,33 +106,57 @@
     </thead>
     <tbody>
             <?php
-            $sql = "SELECT * FROM job_applications";
+
+            if (isset($_GET['search']) && !empty($_GET['search'])) {
+
+              $search = $_GET['search'];
+
+            } else {
+ 
+              $search = 'default value';
+
+            }
+
+            if ($search == 'default value') {
+              $sql = "SELECT 
+              job_applications.application_id, 
+              job_list.jobTitle, 
+              student_profile.firstname,
+              student_profile.lastname,
+              company_list.employer_name,
+              job_applications.status
+              FROM (((job_applications
+              INNER JOIN job_list ON job_applications.jobID = job_list.jobID)
+              INNER JOIN student_profile ON job_applications.studentID = student_profile.id)
+              INNER JOIN company_list ON job_applications.companyID = company_list.company_id)";
+            } else {
+              $sql = "SELECT 
+              job_applications.application_id, 
+              job_list.jobTitle, 
+              student_profile.firstname,
+              student_profile.lastname,
+              company_list.employer_name,
+              job_applications.status
+              FROM (((job_applications
+              INNER JOIN job_list ON job_applications.jobID = job_list.jobID)
+              INNER JOIN student_profile ON job_applications.studentID = student_profile.id)
+              INNER JOIN company_list ON job_applications.companyID = company_list.company_id)
+              WHERE CONCAT(jobTitle, firstname, lastname, employer_name, status) 
+              LIKE '%$search%' 
+              ORDER BY jobTitle, firstname, lastname, employer_name, status";
+            }
+            
+            
             $result = $conn -> query($sql);
 
             if ($result ->num_rows > 0){
                 while($row = $result -> fetch_assoc()){
-                    $jobID = $row['jobID'];
-                    $student_id = $row['studentID'];
-                    $company_id = $row['companyID'];
-                    
-                    $sql2 = "SELECT * FROM job_list WHERE jobID = '$jobID'";
-                    $result2 = $conn -> query($sql2);
-                    $row2 = $result2 -> fetch_assoc();
-                    
-                    $sql3 = "SELECT * FROM student_profile WHERE id = '$student_id'";
-                    $result3 = $conn -> query($sql3);
-                    $row3 = $result3 -> fetch_assoc();
-
-                    $sql4 = "SELECT * FROM company_list WHERE company_id = '$company_id'";
-                    $result4 = $conn -> query($sql4);
-                    $row4 = $result4 -> fetch_assoc();
-
-
+  
                     echo "<tr><td>" .
                     $row["application_id"] . "</td><td>" .
-                    $row2["jobTitle"] . "</td><td>" .
-                    $row3["firstname"]." ". $row3['lastname']. "</td><td>" .
-                    $row4["employer_name"] . "</td><td>" .
+                    $row["jobTitle"] . "</td><td>" .
+                    $row["firstname"]." ". $row['lastname']. "</td><td>" .
+                    $row["employer_name"] . "</td><td>" .
                     $row["status"] . "</td>";
 
                     echo "<td>";
@@ -143,6 +167,9 @@
                     echo "</tr>";
 
                 }
+            }
+            else{
+              echo 'nodata';
             }
             $conn->close();
             ?> 
