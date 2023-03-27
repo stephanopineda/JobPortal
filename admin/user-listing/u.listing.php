@@ -41,6 +41,7 @@
         <label for="entries" class="col-sm-1 col-form-label">entries</label>
       </div> -->
       <!-- search bar(or palitan mo nalang nung search bar na gawa nyo) -->
+
       <div class="col-auto">
         <label for="search" class="col-form-label">Search:</label>
       </div>
@@ -49,8 +50,8 @@
         <input type="search" name="search" id="search" class="form-control">
         <button type="submit" class="btn btn-primary">
               <i class="fas fa-search">Search</i>
-            </button>
-          </form>
+        </button>
+      </form>
       </div>
     </div> <br>
     <form action="u.listing_pdf.php" method="post">  

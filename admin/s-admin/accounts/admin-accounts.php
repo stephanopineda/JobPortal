@@ -53,7 +53,7 @@ include('../sessions.php');
       <!-- <div class="col-auto mb-2"> -->
 
 
-      <div class="col-auto">
+      <!-- <div class="col-auto">
         <label for="entries" class="col-sm-1 col-form-label">Show</label>
       </div>
       <div class="col-1">
@@ -61,7 +61,7 @@ include('../sessions.php');
       </div>
       <div class="col-1 col-md-7">
         <label for="entries" class="col-sm-1 col-form-label">entries</label>
-      </div>
+      </div> -->
       <!-- search bar -->
       <div class="col">
       <form class="form-inline"  method="GET">

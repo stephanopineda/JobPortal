@@ -48,7 +48,7 @@
         <button type="submit" class="btn btn-primary">
               <i class="fas fa-search">Search</i>
             </button>
-          </form>
+          </form> <br> 
       </div>
       <form action="c.listing_pdf.php" method="post">  
       <input type="submit" name="generate_pdf" class="btn btn-success" value="Generate Report" />  
