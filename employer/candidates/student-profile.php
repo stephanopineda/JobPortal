@@ -55,13 +55,13 @@
                 ?>
              
             </div>
-            <div class="col-12 mt-3">
+            <div class="col-12 text-center">
               <p class="text-center fs-3"><?php echo $fullname ?></p>
             </div>
             <div class="col-12 text-center">
               <p class="fs-3">About Me:</p>
             </div>
-            <div class="col-12 mt-0">
+            <div class="col-12 mt-0 d-flex justify-content-evenly text-sm-start">
               <p class="fs-5 text-wrap lh-sm text-break text-justify mx-4"><?php echo $row['bio'] ?></p>
             </div>
           </div>

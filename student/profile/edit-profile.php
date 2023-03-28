@@ -32,7 +32,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col d-flex flex-row-reverse">
+                <div class="col-7 d-flex flex-row-reverse">
                 <?php
 
                     $p_img = $row['p_img'];
@@ -45,14 +45,65 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                     }
                 ?>
             </div>
+            
                 <div class="col mt-auto n-margin">
                     <button type="button" class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         +
                     </button>
 
+
                                 <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
+
+                        <?php
+                                if(isset($_POST['updateImg'])){
+                                    $p_img = $_FILES['p_img']['name'];
+                                    $target = "../../assets/img/student-profile/".basename($_FILES['p_img']['name']);
+                                    $sql ="UPDATE student_profile 
+                                    SET p_img = '$p_img'
+                                    WHERE id = $student_id";
+
+                                    
+                                    if (mysqli_query($conn, $sql)) {
+                                        move_uploaded_file($_FILES['p_img']['tmp_name'], $target);
+                                        echo "<script type='text/javascript'>alert('Profile Picture Updated Successfully!') </script>";
+                                        echo '<script>
+                                                window.location.href = "student-profile.php";
+                                            </script>';
+                                    } else {
+                                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                    }
+
+
+                                }
+                                if(isset($_POST['updateInfo'])){
+                                    $fname = $_POST['firstname'];
+                                    $lname = $_POST['lastname'];
+                                    $email = $_POST['email'];
+                                    $course = $_POST['course'];
+                                    $contact_no = $_POST['contact_no'];
+                                    $address = $_POST['address'];
+                                    $birthdate = $_POST['birthdate'];
+                                    $sex = $_POST['sex'];
+                                    $bio = $_POST['bio'];
+
+                                    
+                                        $sql ="UPDATE student_profile 
+                                            SET firstname='$fname', lastname='$lname', email='$email', course='$course', contact_no='$contact_no', address='$address', birthdate='$birthdate', sex='$sex', bio='$bio' 
+                                            WHERE id='$student_id'";
+
+                                        if (mysqli_query($conn, $sql)) {
+                                            echo "<script type='text/javascript'>alert('Profile Updated Successfully!') </script>";
+                                            echo '<script>
+                                                    window.location.href = "student-profile.php";
+                                                </script>';
+
+                                        } else {
+                                            echo "Error updating record: " . mysqli_error($conn);
+                                        }       
+                            }
+                            ?>
 
                             <div class="modal-content">
                                 <form action="" method="POST" enctype="multipart/form-data">
@@ -201,21 +252,26 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col form-group">
-                    
-                    <label for="sex" class="fw-bold">Sex </label>
-                    <select class="select_dropdown" id="sex" name="sex" value= "<?php echo $row['sex']; ?>" REQUIRED>
-                        <option value=""> Choose Option </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option> 
-                </select>
+                <div class="col form-group" class="">
+                    <label for="sex" class="fw-bold">Sex: <br></label>
+                            <select class="select_dropdown" name="sex">
+                                <?php
+                                    if($row['sex']=='Male'){
+                                        echo '<option value="Male" selected>Male</option>';
+                                        echo '<option value="Female">Female</option>';
+                                    }
+                                    else{
+                                        echo '<option value="Male">Male</option>';
+                                        echo '<option value="Female" selected>Female</option>';    
+                                    }
+                                ?>
+                            </select>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col form-group">
                     <label for="sex" class="fw-bold">Bio</label>
-                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40" REQUIRED><?php echo $row['bio']; ?></textarea>
+                    <textarea class="form-control" id="bio" name="bio" rows="8" cols="40" value= "<?php echo $row['bio']; ?>">
                 </div>
             </div>
             <div class="row mt-5">
@@ -280,4 +336,4 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
 ?>
     </body>
 
-</html>
+</html> 

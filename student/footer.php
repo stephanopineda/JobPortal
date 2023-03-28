@@ -13,13 +13,13 @@
             <a class=" text-white" href="../dashboard/index.php">Home </a>
           </li>
           <li class="">
-            <a class=" text-white" href="../jobs/company-list.php">Find A Job</a>
+            <a class=" text-white" href="../jobs/find-job.php">Find A Job</a>
           </li>
           <li class="">
             <a class=" text-white" href="../profile/student-profile.php">My Profile</a>
           </li>
           <li class="">
-            <a class=" text-white" href="../jobs/find-job.php">Company Lists</a>
+            <a class=" text-white" href="../jobs/company-list.php">Company Lists</a>
           </li>
         </ul>
       </div>
