@@ -32,7 +32,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col d-flex flex-row-reverse">
+                <div class="col-7 d-flex flex-row-reverse">
                 <?php
 
                     $p_img = $row['p_img'];
@@ -45,10 +45,12 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                     }
                 ?>
             </div>
+            
                 <div class="col mt-auto n-margin">
                     <button type="button" class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         +
                     </button>
+
 
                                 <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -257,9 +259,20 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col form-group">
-                    <label for="sex" class="fw-bold">Sex</label>
-                    <input type="text" class="form-control" name= "sex" id="sex" value= "<?php echo $row['sex']; ?>">
+                <div class="col form-group" class="">
+                    <label for="sex" class="fw-bold">Sex: <br></label>
+                            <select class="select_dropdown" name="sex">
+                                <?php
+                                    if($row['sex']=='Male'){
+                                        echo '<option value="Male" selected>Male</option>';
+                                        echo '<option value="Female">Female</option>';
+                                    }
+                                    else{
+                                        echo '<option value="Male">Male</option>';
+                                        echo '<option value="Female" selected>Female</option>';    
+                                    }
+                                ?>
+                            </select>
                 </div>
             </div>
                     <div class="row mt-3">
@@ -282,6 +295,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
                 </div>
             </div>
         </div>
+    </div>
     </body>
 
 </html> 

@@ -88,8 +88,13 @@
                         <p class="text-left fs-5">Company Overview</p>
                         <h6 text-left fs-3><?php echo $row["overview"]; ?></h6>
                     </div>
+                    <br>
                 </div>
+                <br>
+                <br>
             </div>
+            <br>
+                <br>
         </div>
     </div>
     <?php
