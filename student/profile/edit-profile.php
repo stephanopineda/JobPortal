@@ -260,7 +260,7 @@ selectWhere($conn, 'student_profile', '*', 'id', $student_id);
         $address = $_POST['address'];
         $birthdate = $_POST['birthdate'];
         $sex = $_POST['sex'];
-        $bio = $_POST['bio'];
+        $bio = htmlspecialchars($_POST['bio']);
 
         
             $sql ="UPDATE student_profile 
