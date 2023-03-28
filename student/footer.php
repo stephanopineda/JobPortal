@@ -10,16 +10,16 @@
             <p class="footer-toc fw-bolder" style=" margin-top: 25px;color:aliceblue;">Table of Contents</p>
           </li>
           <li class="">
-            <a class=" text-white" href="/Job Portal/JobPortal/student/dashboard/index.php">Home </a>
+            <a class=" text-white" href="../dashboard/index.php">Home </a>
           </li>
           <li class="">
-            <a class=" text-white" href="/Job Portal/JobPortal/student/jobs/find-job.php">Find A Job</a>
+            <a class=" text-white" href="../jobs/find-job.php">Find A Job</a>
           </li>
           <li class="">
-            <a class=" text-white" href="/Job Portal/JobPortal/student/profile/student-profile.php">My Profile</a>
+            <a class=" text-white" href="../profile/student-profile.php">My Profile</a>
           </li>
           <li class="">
-            <a class=" text-white" href="/Job Portal/JobPortal/student/jobs/company-list.php">Company Lists</a>
+            <a class=" text-white" href="../jobs/company-list.php">Company Lists</a>
           </li>
         </ul>
       </div>
